@@ -1,0 +1,80 @@
+// Resume Global Style Overrides (SCSS)
+// --------------------------------------------------
+// Based on Quasar variables customization for a clean, white-background, black-text,
+// blue-accent resume template.
+
+// Core Colors
+$resume-bg-color: #ffffff !default; // White background
+$resume-text-color: #000000 !default; // Black primary text
+$resume-accent-color: #0077cc !default; // Bright blue accent
+$resume-link-color: #0055aa !default; // Darker blue for links
+$resume-muted-color: #666666 !default; // Muted grey for secondary text
+
+// Heading Color Variants
+$resume-heading-color: $resume-text-color !default;
+$resume-heading-accent-color: $resume-accent-color !default;
+
+// Typography Sizes & Weights
+$resume-heading-xxl-size: 2.5rem !default; // For page title / name
+$resume-heading-xl-size: 2rem !default; // Section headings
+$resume-heading-l-size: 1.75rem !default; // Sub-section headings
+$resume-heading-m-size: 1.5rem !default; // Minor headings
+$resume-body-font-size: 1rem !default; // 16px
+$resume-small-font-size: 0.875rem !default; // 14px
+
+$resume-heading-xxl-weight: 700 !default;
+$resume-heading-xl-weight: 600 !default;
+$resume-heading-l-weight: 600 !default;
+$resume-heading-m-weight: 500 !default;
+$resume-body-weight: 400 !default;
+
+// Line-heights
+$resume-heading-line-height: 1.2 !default;
+$resume-body-line-height: 1.5 !default;
+
+// Spacing Utilities
+$resume-spacing-unit: 0.5rem !default; // Base spacing
+$resume-gutter-sm: $resume-spacing-unit !default;
+$resume-gutter-md: 1rem !default;
+$resume-gutter-lg: 1.5rem !default;
+
+// Date Format String (for use in JS formatting or mixins)
+$resume-date-format: 'DD MMM YYYY' !default;
+$resume-date-format-short: 'MMM YYYY' !default;
+
+// Quasar Mapping Overrides
+$primary: $resume-bg-color !default;
+$secondary: $resume-text-color !default;
+$accent: $resume-accent-color !default;
+
+// Utility Mixins
+@mixin resume-heading($level) {
+  @if $level == 'xxl' {
+    font-size: $resume-heading-xxl-size;
+    font-weight: $resume-heading-xxl-weight;
+  } @else if $level == 'xl' {
+    font-size: $resume-heading-xl-size;
+    font-weight: $resume-heading-xl-weight;
+  } @else if $level == 'l' {
+    font-size: $resume-heading-l-size;
+    font-weight: $resume-heading-l-weight;
+  } @else if $level == 'm' {
+    font-size: $resume-heading-m-size;
+    font-weight: $resume-heading-m-weight;
+  }
+  line-height: $resume-heading-line-height;
+  color: $resume-heading-color;
+}
+
+@mixin resume-link {
+  color: $resume-link-color;
+  text-decoration: none;
+  &:hover {
+    color: darken($resume-link-color, 10%);
+    text-decoration: underline;
+  }
+}
+
+// Example Usage
+// .resume-title { @include resume-heading('xxl'); }
+// a.review-link { @include resume-link; }
