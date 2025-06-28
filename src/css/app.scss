@@ -1,1 +1,72 @@
-// app global css in SCSS form
+// app.scss — Global Styles (SCSS)
+@use './quasar.variables' as *;
+
+// 1. Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: $font-family-base;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+}
+
+// 2. Utility Wrappers
+.page-wrapper {
+  max-width: $page-max-width;
+  margin: 0 auto;
+  padding: $page-padding;
+  overflow-x: hidden;
+}
+
+// 3. Responsive Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// 4. Print Styles
+@media print {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: auto !important;
+    background: white !important;
+    font-family: $font-family-base !important;
+    font-size: $print-font-base !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0.5in;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

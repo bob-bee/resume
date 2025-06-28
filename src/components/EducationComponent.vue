@@ -1,42 +1,56 @@
 <template>
-  <div class="q-pa-md row items-start q-gutter-md">
-    <q-card class="my-card" flat bordered>
+  <div class="q-pa-md column q-gutter-md">
+    <q-card v-for="edu in store.education" :key="edu.degree" class="education-card" flat bordered>
       <q-item>
-        <q-item-section avatar>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
+        <!-- Degree & Institution -->
+        <q-item-section>
+          <q-item-label class="text-h6 text-bold">{{ edu.degree }}</q-item-label>
+          <q-item-label caption class="text-primary">
+            {{ edu.institution }}
+          </q-item-label>
         </q-item-section>
 
-        <q-item-section>
-          <q-item-label>Title</q-item-label>
-          <q-item-label caption> Subhead </q-item-label>
+        <!-- Period & Location -->
+        <q-item-section side class="text-right">
+          <div class="text-caption">{{ edu.period }}</div>
+          <div class="text-caption text-grey">{{ edu.location }}</div>
         </q-item-section>
       </q-item>
 
+      <!-- Highlights -->
       <q-separator />
-
-      <q-card-section horizontal>
-        <q-card-section>
-          {{ lorem }}
-        </q-card-section>
-
-        <q-separator vertical />
-
-        <q-card-section class="col-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </q-card-section>
+      <q-card-section>
+        <ul class="q-pl-md q-mt-sm">
+          <li v-for="item in edu.highlights" :key="item">
+            {{ item }}
+          </li>
+        </ul>
       </q-card-section>
     </q-card>
   </div>
 </template>
 
 <script lang="ts" setup>
-const lorem =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  inline-size: 100%
+<style lang="scss" scoped>
+.education-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+ul {
+  padding-inline-start: 1.2rem;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
 </style>
