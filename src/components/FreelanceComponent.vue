@@ -1,6 +1,11 @@
 <template>
   <div>
-    <q-card v-for="project in store.projects" :key="project.name" class="q-mb-md" bordered>
+    <q-card
+      v-for="project in store.projects"
+      :key="project.name"
+      class="card-style-default q-mb-md"
+      bordered
+    >
       <!-- Title and Company -->
       <q-item>
         <q-item-section>
@@ -49,15 +54,9 @@ const store = useResumeStore();
 </script>
 
 <style lang="scss" scoped>
-.q-card {
-  border: 0.1rem solid rgb(12, 12, 10);
-  border-radius: 0.25rem;
-  padding: 1rem;
-}
-
 .q-item {
-  padding-block: 0.25rem; // Top/bottom spacing
-  gap: 0.5rem; // Space between sections
+  padding-block: 0.25rem; // vertical padding
+  gap: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +70,7 @@ const store = useResumeStore();
   align-items: center;
 
   .q-icon {
-    font-size: clamp(2rem, 3vw, 2.75rem); // Match icon sizing from resume
+    font-size: clamp(2rem, 3vw, 2.75rem);
   }
 }
 
@@ -82,7 +81,7 @@ const store = useResumeStore();
 
   .resume-link,
   .resume-text-muted {
-    font-size: 0.9625rem; // Slight bump from default 0.875
+    font-size: 0.9625rem;
     line-height: 1.2;
     text-align: end;
   }
@@ -93,6 +92,7 @@ ul {
   font-size: 1rem;
   line-height: 1.5;
   text-align: justify;
+  margin: 0;
 }
 
 .text-caption.text-grey {

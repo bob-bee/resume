@@ -1,6 +1,10 @@
 // app.scss — Global Styles (SCSS)
 @use './quasar.variables' as *;
 
+// Base colors - define these in quasar.variables.scss ideally
+$background-color-base: #fff !default;
+$text-color-base: #000 !default;
+
 // 1. Reset & Base Styles
 *,
 *::before,
@@ -14,8 +18,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: $font-family-base;
-  background-color: #fff;
-  color: #000;
+  background-color: $background-color-base;
+  color: $text-color-base;
   line-height: 1.5;
   font-size: $font-size-base;
   -webkit-font-smoothing: antialiased;
@@ -23,20 +27,63 @@ body {
 
 // 2. Utility Wrappers
 .page-wrapper {
-  max-width: $page-max-width;
-  margin: 0 auto;
-  padding: $page-padding;
+  max-inline-size: $page-max-width;
+  margin-inline: auto;
+  padding-inline: $page-padding;
   overflow-x: hidden;
 }
 
 // 3. Responsive Images
 img {
-  max-width: 100%;
-  height: auto;
+  max-inline-size: 100%;
+  block-size: auto;
   display: block;
 }
 
-// 4. Print Styles
+// 4. Typography Utilities
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-accent {
+  color: $accent;
+}
+
+// 5. Base Card Style (for all standard cards)
+.card-style-default {
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  box-shadow: none; // base has no shadow by default, you can add if wanted
+  padding: 1rem;
+  background-color: $background-color-base;
+  color: $text-color-base;
+  transition: none;
+}
+
+// 6. Interests Card Modifier (adds shadow + hover lift)
+.card-interest {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// 7. Content List Style (ul, ol)
+.content-list {
+  padding-inline-start: 1rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+  margin: 0;
+}
+
+// 8. Print Styles
 @media print {
   *,
   *::before,
@@ -49,8 +96,8 @@ img {
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
-    width: 100% !important;
-    height: auto !important;
+    inline-size: 100% !important;
+    block-size: auto !important;
     background: white !important;
     font-family: $font-family-base !important;
     font-size: $print-font-base !important;

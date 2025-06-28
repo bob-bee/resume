@@ -69,6 +69,16 @@ export interface Award {
   items?: string[];
 }
 
+export interface Language {
+  name: string;
+  level?: string; // Optional for now
+}
+export interface Interest {
+  title: string;
+  goal: string;
+  notes?: string[];
+}
+
 export interface ResumeState {
   name: string;
   roleBuckets: RoleBucket[];
@@ -80,5 +90,5 @@ export interface ResumeState {
   certifications: Certification[];
   awards: Award[];
   languages: string[];
-  interests: string[];
+  interests: Interest[];
 }

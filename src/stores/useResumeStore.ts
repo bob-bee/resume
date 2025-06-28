@@ -272,14 +272,46 @@ export const useResumeStore = defineStore('resume', {
     languages: ['English', 'Italian', 'Hindi', 'Spanish'],
 
     interests: [
-      'AI',
-      'Quantum Physics',
-      'Calisthenics',
-      'MMA',
-      'Traveling',
-      'Music',
-      'Vlog',
-      'Content Creation',
+      {
+        title: 'AI',
+        goal: 'Build an AI comedy-writing assistant to co-write stand-up material.',
+        notes: ['Experiment with GPT agents', 'Deploy as mobile app'],
+      },
+      {
+        title: 'Quantum Physics',
+        goal: 'Write a layman-accessible explainer series on quantum computing.',
+        notes: ['Collaborate with researchers', 'Publish on Medium/Substack'],
+      },
+      {
+        title: 'Calisthenics',
+        goal: 'Hold a full human flag for 30 seconds.',
+        notes: ['Train planche and front lever', 'Document progress on IG'],
+      },
+      {
+        title: 'MMA',
+        goal: 'Compete in an amateur MMA bout.',
+        notes: ['Focus: Muay Thai + BJJ', 'Track training and sparring stats'],
+      },
+      {
+        title: 'Traveling',
+        goal: 'Bike across at least 10 European countries and vlog the journey.',
+        notes: ['Create a documentary', 'Secure gear sponsor'],
+      },
+      {
+        title: 'Music',
+        goal: 'Produce and release a full rap EP with Dr. Dre (or die trying).',
+        notes: ['Learn mixing/mastering', 'Perform at a local club or fest'],
+      },
+      {
+        title: 'Vlog',
+        goal: 'Hit 100K YouTube subs documenting tech+travel lifestyle.',
+        notes: ['Blend tutorials + storytelling', 'Weekly uploads'],
+      },
+      {
+        title: 'Content Creation',
+        goal: 'Launch a podcast blending comedy, AI, and weird science.',
+        notes: ['Interview niche experts', 'Distribute across platforms'],
+      },
     ],
   }),
 

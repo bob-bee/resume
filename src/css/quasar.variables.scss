@@ -1,6 +1,6 @@
 // quasar.variables.scss
 
-// Example custom theme variables
+// THEME COLORS
 $primary: #3f51b5;
 $secondary: #ff9800;
 $accent: #e91e63;
@@ -10,28 +10,32 @@ $negative: #c10015;
 $info: #31ccec;
 $warning: #f2c037;
 
-// Quasar typography overrides (optional)
+$background-color-base: #fff;
+$text-color-base: #000;
+
+// TYPOGRAPHY
 $body-font-family: 'Inter', sans-serif;
-
-// Add more Quasar-specific overrides here...
-
-// _variables.scss
-
-// Font Family
 $font-family-base: 'Inter', sans-serif;
 
-// Font Sizes (responsive for screen)
 $font-size-sm: clamp(0.8rem, 0.9vw, 1rem);
 $font-size-base: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
 $font-size-md: clamp(1rem, 1.5vw + 0.3rem, 1.4rem);
 $font-size-lg: clamp(1.2rem, 2vw + 0.5rem, 2rem);
 
-// Font Sizes (fixed for print)
+// Fixed Sizes for Print
 $print-font-sm: 10pt;
 $print-font-base: 11pt;
 $print-font-md: 13pt;
 $print-font-lg: 16pt;
 
-// Layout
+// LAYOUT VARIABLES
 $page-max-width: 1200px;
 $page-padding: 1rem;
+
+$space: (
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 1rem,
+  'lg': 2rem,
+  'xl': 4rem,
+);
