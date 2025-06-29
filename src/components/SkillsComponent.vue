@@ -1,13 +1,23 @@
 <template>
+  <div class="section-title">
+    <h5>Skills</h5>
+  </div>
   <div class="q-pa-md">
-    <div v-for="(skillList, category) in store.skills" :key="category" class="skill-section">
-      <div class="section-header">
+    <div
+      v-for="(skillList, category) in store.skills"
+      :key="category"
+      class="card-style-default card-interest q-mb-sm"
+    >
+      <div class="card-title q-mb-sm">
         {{ categoryLabels[category] || category }}
       </div>
-      <div class="skill-wrapper">
-        <div v-for="(skill, index) in skillList" :key="`${category}-${index}`" class="skill-chip">
-          {{ skill }}
-        </div>
+      <div class="chip-group">
+        <span
+          v-for="(skill, index) in skillList"
+          :key="`${category}-${index}`"
+          class="chip-style"
+          >{{ skill }}</span
+        >
       </div>
     </div>
   </div>
@@ -35,42 +45,5 @@ const categoryLabels: Record<string, string> = {
 </script>
 
 <style scoped lang="scss">
-.skill-section {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  margin-block-end: 0.5rem;
-  background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.section-header {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-block-end: 0.5rem;
-}
-
-.skill-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-
-.skill-chip {
-  padding: 0.3rem 0.75rem;
-  background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
-  border-radius: 9999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #374151;
-  white-space: nowrap;
-  transition: 0.2s ease;
-  cursor: default;
-
-  &:hover {
-    background-color: #e5e7eb;
-  }
-}
+// No local styles here — everything comes from global app.scss
 </style>

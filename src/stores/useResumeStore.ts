@@ -285,7 +285,6 @@ export const useResumeStore = defineStore('resume', {
         'Documentation',
         'Change Management',
       ],
-      languages: ['English', 'Italian', 'Hindi', 'Telugu', 'Spanish'],
       otherTech: [
         'SEO Optimization',
         'Web Scraping',
@@ -295,6 +294,7 @@ export const useResumeStore = defineStore('resume', {
         'Workflow Automation',
         'Content Creation',
       ],
+      languages: ['English', 'Italian', 'Hindi', 'Telugu', 'Spanish'],
     },
     certifications: [
       {

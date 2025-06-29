@@ -7,10 +7,10 @@
       bordered
     >
       <!-- Title and Company -->
-      <q-item>
+      <q-item class="resume-item">
         <q-item-section>
-          <q-item-label>{{ project.name }}</q-item-label>
-          <q-item-label caption>
+          <q-item-label class="card-title">{{ project.name }}</q-item-label>
+          <q-item-label caption class="card-meta">
             <a
               v-if="project.companyUrl"
               :href="project.companyUrl"
@@ -26,8 +26,8 @@
 
         <!-- Period & Location -->
         <q-item-section side class="text-right">
-          <div>{{ project.period }}</div>
-          <div v-if="project.location" class="text-caption text-grey">
+          <div class="card-meta">{{ project.period }}</div>
+          <div v-if="project.location" class="card-meta text-caption text-grey">
             {{ project.location }}
           </div>
         </q-item-section>
@@ -36,8 +36,8 @@
       <q-separator />
 
       <!-- Items -->
-      <q-card-section>
-        <ul class="q-pl-md">
+      <q-card-section class="card-body">
+        <ul class="content-list">
           <li v-for="item in project.items" :key="item">
             {{ item }}
           </li>
@@ -53,50 +53,6 @@ import { useResumeStore } from 'src/stores/useResumeStore';
 const store = useResumeStore();
 </script>
 
-<style lang="scss" scoped>
-.q-item {
-  padding-block: 0.25rem; // vertical padding
-  gap: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.q-item-section[avatar] {
-  flex: 0 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  .q-icon {
-    font-size: clamp(2rem, 3vw, 2.75rem);
-  }
-}
-
-.q-item-section:not([avatar]) {
-  flex: 1;
-  padding: 0;
-  margin: 0;
-
-  .resume-link,
-  .resume-text-muted {
-    font-size: 0.9625rem;
-    line-height: 1.2;
-    text-align: end;
-  }
-}
-
-ul {
-  padding-inline-start: 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: justify;
-  margin: 0;
-}
-
-.text-caption.text-grey {
-  font-size: 0.875rem;
-  color: #666;
-}
+<style scoped lang="scss">
+// Removed – styles now centralized in app.scss
 </style>

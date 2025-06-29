@@ -1,4 +1,7 @@
 <template>
+  <div class="section-title">
+    <h5>Awards</h5>
+  </div>
   <div>
     <q-card v-for="award in store.awards" :key="award.title" class="q-mb-md" bordered>
       <!-- Title and Issuer -->

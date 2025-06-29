@@ -1,6 +1,10 @@
 <template>
+  <div class="section-title">
+    <h5>Interests</h5>
+  </div>
   <div class="q-pa-md column q-gutter-md">
     <q-card
+      title="Interests"
       v-for="interest in store.interests"
       :key="interest.title"
       class="interest-card"

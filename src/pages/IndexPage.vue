@@ -4,37 +4,30 @@
     <HeaderComponent />
 
     <section class="resume-section" id="work-experience">
-      <h3 class="section-title">Work Experience</h3>
       <WorkComponent />
     </section>
 
     <section class="resume-section" id="projects">
-      <h3 class="section-title">Freelance Projects</h3>
       <FreelanceComponent />
     </section>
 
-    <section class="resume-section" id="deucation">
-      <h3 class="section-title">Education</h3>
+    <section class="resume-section" id="education">
       <EducationComponent />
     </section>
 
     <section class="resume-section" id="skills">
-      <h3 class="section-title">Skills</h3>
       <SkillsComponent />
     </section>
 
     <section class="resume-section" id="certifications">
-      <h3 class="section-title">Certifications</h3>
       <CerticifationsComponent />
     </section>
 
     <section class="resume-section" id="awards">
-      <h3 class="section-title">Awards</h3>
       <AwardsComponent />
     </section>
 
     <section class="resume-section" id="interests">
-      <h3 class="section-title">Interests</h3>
       <InterestsComponent />
     </section>
   </q-page>

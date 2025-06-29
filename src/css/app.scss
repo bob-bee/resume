@@ -41,30 +41,29 @@ img {
 }
 
 // 4. Typography Utilities
-.text-primary {
-  color: $primary;
+.text {
+  &-primary {
+    color: $primary;
+  }
+  &-secondary {
+    color: $secondary;
+  }
+  &-accent {
+    color: $accent;
+  }
 }
 
-.text-secondary {
-  color: $secondary;
-}
-
-.text-accent {
-  color: $accent;
-}
-
-// 5. Base Card Style (for all standard cards)
+// 5. Card Styles
 .card-style-default {
   border-radius: 0.5rem;
   border: 1px solid #ccc;
-  box-shadow: none; // base has no shadow by default, you can add if wanted
+  box-shadow: none;
   padding: 1rem;
   background-color: $background-color-base;
   color: $text-color-base;
   transition: none;
 }
 
-// 6. Interests Card Modifier (adds shadow + hover lift)
 .card-interest {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
@@ -72,6 +71,47 @@ img {
   &:hover {
     transform: translateY(-2px);
   }
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-block-end: 0.5rem;
+  text-transform: capitalize;
+  border-block-end: 1px solid black;
+  padding-block-end: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+  margin-block-end: 0.25rem;
+}
+
+.card-paragraph {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  margin-block-end: 0.5rem;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+  margin-block-end: 0.25rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #fafafa;
+  border: 1px solid white;
+  border-radius: 0.25rem;
 }
 
 // 7. Content List Style (ul, ol)
@@ -115,5 +155,142 @@ img {
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+}
+
+// 9. Resume Card Section Style (shared by Work, Freelance, Skills, etc.)
+.card-section {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+  margin-block: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  > .card-title {
+    @extend .card-title;
+  }
+
+  .card-body {
+    @extend .card-body;
+  }
+}
+
+// 10. Skills Section
+.skill-section {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-block-end: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  .section-header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-block-end: 0.5rem;
+  }
+
+  .skill-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+
+    .skill-chip {
+      padding: 0.3rem 0.75rem;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #374151;
+      white-space: nowrap;
+      transition: 0.2s ease;
+      cursor: default;
+
+      &:hover {
+        background-color: #e5e7eb;
+      }
+    }
+  }
+}
+
+// 11. Chip Group
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem; // ensures spacing between chips
+
+  .chip-style {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #d1d5db;
+    background-color: #f3f4f6;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+    cursor: default;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #e5e7eb;
+    }
+  }
+}
+// === Resume Typography ===
+.resume-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.resume-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.resume-summary {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: unset;
+}
+
+// === Contact List Items ===
+.resume-contact-item {
+  padding-block: 0.25rem;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume-contact-icon {
+  flex: 0 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .q-icon {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+  }
+}
+
+.resume-contact-text {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+
+  .resume-link,
+  .resume-text-muted {
+    font-size: 0.9625rem;
+    line-height: 1.2;
+    text-align: end;
   }
 }

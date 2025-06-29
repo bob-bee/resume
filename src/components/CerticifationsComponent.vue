@@ -1,4 +1,7 @@
 <template>
+  <div class="section-title">
+    <h5>Certifications</h5>
+  </div>
   <div>
     <q-card
       v-for="certification in store.certifications"

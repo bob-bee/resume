@@ -1,4 +1,7 @@
 <template>
+  <div class="section-title">
+    <h5>Achievements</h5>
+  </div>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card" flat bordered>
       <q-item>
