@@ -28,14 +28,23 @@ $print-font-base: 11pt;
 $print-font-md: 13pt;
 $print-font-lg: 16pt;
 
-// LAYOUT VARIABLES
+// SPACING TOKENS
+$space: (
+  'xxs': 0.125rem,
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'xl': 1.5rem,
+);
+
+$gap-tiny: map-get($space, 'xxs');
+$gap-small: map-get($space, 'xs');
+$gap-base: map-get($space, 'sm');
+$gap-loose: map-get($space, 'md');
+
 $page-max-width: 1200px;
 $page-padding: 1rem;
 
-$space: (
-  'xs': 0.25rem,
-  'sm': 0.5rem,
-  'md': 1rem,
-  'lg': 2rem,
-  'xl': 4rem,
-);
+// Print
+$print-padding: 0.25in;

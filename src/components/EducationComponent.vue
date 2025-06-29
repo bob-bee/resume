@@ -1,44 +1,44 @@
 <template>
-  <div class="section-title">
-    <h5>Academia</h5>
-  </div>
-  <div class="q-pa-md column q-gutter-md">
-    <q-card
-      v-for="edu in store.education"
-      :key="edu.degree"
-      class="card-style-default card-interest"
-      bordered
-    >
-      <!-- Degree & Institution -->
-      <q-item class="q-pa-sm">
-        <q-item-section>
-          <q-item-label class="card-title">
-            {{ edu.degree }}
-          </q-item-label>
-          <q-item-label caption class="card-meta text-primary">
-            {{ edu.institution }}
-          </q-item-label>
-        </q-item-section>
+  <div class="section">
+    <h5 class="section-title">Academia</h5>
+    <div class="q-pa-md column q-gutter-md">
+      <q-card
+        v-for="edu in store.education"
+        :key="edu.degree"
+        class="card-style-default card-interest"
+        bordered
+      >
+        <!-- Degree & Institution -->
+        <q-item class="q-pa-sm">
+          <q-item-section>
+            <q-item-label class="card-title">
+              {{ edu.degree }}
+            </q-item-label>
+            <q-item-label caption class="card-meta text-primary">
+              {{ edu.institution }}
+            </q-item-label>
+          </q-item-section>
 
-        <!-- Period & Location -->
-        <q-item-section side class="text-right">
-          <div class="card-meta">{{ edu.period }}</div>
-          <div class="card-meta text-grey text-caption">
-            {{ edu.location }}
-          </div>
-        </q-item-section>
-      </q-item>
+          <!-- Period & Location -->
+          <q-item-section side class="text-right">
+            <div class="card-meta">{{ edu.period }}</div>
+            <div class="card-meta text-grey text-caption">
+              {{ edu.location }}
+            </div>
+          </q-item-section>
+        </q-item>
 
-      <!-- Highlights -->
-      <q-separator />
-      <q-card-section class="card-body">
-        <ul class="content-list">
-          <li v-for="item in edu.highlights" :key="item">
-            {{ item }}
-          </li>
-        </ul>
-      </q-card-section>
-    </q-card>
+        <!-- Highlights -->
+        <q-separator />
+        <q-card-section class="card-body">
+          <ul class="content-list">
+            <li v-for="item in edu.highlights" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </q-card-section>
+      </q-card>
+    </div>
   </div>
 </template>
 
