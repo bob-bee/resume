@@ -33,11 +33,6 @@
       <AwardsComponent />
     </section>
 
-    <section class="resume-section" id="languages">
-      <h3 class="section-title">Languages</h3>
-      <LanguageComponent />
-    </section>
-
     <section class="resume-section" id="interests">
       <h3 class="section-title">Interests</h3>
       <InterestsComponent />
@@ -54,6 +49,5 @@ import CerticifationsComponent from 'src/components/CerticifationsComponent.vue'
 import AwardsComponent from 'src/components/AwardsComponent.vue';
 import HeaderComponent from 'src/components/HeaderComponent.vue';
 import SkillsComponent from 'src/components/SkillsComponent.vue';
-import LanguageComponent from 'src/components/LanguageComponent.vue';
 import InterestsComponent from 'src/components/InterestsComponent.vue';
 </script>

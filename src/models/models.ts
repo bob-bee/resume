@@ -46,11 +46,16 @@ export interface Education {
 export interface Skills {
   operatingSystems: string[];
   networking: string[];
-  cloud: string[];
-  tools: string[];
-  dev: string[];
-  admin: string[];
+  devOpsTools: string[];
+  cloudPlatforms: string[];
+  databases: string[];
+  analyticsAndBI: string[];
+  webDevelopment: string[];
+  scriptingAndAutomation: string[];
+  administration: string[];
+  otherTech: string[];
   softSkills: string[];
+  languages: string[];
 }
 export interface Certification {
   name: string;
@@ -69,10 +74,6 @@ export interface Award {
   items?: string[];
 }
 
-export interface Language {
-  name: string;
-  level?: string; // Optional for now
-}
 export interface Interest {
   title: string;
   goal: string;
@@ -89,6 +90,5 @@ export interface ResumeState {
   skills: Skills;
   certifications: Certification[];
   awards: Award[];
-  languages: string[];
   interests: Interest[];
 }
