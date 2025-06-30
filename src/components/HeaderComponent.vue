@@ -2,8 +2,8 @@
   <div class="resume-header">
     <div class="left-section">
       <div class="resume-title">{{ resume.name }}</div>
-      <div class="resume-subtitle">{{ currentBucket.title }}</div>
-      <div class="resume-summary">{{ currentBucket.summary }}</div>
+      <div class="card-subtitle">{{ currentBucket.title }}</div>
+      <div class="card-body">{{ currentBucket.summary }}</div>
     </div>
 
     <div class="center-section">
@@ -14,8 +14,8 @@
 
     <div class="right-section">
       <q-list>
-        <q-item v-for="contact in resume.contacts" :key="contact.text" class="resume-contact-item">
-          <q-item-section class="resume-contact-text">
+        <q-item v-for="contact in resume.contacts" :key="contact.text" class="contact-item">
+          <q-item-section class="contact-info">
             <template v-if="contact.url">
               <a :href="contact.url" class="resume-link">{{ contact.text }}</a>
             </template>
@@ -24,7 +24,7 @@
             </template>
           </q-item-section>
 
-          <q-item-section avatar class="resume-contact-icon">
+          <q-item-section avatar class="contact-icon">
             <q-icon :name="contact.icon" />
           </q-item-section>
         </q-item>
@@ -68,6 +68,11 @@ const currentBucket = computed<RoleBucket>(() => {
   flex: 1 1 55%;
   display: flex;
   flex-direction: column;
+}
+.resume-title {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
 }
 
 .center-section {

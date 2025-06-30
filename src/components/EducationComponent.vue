@@ -2,16 +2,11 @@
   <div class="section">
     <h5 class="section-title">Academia</h5>
     <div class="q-pa-md column q-gutter-md">
-      <q-card
-        v-for="edu in store.education"
-        :key="edu.degree"
-        class="card-style-default card-interest"
-        bordered
-      >
+      <q-card v-for="edu in store.education" :key="edu.degree" class="card-style-default" bordered>
         <!-- Degree & Institution -->
         <q-item class="q-pa-sm">
           <q-item-section>
-            <q-item-label class="card-title">
+            <q-item-label class="card-subtitle">
               {{ edu.degree }}
             </q-item-label>
             <q-item-label caption class="card-meta text-primary">
@@ -31,7 +26,7 @@
         <!-- Highlights -->
         <q-separator />
         <q-card-section class="card-body">
-          <ul class="content-list">
+          <ul>
             <li v-for="item in edu.highlights" :key="item">
               {{ item }}
             </li>

@@ -214,6 +214,27 @@ export const useResumeStore = defineStore('resume', {
           'Headed sustainability efforts as Go-Green Club lead, including design and campus-wide rollout of an eco-bin initiative for waste segregation.',
         ],
       },
+      {
+        degree: 'Italian Language Certification',
+        institution: 'University Degli studo di Genova',
+        location: 'Genova, Italy',
+        period: '2023',
+        highlights: ['Achieved B2 level proficiency in Italian language.'],
+      },
+      {
+        degree: 'IELTS – B2',
+        institution: 'British Council',
+        location: 'Vijayawada, India',
+        period: '2016',
+        highlights: ['Scored B2 level proficiency in English based on IELTS standards.'],
+      },
+      {
+        degree: 'CNC Machining & AutoCAD',
+        institution: 'Central Institute of Tool Design',
+        location: 'Hyderabad, India',
+        period: '2012',
+        highlights: ['Completed intensive hands-on training in CNC programming and drafting.'],
+      },
     ],
 
     skills: {
@@ -306,17 +327,17 @@ export const useResumeStore = defineStore('resume', {
       },
       {
         name: 'Italian Language Certification',
-        company: 'University for Foreigners of Perugia',
-        period: '2013',
-        location: 'Perugia, Italy',
-        items: ['Achieved C1 level proficiency in Italian language.'],
+        company: 'University Degli studo di Genova',
+        period: '2023',
+        location: 'Genova, Italy',
+        items: ['Achieved B2 level proficiency in Italian language.'],
       },
       {
-        name: 'IELTS – C1',
+        name: 'IELTS – B2',
         company: 'British Council',
         period: '2016',
-        location: 'Rome, Italy',
-        items: ['Scored C1 level proficiency in English based on IELTS standards.'],
+        location: 'Vijayawada, India',
+        items: ['Scored B2 level proficiency in English based on IELTS standards.'],
       },
     ],
 
@@ -324,6 +345,7 @@ export const useResumeStore = defineStore('resume', {
       {
         title: 'Gold Medal – Inter NIT Boxing',
         issuer: 'National Institute of Technology',
+        issuerUrl: 'https://www.nitrr.ac.in',
         period: '2012',
         location: 'India',
         items: ['Won gold in the national inter-NIT boxing tournament (lightweight division).'],
@@ -331,6 +353,8 @@ export const useResumeStore = defineStore('resume', {
       {
         title: 'Bronze Medal – Inter NIT Boxing',
         issuer: 'National Institute of Technology',
+        issuerUrl: 'https://www.nitrr.ac.in',
+
         period: '2013',
         location: 'India',
         items: ['Secured bronze the following year in the same national tournament.'],
@@ -338,8 +362,9 @@ export const useResumeStore = defineStore('resume', {
       {
         title: 'Symantec Employee of the Year',
         issuer: 'Symantec Corporation',
+        issuerUrl: 'https://www.us.norton.com',
         period: '2014–2015',
-        location: 'Pune, India',
+        location: 'Chennai, India',
         items: ['Recognized for outstanding team leadership and technical innovation.'],
       },
     ],

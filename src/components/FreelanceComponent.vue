@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section">
     <h5 class="section-title">Projects</h5>
     <div>
       <q-card
@@ -11,14 +11,14 @@
         <!-- Title and Company -->
         <q-item class="resume-item">
           <q-item-section>
-            <q-item-label class="card-title">{{ project.name }}</q-item-label>
+            <q-item-label class="card-subtitle">{{ project.name }}</q-item-label>
             <q-item-label caption class="card-meta">
               <a
                 v-if="project.companyUrl"
                 :href="project.companyUrl"
                 target="_blank"
                 rel="noopener"
-                class="text-primary"
+                class="card-title text-primary"
               >
                 {{ project.company }}
               </a>
@@ -28,18 +28,18 @@
 
           <!-- Period & Location -->
           <q-item-section side class="text-right">
-            <div class="card-meta">{{ project.period }}</div>
+            <div v-if="project.period" class="card-meta">{{ project.period }}</div>
             <div v-if="project.location" class="card-meta text-caption text-grey">
               {{ project.location }}
             </div>
           </q-item-section>
         </q-item>
 
-        <q-separator />
+        <q-separator v-if="project.items?.length" />
 
         <!-- Items -->
-        <q-card-section class="card-body">
-          <ul class="content-list">
+        <q-card-section v-if="project.items?.length" class="card-body">
+          <ul class="q-pa-md">
             <li v-for="item in project.items" :key="item">
               {{ item }}
             </li>

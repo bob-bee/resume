@@ -35,38 +35,71 @@ img {
 }
 
 .section {
-  margin: none;
-  padding: none;
-  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color-base;
+
+  border-radius: $border-radius-base;
+  box-shadow: 0 1px 3px rgba(248, 248, 248, 0.1);
+}
+.skill-category {
+  font-weight: 600;
+  color: $primary;
+  text-transform: capitalize;
+  overflow-wrap: break-word;
+  text-align: center;
+  background-color: $background-color-base;
+}
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: $gap-small;
+  padding: $gap-small;
   border-radius: 0.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  vertical-align: middle;
+}
+.skill-title {
+  font-size: $font-size-md;
+  font-weight: 350;
+  color: $primary;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .section-title {
-  font-size: 1.2rem;
+  font-size: $font-size-xl;
+
   font-weight: 800;
   margin-block-end: $gap-small;
-  padding: none;
+  padding: $gap-tiny $gap-small;
   text-align: center;
 }
 .card-style-default {
-  border-radius: 0.25rem;
-  border: 1px solid #ccc;
-  padding: map-get($space, 'sm');
   background-color: $background-color-base;
   color: $text-color-base;
-  box-shadow: none;
+  box-shadow: $background-color-shadow;
   transition: none;
 }
 
 .card-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: $font-size-lg;
+
+  font-weight: 800;
   margin-block-end: $gap-small;
   padding-block-end: $gap-tiny;
-  border-block-end: 1px solid black;
   text-transform: capitalize;
-  color: #111;
+  color: $primary;
+}
+
+.card-subtitle {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $secondary;
 }
 
 .card-body {
@@ -74,7 +107,7 @@ img {
   flex-direction: column;
   gap: $gap-small;
   padding: $gap-small;
-  background-color: #fafafa;
+  background-color: $background-color-light;
   border: 1px solid white;
   border-radius: 0.25rem;
 }
@@ -90,34 +123,38 @@ img {
   gap: $gap-small;
 }
 
-.skill-section {
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: $gap-small;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.skill-wrapper {
+.contact-info {
   display: flex;
-  flex-wrap: wrap;
-  gap: $gap-tiny;
-}
-
-.skill-chip {
-  padding: $gap-tiny $gap-small;
-  background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  flex-direction: column;
+  font-size: $font-size-sm;
   color: #374151;
-  white-space: nowrap;
-  transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: #e5e7eb;
+  .contact-link {
+    color: $primary;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: darken($primary, 10%);
+    }
   }
+}
+.contact-icon {
+  color: $primary;
+  font-size: $font-size-md;
+  flex-shrink: 0;
+
+  .q-icon {
+    font-size: $font-size-lg;
+  }
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: $gap-small;
+  padding: $gap-tiny;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
 }
 
 @media print {

@@ -19,16 +19,8 @@
       <SkillsComponent />
     </section>
 
-    <section class="resume-section" id="certifications">
-      <CerticifationsComponent />
-    </section>
-
     <section class="resume-section" id="awards">
       <AwardsComponent />
-    </section>
-
-    <section class="resume-section" id="interests">
-      <InterestsComponent />
     </section>
   </q-page>
 </template>
@@ -38,9 +30,7 @@
 import WorkComponent from 'src/components/WorkComponent.vue';
 import FreelanceComponent from 'src/components/FreelanceComponent.vue';
 import EducationComponent from 'src/components/EducationComponent.vue';
-import CerticifationsComponent from 'src/components/CerticifationsComponent.vue';
 import AwardsComponent from 'src/components/AwardsComponent.vue';
 import HeaderComponent from 'src/components/HeaderComponent.vue';
 import SkillsComponent from 'src/components/SkillsComponent.vue';
-import InterestsComponent from 'src/components/InterestsComponent.vue';
 </script>

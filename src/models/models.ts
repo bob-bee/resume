@@ -69,6 +69,7 @@ export interface Certification {
 export interface Award {
   title: string;
   issuer?: string;
+  issuerUrl?: string;
   period?: string;
   location?: string;
   items?: string[];

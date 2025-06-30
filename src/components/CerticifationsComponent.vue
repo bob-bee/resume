@@ -11,14 +11,14 @@
         <!-- Title and Issuer -->
         <q-item>
           <q-item-section>
-            <q-item-label class="text-h6">{{ certification.name }}</q-item-label>
+            <q-item-label class="card-title">{{ certification.name }}</q-item-label>
             <q-item-label caption>
               <a
                 v-if="certification.companyUrl"
                 :href="certification.companyUrl"
                 target="_blank"
                 rel="noopener"
-                class="text-primary"
+                class="card-subtitle"
               >
                 {{ certification.company }}
               </a>
