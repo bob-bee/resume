@@ -34,14 +34,16 @@ img {
   display: block;
 }
 
+// Section Styles
 .section {
   margin: 0;
   padding: 0;
   background-color: $background-color-base;
-
   border-radius: $border-radius-base;
   box-shadow: 0 1px 3px rgba(248, 248, 248, 0.1);
 }
+
+// Skill Styles
 .skill-category {
   font-weight: 600;
   color: $primary;
@@ -50,6 +52,7 @@ img {
   text-align: center;
   background-color: $background-color-base;
 }
+
 .skill-list {
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +63,7 @@ img {
   background-color: #f5f5f5;
   vertical-align: middle;
 }
+
 .skill-title {
   font-size: $font-size-md;
   font-weight: 350;
@@ -71,35 +75,75 @@ img {
   vertical-align: middle;
 }
 
+// Typography
 .section-title {
   font-size: $font-size-xl;
-
   font-weight: 800;
   margin-block-end: $gap-small;
   padding: $gap-tiny $gap-small;
   text-align: center;
 }
+
+.text-primary {
+  color: var(--q-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.text-caption {
+  font-size: $font-size-xs;
+  color: #666;
+}
+
+.text-grey {
+  color: #888;
+}
+
+// Card Styles
 .card-style-default {
-  background-color: $background-color-base;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   color: $text-color-base;
-  box-shadow: $background-color-shadow;
   transition: none;
 }
 
 .card-title {
   font-size: $font-size-lg;
-
-  font-weight: 800;
+  font-weight: 700;
   margin-block-end: $gap-small;
   padding-block-end: $gap-tiny;
   text-transform: capitalize;
   color: $primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .card-subtitle {
   font-size: $font-size-md;
   font-weight: 600;
+  margin-block-end: 0.25rem;
   color: $secondary;
+  display: flex;
+  align-items: center;
+}
+
+.card-meta {
+  font-size: $font-size-base;
+  color: #777;
+  font-weight: 400;
+  text-align: end;
+  flex-shrink: 0;
 }
 
 .card-body {
@@ -112,17 +156,7 @@ img {
   border-radius: 0.25rem;
 }
 
-.card-section {
-  border: 1px solid black;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  padding: $gap-base;
-  margin-block: $gap-base;
-  display: flex;
-  flex-direction: column;
-  gap: $gap-small;
-}
-
+// Contact Info
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -139,6 +173,7 @@ img {
     }
   }
 }
+
 .contact-icon {
   color: $primary;
   font-size: $font-size-md;
@@ -148,6 +183,7 @@ img {
     font-size: $font-size-lg;
   }
 }
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -157,6 +193,7 @@ img {
   transition: background-color 0.2s ease;
 }
 
+// Print Styles
 @media print {
   html,
   body {
@@ -172,4 +209,132 @@ img {
     size: A4;
     margin: 0.25in;
   }
+}
+
+// Work Experience
+
+.job-info,
+.award-info,
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-location {
+  margin-block-start: 0.25rem;
+}
+
+.separator {
+  border: none;
+  border-block-start: 1px solid #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+.role-section {
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+}
+
+.text-right {
+  margin-inline-start: auto;
+  text-align: end;
+}
+
+.role-duration {
+  margin-inline-start: 0.5rem;
+  font-weight: 400;
+  font-size: $font-size-sm;
+  color: #555;
+  text-align: end;
+}
+
+.content-list,
+.award-body ul,
+.project-body ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  color: #333;
+  font-size: $font-size-base;
+  list-style-type: disc;
+}
+
+.content-list li,
+.award-body li,
+.project-body li {
+  margin-block-end: 0.25rem;
+}
+
+// Achievements Section
+.achievements-section {
+  .q-pa-md {
+    padding: $gap-base;
+  }
+
+  .card-style-default {
+    border: 1px solid #ccc;
+    border-radius: $border-radius-base;
+    background-color: $background-color-base;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .q-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: $gap-small;
+
+    .q-avatar {
+      inline-size: 48px;
+      block-size: 48px;
+      img {
+        border-radius: 50%;
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .q-item-section {
+      .q-item-label {
+        &:first-child {
+          font-size: $font-size-md;
+          font-weight: 600;
+          color: $primary;
+        }
+
+        &.caption {
+          font-size: $font-size-sm;
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .q-separator {
+    block-size: 1px;
+    background-color: #e0e0e0;
+
+    &.vertical {
+      inline-size: 1px;
+      block-size: auto;
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+// Awards Section
+.award-card,
+.project-card {
+  margin-block-end: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.award-body,
+.project-body {
+  padding: 1rem;
+  background-color: $background-color-light;
+  border: 1px solid #ddd;
+  border-radius: $border-radius-base;
 }

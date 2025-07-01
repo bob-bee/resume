@@ -7,28 +7,27 @@
     </div>
 
     <div class="center-section">
-      <q-avatar class="profile-photo">
+      <div class="profile-photo">
         <img src="/src/assets/picture.jpg" alt="Profile Photo" />
-      </q-avatar>
+      </div>
     </div>
 
     <div class="right-section">
-      <q-list>
-        <q-item v-for="contact in resume.contacts" :key="contact.text" class="contact-item">
-          <q-item-section class="contact-info">
+      <ul class="contact-list">
+        <li v-for="contact in resume.contacts" :key="contact.text" class="contact-item">
+          <div class="contact-info">
             <template v-if="contact.url">
               <a :href="contact.url" class="resume-link">{{ contact.text }}</a>
             </template>
             <template v-else>
               <span class="resume-text-muted">{{ contact.text }}</span>
             </template>
-          </q-item-section>
-
-          <q-item-section avatar class="contact-icon">
+          </div>
+          <div class="contact-icon">
             <q-icon :name="contact.icon" />
-          </q-item-section>
-        </q-item>
-      </q-list>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -54,50 +53,104 @@ const currentBucket = computed<RoleBucket>(() => {
 <style scoped lang="scss">
 .resume-header {
   display: flex;
+  flex-direction: row;
   inline-size: 100%;
-  block-size: 100%;
-  margin: 0 auto;
-  padding: 1rem;
+  block-size: auto;
+  padding-block: 1rem;
+  padding-inline: 1rem;
   gap: 1rem;
   border: 0.1rem solid rgb(12, 12, 10);
   border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+.left-section,
+.center-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .left-section {
-  max-inline-size: 60%;
   flex: 1 1 55%;
-  display: flex;
-  flex-direction: column;
-}
-.resume-title {
-  font-size: $font-size-xl;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
+  max-inline-size: 60%;
 }
 
 .center-section {
   flex: 0 0 20%;
-  inline-size: 20%;
-  display: flex;
-  justify-content: center;
   align-items: center;
 
   .profile-photo {
     inline-size: 100%;
-    block-size: auto;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 
     img {
       inline-size: 100%;
-      block-size: auto;
-      display: block;
+      block-size: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
   }
+}
+
+.right-section {
+  flex: 1 1 25%;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 0.5rem;
+
+    .contact-info {
+      inline-size: 75%;
+      text-align: end;
+    }
+
+    .contact-icon {
+      inline-size: 2rem;
+      display: flex;
+      align-items: start;
+    }
+
+    .resume-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .resume-text-muted {
+      color: gray;
+    }
+  }
+}
+
+.resume-title {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  margin-block-end: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: $font-size-md;
+  font-weight: 600;
+  margin-block-end: 0.25rem;
+}
+
+.card-body {
+  font-size: $font-size-base;
 }
 </style>

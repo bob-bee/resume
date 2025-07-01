@@ -149,7 +149,8 @@ export const useResumeStore = defineStore('resume', {
       },
 
       {
-        name: 'B-Spidey – Custom Web Crawling Automation Suite',
+        name: 'Custom Web Crawling Automation Suite',
+        company: 'B-Spidey',
         period: 'Jan 2024 – Present',
         items: [
           'Built modular web crawlers in Python using libraries like BeautifulSoup, Requests, and Playwright to extract data from dynamic and static web sources.',

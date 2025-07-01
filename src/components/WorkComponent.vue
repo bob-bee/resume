@@ -1,43 +1,41 @@
 <template>
   <div class="section">
     <h5 class="section-title">Work Experience</h5>
-    <div class="q-pa-md column q-gutter-md">
-      <q-card v-for="job in store.work" :key="job.company" class="card-style-default" bordered>
-        <!-- Company Header -->
-        <q-item class="q-pa-sm">
-          <q-item-section>
-            <q-item-label class="card-title">
-              <a v-if="job.url" :href="job.url" target="_blank" rel="noopener" class="text-primary">
-                {{ job.company }}
-              </a>
-              <span v-else>{{ job.company }}</span>
-            </q-item-label>
-            <q-item-label caption class="card-meta text-grey">
-              {{ job.location }}
-            </q-item-label>
-          </q-item-section>
+    ">
+    <div v-for="job in store.work" :key="job.company" class="card-style-default">
+      <!-- Company Header -->
 
-          <q-item-section side class="text-right">
-            <div class="card-meta">{{ job.period }}</div>
-          </q-item-section>
-        </q-item>
+      <div class="card-title">
+        <a v-if="job.url" :href="job.url" target="_blank" rel="noopener" class="text-primary">
+          {{ job.company }}
+        </a>
+        <span v-else>{{ job.company }}</span>
 
-        <!-- Roles -->
-        <q-separator />
-
-        <q-card-section v-for="role in job.roles" :key="role.title" class="card-body">
-          <div class="card-subtitle">
-            {{ role.title }}
-            <span class="card-meta" style="margin-inline-start: 0.5rem">
-              {{ role.duration }}
-            </span>
+        <div class="card-meta text-right">
+          <div>
+            {{ job.location }}
           </div>
+          <div>{{ job.period }}</div>
+        </div>
+      </div>
 
-          <ul class="content-list">
-            <li v-for="item in role.items" :key="item">{{ item }}</li>
-          </ul>
-        </q-card-section>
-      </q-card>
+      <!-- Separator -->
+      <hr class="separator" />
+
+      <!-- Roles -->
+      <div v-for="role in job.roles" :key="role.title" class="card-body role-section">
+        <div class="card-subtitle">
+          {{ role.title }}
+          <span class="card-meta text-right">
+            {{ role.duration }}
+          </span>
+        </div>
+        <!-- Items -->
+
+        <ul class="content-list">
+          <li v-for="item in role.items" :key="item">{{ item }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

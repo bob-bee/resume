@@ -1,51 +1,39 @@
 <template>
   <div class="section">
     <h5 class="section-title">Awards</h5>
-    <div>
-      <q-card v-for="award in store.awards" :key="award.title" class="q-mb-md" bordered>
-        <!-- Title and Issuer -->
-        <q-item>
-          <q-item-section>
-            <q-item-label class="card-subtitle">{{ award.title }}</q-item-label>
-            <q-item-label caption class="card-meta text-primary">
-              <a
-                v-if="award.issuerUrl"
-                :href="award.issuerUrl"
-                target="_blank"
-                rel="noopener"
-                class="card-title text-primary"
-              >
-                {{ award.issuer }}
-              </a>
-              <span v-else>{{ award.issuer }}</span>
-            </q-item-label>
-          </q-item-section>
+    <ul class="content-list">
+      <li v-for="award in store.awards" :key="award.title">
+        <div v-for="item in award.items || [null]" :key="item || 'no-item'" class="award-item">
+          <div class="award-main">
+            <span class="card-title">{{ award.title }}</span> —
+            <a
+              v-if="award.issuerUrl"
+              :href="award.issuerUrl"
+              target="_blank"
+              rel="noopener"
+              class="award-issuer text-primary"
+            >
+              {{ award.issuer }}
+            </a>
+            <span v-else class="card-subtitle">{{ award.issuer }}</span>
+          </div>
 
-          <!-- Period & Location -->
-          <q-item-section side class="text-right">
-            <div v-if="award.period" class="card-meta">{{ award.period }}</div>
-            <div v-if="award.location" class="card-meta">
-              {{ award.location }}
-            </div>
-          </q-item-section>
-        </q-item>
+          <div v-if="item" class="card-caption">{{ item }}</div>
 
-        <q-separator v-if="award.items?.length" />
+          <div class="card-meta text-right">
+            <span v-if="award.period">{{ award.period }}</span>
+            <span v-if="award.period && award.location"> | </span>
+            <span v-if="award.location">{{ award.location }}</span>
+          </div>
 
-        <!-- Award Details -->
-        <q-card-section v-if="award.items?.length" class="card-body">
-          <ul class="q-pa-md">
-            <li v-for="item in award.items" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </q-card-section>
-      </q-card>
-    </div>
+          <hr class="separator" />
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useResumeStore } from 'src/stores/useResumeStore';
 
 const store = useResumeStore();

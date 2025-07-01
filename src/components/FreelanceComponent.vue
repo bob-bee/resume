@@ -2,17 +2,11 @@
   <div class="section">
     <h5 class="section-title">Projects</h5>
     <div>
-      <q-card
-        v-for="project in store.projects"
-        :key="project.name"
-        class="card-style-default q-mb-md"
-        bordered
-      >
+      <div v-for="project in store.projects" :key="project.name" class="card-style-default">
         <!-- Title and Company -->
-        <q-item class="resume-item">
-          <q-item-section>
-            <q-item-label class="card-subtitle">{{ project.name }}</q-item-label>
-            <q-item-label caption class="card-meta">
+        <div class="resume-item project-header">
+          <div class="project-info">
+            <div class="card-meta">
               <a
                 v-if="project.companyUrl"
                 :href="project.companyUrl"
@@ -23,39 +17,41 @@
                 {{ project.company }}
               </a>
               <span v-else>{{ project.company }}</span>
-            </q-item-label>
-          </q-item-section>
+            </div>
+          </div>
 
           <!-- Period & Location -->
-          <q-item-section side class="text-right">
-            <div v-if="project.period" class="card-meta">{{ project.period }}</div>
-            <div v-if="project.location" class="card-meta text-caption text-grey">
+          <div class="card-meta text-right">
+            <div v-if="project.period">{{ project.period }}</div>
+            <div v-if="project.location">
               {{ project.location }}
             </div>
-          </q-item-section>
-        </q-item>
+          </div>
+        </div>
 
-        <q-separator v-if="project.items?.length" />
+        <hr v-if="project.items?.length" class="separator" />
+
+        <!-- Roles -->
 
         <!-- Items -->
-        <q-card-section v-if="project.items?.length" class="card-body">
-          <ul class="q-pa-md">
-            <li v-for="item in project.items" :key="item">
-              {{ item }}
-            </li>
-          </ul>
-        </q-card-section>
-      </q-card>
+        <div>
+          <div class="card-subtitle">
+            {{ project.name }}
+          </div>
+
+          <div v-if="project.items?.length" class="card-body role-section">
+            <ul>
+              <li v-for="item in project.items" :key="item">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useResumeStore } from 'src/stores/useResumeStore';
 
 const store = useResumeStore();
 </script>
-
-<style scoped lang="scss">
-// Removed – styles now centralized in app.scss
-</style>
+<style lang="scss" scoped></style>

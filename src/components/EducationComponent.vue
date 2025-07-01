@@ -15,9 +15,9 @@
           </q-item-section>
 
           <!-- Period & Location -->
-          <q-item-section side class="text-right">
-            <div class="card-meta">{{ edu.period }}</div>
-            <div class="card-meta text-grey text-caption">
+          <q-item-section side class="card-meta text-right">
+            <div>{{ edu.period }}</div>
+            <div>
               {{ edu.location }}
             </div>
           </q-item-section>
