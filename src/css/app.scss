@@ -1,7 +1,6 @@
-// app.scss — Global Styles (SCSS)
 @use './quasar.variables' as *;
 
-// 1. Reset & Base Styles
+// Reset & Base Styles
 *,
 *::before,
 *::after {
@@ -21,17 +20,48 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.page-wrapper {
-  max-inline-size: $page-max-width;
-  margin-inline: auto;
-  padding-inline: $page-padding;
-  overflow-x: hidden;
-}
-
 img {
   max-inline-size: 100%;
   block-size: auto;
   display: block;
+}
+
+// Layout & Utility
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-2 {
+  width: 16.6667%;
+}
+
+.col-10 {
+  width: 83.3333%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.bordered {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.separator {
+  border: none;
+  border-block-start: 1px solid #e0e0e0;
+  margin: 0.5rem 0;
 }
 
 // Section Styles
@@ -43,11 +73,26 @@ img {
   box-shadow: 0 1px 3px rgba(248, 248, 248, 0.1);
 }
 
-// Skill Styles
+.section-title {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  margin-block-end: $gap-small;
+  padding: $gap-tiny $gap-small;
+  text-align: center;
+}
+
+// Skill Section
 .skill-category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   font-weight: 600;
+  vertical-align: center;
   color: $primary;
   text-transform: capitalize;
+  padding: auto;
+  margin: auto;
+  word-wrap: break-word;
   overflow-wrap: break-word;
   text-align: center;
   background-color: $background-color-base;
@@ -60,47 +105,7 @@ img {
   gap: $gap-small;
   padding: $gap-small;
   border-radius: 0.25rem;
-  background-color: #f5f5f5;
   vertical-align: middle;
-}
-
-.skill-title {
-  font-size: $font-size-md;
-  font-weight: 350;
-  color: $primary;
-  border: none;
-  padding: 0;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-}
-
-// Typography
-.section-title {
-  font-size: $font-size-xl;
-  font-weight: 800;
-  margin-block-end: $gap-small;
-  padding: $gap-tiny $gap-small;
-  text-align: center;
-}
-
-.text-primary {
-  color: var(--q-primary);
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-.text-caption {
-  font-size: $font-size-xs;
-  color: #666;
-}
-
-.text-grey {
-  color: #888;
 }
 
 // Card Styles
@@ -108,7 +113,6 @@ img {
   background: white;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
-  box-sizing: border-box;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   color: $text-color-base;
   transition: none;
@@ -116,12 +120,14 @@ img {
 
 .card-title {
   font-size: $font-size-lg;
-  font-weight: 700;
+  font-weight: 100;
+  vertical-align: middle;
+
+  align-items: center;
   margin-block-end: $gap-small;
   padding-block-end: $gap-tiny;
   text-transform: capitalize;
   color: $primary;
-  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -148,6 +154,7 @@ img {
 
 .card-body {
   display: flex;
+  font-size: $font-size-sm;
   flex-direction: column;
   gap: $gap-small;
   padding: $gap-small;
@@ -156,32 +163,53 @@ img {
   border-radius: 0.25rem;
 }
 
-// Contact Info
+.card-caption {
+  font-size: $font-size-sm;
+  color: #888;
+}
+
+// Text
+.text-primary {
+  color: var(--q-primary);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.text-right {
+  margin-inline-start: auto;
+  text-align: end;
+}
+
+.caption {
+  font-size: $font-size-xs;
+  color: #666;
+}
+
+// Chips (assumed)
+.chip {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: $font-size-sm;
+  background-color: var(--q-accent);
+  border-radius: 16px;
+  color: white;
+}
+.chip {
+  display: inline-block;
+  background-color: var(--q-color-accent, #e0e0e0);
+  color: #333;
+  padding: 4px 10px;
+  line-height: 1;
+}
+// Contact Section
 .contact-info {
   display: flex;
   flex-direction: column;
   font-size: $font-size-sm;
   color: #374151;
-
-  .contact-link {
-    color: $primary;
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: darken($primary, 10%);
-    }
-  }
-}
-
-.contact-icon {
-  color: $primary;
-  font-size: $font-size-md;
-  flex-shrink: 0;
-
-  .q-icon {
-    font-size: $font-size-lg;
-  }
 }
 
 .contact-item {
@@ -190,7 +218,100 @@ img {
   gap: $gap-small;
   padding: $gap-tiny;
   border-radius: 0.25rem;
-  transition: background-color 0.2s ease;
+}
+
+.contact-icon {
+  color: $primary;
+  font-size: $font-size-md;
+  flex-shrink: 0;
+}
+
+// Resume Header
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume-title {
+  font-size: $font-size-xl;
+  font-weight: bold;
+}
+
+.resume-link {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.resume-text-muted {
+  color: #888;
+}
+
+// Profile
+.profile-photo {
+  inline-size: 100px;
+  block-size: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+// Interest Cards
+.interest-card {
+  border: 1px solid #ccc;
+  border-radius: $border-radius-base;
+  background-color: $background-color-base;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+// Award section (assuming these are custom cards)
+.award-main,
+.award-item,
+.award-issuer {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-small;
+}
+
+// Layout
+.left-section {
+  flex: 1;
+}
+
+.right-section {
+  flex: 1;
+}
+
+// Quasar Gaps (these may be utilities or overridden)
+.q-pa-md {
+  padding: $gap-base;
+}
+
+.q-pa-sm {
+  padding: $gap-small;
+}
+
+.q-mb-md {
+  margin-bottom: $gap-base;
+}
+
+.q-mb-xs {
+  margin-bottom: 0.25rem;
+}
+
+.q-mr-xs {
+  margin-right: 0.25rem;
+}
+
+.q-col-gutter-sm {
+  column-gap: $gap-small;
+}
+
+.q-row-gutter-sm {
+  row-gap: $gap-small;
 }
 
 // Print Styles
@@ -202,139 +323,13 @@ img {
     padding: 0 !important;
     background: white !important;
   }
+
   .no-print {
     display: none !important;
   }
+
   @page {
     size: A4;
     margin: 0.25in;
   }
-}
-
-// Work Experience
-
-.job-info,
-.award-info,
-.project-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-location {
-  margin-block-start: 0.25rem;
-}
-
-.separator {
-  border: none;
-  border-block-start: 1px solid #e0e0e0;
-  margin: 0.5rem 0;
-}
-
-.role-section {
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  box-sizing: border-box;
-}
-
-.text-right {
-  margin-inline-start: auto;
-  text-align: end;
-}
-
-.role-duration {
-  margin-inline-start: 0.5rem;
-  font-weight: 400;
-  font-size: $font-size-sm;
-  color: #555;
-  text-align: end;
-}
-
-.content-list,
-.award-body ul,
-.project-body ul {
-  margin: 0;
-  padding-inline-start: 1.25rem;
-  color: #333;
-  font-size: $font-size-base;
-  list-style-type: disc;
-}
-
-.content-list li,
-.award-body li,
-.project-body li {
-  margin-block-end: 0.25rem;
-}
-
-// Achievements Section
-.achievements-section {
-  .q-pa-md {
-    padding: $gap-base;
-  }
-
-  .card-style-default {
-    border: 1px solid #ccc;
-    border-radius: $border-radius-base;
-    background-color: $background-color-base;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  .q-item {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    gap: $gap-small;
-
-    .q-avatar {
-      inline-size: 48px;
-      block-size: 48px;
-      img {
-        border-radius: 50%;
-        inline-size: 100%;
-        block-size: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .q-item-section {
-      .q-item-label {
-        &:first-child {
-          font-size: $font-size-md;
-          font-weight: 600;
-          color: $primary;
-        }
-
-        &.caption {
-          font-size: $font-size-sm;
-          color: $secondary;
-        }
-      }
-    }
-  }
-
-  .q-separator {
-    block-size: 1px;
-    background-color: #e0e0e0;
-
-    &.vertical {
-      inline-size: 1px;
-      block-size: auto;
-      background-color: #e0e0e0;
-    }
-  }
-}
-
-// Awards Section
-.award-card,
-.project-card {
-  margin-block-end: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.award-body,
-.project-body {
-  padding: 1rem;
-  background-color: $background-color-light;
-  border: 1px solid #ddd;
-  border-radius: $border-radius-base;
 }

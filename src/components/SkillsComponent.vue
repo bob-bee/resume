@@ -1,36 +1,24 @@
 <template>
   <div class="section">
-    <h5 class="q-mb-md section-title">Skills</h5>
-    <div class="q-pa-md">
-      <q-card
-        v-for="(skillList, category) in store.skills"
-        :key="category"
-        class="card-style-default"
-        bordered
-      >
-        <q-card-section class="q-pa-sm">
-          <div class="row wrap">
-            <!-- Category Label (2 cols) -->
-            <div class="col-2 skill-category q-pa-sm">
-              {{ categoryLabels[category] || category }}
-            </div>
+    <h5 class="section-title">Skills</h5>
+    <div class="card">
+      <div v-for="(skillList, category) in store.skills" :key="category">
+        <div class="q-pa-sm row wrap">
+          <!-- Category Label (2 cols) -->
+          <div class="col-2 skill-category q-pa-sm">
+            {{ categoryLabels[category] || category }}
+          </div>
 
-            <!-- Skills List (6 cols) -->
-            <div class="col-10 q-pa-sm skill-list bordered">
-              <div class="row q-col-gutter-sm q-row-gutter-sm">
-                <q-chip
-                  v-for="(skill, index) in skillList"
-                  :key="`${category}-${index}`"
-                  class="q-mb-xs q-mr-xs"
-                  color="accent"
-                >
-                  {{ skill }}
-                </q-chip>
-              </div>
+          <!-- Skills List (10 cols) -->
+          <div class="col-10 q-pa-sm skill-list bordered rounded">
+            <div class="row q-col-gutter-sm q-row-gutter-sm">
+              <span v-for="(skill, index) in skillList" :key="`${category}-${index}`" class="">
+                <q-chip class="chip col-auto q-pa-xs q-mb-xs q-mr-xs">{{ skill }}</q-chip>
+              </span>
             </div>
           </div>
-        </q-card-section>
-      </q-card>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,5 +45,13 @@ const categoryLabels: Record<string, string> = {
 </script>
 
 <style scoped lang="scss">
-// Styling is handled globally; no scoped styles needed unless you want to tweak chip spacing
+.chip {
+  display: inline-block;
+  background-color: var(--q-color-accent, #e0e0e0);
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  line-height: 1;
+}
 </style>

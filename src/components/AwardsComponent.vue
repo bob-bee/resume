@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <h5 class="section-title">Awards</h5>
-    <ul class="content-list">
+    <ul class="section-item">
       <li v-for="award in store.awards" :key="award.title">
         <div v-for="item in award.items || [null]" :key="item || 'no-item'" class="award-item">
           <div class="award-main">

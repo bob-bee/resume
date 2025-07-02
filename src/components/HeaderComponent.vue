@@ -131,10 +131,6 @@ const currentBucket = computed<RoleBucket>(() => {
       text-decoration: none;
       color: inherit;
     }
-
-    .resume-text-muted {
-      color: gray;
-    }
   }
 }
 

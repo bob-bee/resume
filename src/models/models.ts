@@ -28,6 +28,7 @@ export interface WorkExperience {
 
 export interface Project {
   name: string;
+  role?: string;
   company?: string;
   companyUrl?: string;
   period: string;

@@ -134,7 +134,8 @@ export const useResumeStore = defineStore('resume', {
 
     projects: [
       {
-        name: 'Field Services Engineer – IT Asset Refresh Project',
+        name: 'IT Asset Refresh Project',
+        role: 'Field Services Engineer',
         company: 'Vorwerk Group',
         companyUrl: 'https://corporate.vorwerk.com/en/home/',
         period: 'Apr 2025 – Jun 2025',
@@ -150,6 +151,8 @@ export const useResumeStore = defineStore('resume', {
 
       {
         name: 'Custom Web Crawling Automation Suite',
+        role: 'Freelance Developer',
+        companyUrl: 'https://github.com/B-Spidey',
         company: 'B-Spidey',
         period: 'Jan 2024 – Present',
         items: [
@@ -162,6 +165,9 @@ export const useResumeStore = defineStore('resume', {
       },
       {
         name: 'B-Coin – Automated Crypto Trading Bot',
+        role: 'Freelance Developer',
+        companyUrl: 'https://github.com/B-Coin',
+        company: 'B-Coin',
         period: 'Aug 2024 – Present',
         items: [
           'Built a Python-based crypto trading bot to automate buying/selling logic using technical indicators like RSI, EMA, and MACD.',
@@ -174,13 +180,15 @@ export const useResumeStore = defineStore('resume', {
       {
         name: 'B-Web',
         period: 'Jan 2022 – Present',
+        role: 'Freelance Web Developer',
+        companyUrl: '        https://www.mammamiarecco.it',
+
         items: [
           'Sole developer and maintainer for multiple client websites across hospitality, entertainment, and satire sectors.',
           'Built responsive, SEO-optimized frontends using Vue.js, HTML5, and SCSS, integrating CMS platforms and Google Analytics.',
           'Handled hosting, SSL setup, and domain config across environments to ensure uptime and performance.',
           'Created and deployed custom features like booking widgets, dynamic menus, and structured data for rich snippets.',
           'Websites built and maintained:',
-          'www.mammamiarecco.it',
           'www.officinadelriso.com',
           'www.waldenmilano.it',
           'www.geniusfaker.com',
