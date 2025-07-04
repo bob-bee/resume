@@ -2,7 +2,7 @@
   <div class="resume-header">
     <div class="left-section">
       <div class="resume-title">{{ resume.name }}</div>
-      <div class="card-subtitle">{{ currentBucket.title }}</div>
+      <div class="card-title-verb">{{ currentBucket.title }}</div>
       <div class="card-body">{{ currentBucket.summary }}</div>
     </div>
 
@@ -140,7 +140,7 @@ const currentBucket = computed<RoleBucket>(() => {
   margin-block-end: 0.5rem;
 }
 
-.card-subtitle {
+.card-title-verb {
   font-size: $font-size-md;
   font-weight: 600;
   margin-block-end: 0.25rem;

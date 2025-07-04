@@ -39,6 +39,7 @@ export interface Project {
 export interface Education {
   degree: string;
   institution: string;
+  institutionUrl?: string;
   location: string;
   period: string;
   highlights: string[];
@@ -57,14 +58,6 @@ export interface Skills {
   otherTech: string[];
   softSkills: string[];
   languages: string[];
-}
-export interface Certification {
-  name: string;
-  company?: string;
-  companyUrl?: string;
-  period?: string;
-  location?: string;
-  items?: string[];
 }
 
 export interface Award {
@@ -90,7 +83,6 @@ export interface ResumeState {
   projects: Project[];
   education: Education[];
   skills: Skills;
-  certifications: Certification[];
   awards: Award[];
   interests: Interest[];
 }

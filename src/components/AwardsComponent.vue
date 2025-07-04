@@ -15,7 +15,7 @@
             >
               {{ award.issuer }}
             </a>
-            <span v-else class="card-subtitle">{{ award.issuer }}</span>
+            <span v-else class="card-title-verb">{{ award.issuer }}</span>
           </div>
 
           <div v-if="item" class="card-caption">{{ item }}</div>

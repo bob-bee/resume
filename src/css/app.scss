@@ -10,7 +10,7 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   overflow-x: hidden;
   font-family: $font-family-base;
   background-color: $background-color-base;
@@ -38,11 +38,11 @@ img {
 }
 
 .col-2 {
-  width: 16.6667%;
+  inline-size: 16.6667%;
 }
 
 .col-10 {
-  width: 83.3333%;
+  inline-size: 83.3333%;
 }
 
 .wrap {
@@ -109,7 +109,7 @@ img {
 }
 
 // Card Styles
-.card-style-default {
+.card-style {
   background: white;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
@@ -119,37 +119,53 @@ img {
 }
 
 .card-title {
-  font-size: $font-size-lg;
-  font-weight: 100;
   vertical-align: middle;
-
   align-items: center;
+  display: flex-grid;
+  flex-direction: row;
   margin-block-end: $gap-small;
   padding-block-end: $gap-tiny;
   text-transform: capitalize;
-  color: $primary;
 
   &:hover,
   &:focus {
     text-decoration: underline;
   }
 }
-
-.card-subtitle {
-  font-size: $font-size-md;
+.card-title-noun {
+  font-size: $font-size-lg;
   font-weight: 600;
-  margin-block-end: 0.25rem;
   color: $secondary;
   display: flex;
+  align-items: start;
+  vertical-align: middle;
+}
+
+.card-title-verb {
+  font-size: $font-size-md;
+  font-weight: 500;
+  margin-block-end: 0.25rem;
+  color: $primary;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: start;
+}
+
+.card-description {
+  font-size: $font-size-sm;
+  color: #555;
+  margin-block-end: $gap-tiny;
+  display: flex;
   align-items: center;
+  vertical-align: middle;
 }
 
 .card-meta {
   font-size: $font-size-base;
   color: #777;
-  font-weight: 400;
-  text-align: end;
-  flex-shrink: 0;
+  font-weight: 500;
+  vertical-align: middle;
 }
 
 .card-body {
@@ -158,14 +174,10 @@ img {
   flex-direction: column;
   gap: $gap-small;
   padding: $gap-small;
+  padding-inline-start: 20px;
   background-color: $background-color-light;
   border: 1px solid white;
   border-radius: 0.25rem;
-}
-
-.card-caption {
-  font-size: $font-size-sm;
-  color: #888;
 }
 
 // Text
@@ -181,6 +193,14 @@ img {
 .text-right {
   margin-inline-start: auto;
   text-align: end;
+  display: grid;
+  align-items: end;
+  vertical-align: middle;
+  justify-content: end;
+  justify-items: middle;
+  align-content: center;
+  justify-self: flex-end;
+  align-self: flex-end;
 }
 
 .caption {
@@ -295,15 +315,15 @@ img {
 }
 
 .q-mb-md {
-  margin-bottom: $gap-base;
+  margin-block-end: $gap-base;
 }
 
 .q-mb-xs {
-  margin-bottom: 0.25rem;
+  margin-block-end: 0.25rem;
 }
 
 .q-mr-xs {
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
 }
 
 .q-col-gutter-sm {

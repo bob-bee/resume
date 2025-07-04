@@ -5,13 +5,15 @@
       <div v-for="job in store.work" :key="job.company">
         <!-- Company Header -->
 
-        <div class="card-title">
-          <a v-if="job.url" :href="job.url" target="_blank" rel="noopener">
-            {{ job.company }}
-          </a>
-          <span v-else>{{ job.company }}</span>
+        <div class="card-title row">
+          <div class="card-title-noun col">
+            <a v-if="job.url" :href="job.url" target="_blank" rel="noopener">
+              {{ job.company }}
+            </a>
+            <span v-else>{{ job.company }}</span>
+          </div>
 
-          <div class="card-meta">
+          <div class="card-meta text-right col">
             <div>
               {{ job.location }}
             </div>
@@ -24,7 +26,7 @@
 
         <!-- Roles -->
         <div v-for="role in job.roles" :key="role.title">
-          <div class="card-subtitle">
+          <div class="card-title-verb">
             {{ role.title }}
             <span class="card-meta">
               {{ role.duration }}
@@ -32,9 +34,11 @@
           </div>
           <!-- Items -->
 
-          <ul class="card-body">
-            <li v-for="item in role.items" :key="item">{{ item }}</li>
-          </ul>
+          <div>
+            <ul class="card-body">
+              <li v-for="item in role.items" :key="item">{{ item }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

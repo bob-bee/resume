@@ -44,14 +44,4 @@ const categoryLabels: Record<string, string> = {
 };
 </script>
 
-<style scoped lang="scss">
-.chip {
-  display: inline-block;
-  background-color: var(--q-color-accent, #e0e0e0);
-  color: #333;
-  padding: 4px 10px;
-  border-radius: 16px;
-  font-size: 0.875rem;
-  line-height: 1;
-}
-</style>
+<style scoped lang="scss"></style>

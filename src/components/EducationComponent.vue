@@ -1,38 +1,47 @@
 <template>
   <div class="section">
     <h5 class="section-title">Academia</h5>
-    <div class="q-pa-md column q-gutter-md">
-      <q-card v-for="edu in store.education" :key="edu.degree" class="card-style-default" bordered>
+    <div>
+      <div v-for="edu in store.education" :key="edu.degree" bordered>
         <!-- Degree & Institution -->
-        <q-item class="q-pa-sm">
-          <q-item-section>
-            <q-item-label class="card-subtitle">
-              {{ edu.degree }}
-            </q-item-label>
-            <q-item-label caption class="card-meta text-primary">
-              {{ edu.institution }}
-            </q-item-label>
-          </q-item-section>
+        <div>
+          <div class="card-title row">
+            <div class="card-title-verb col">
+              <a
+                v-if="edu.institutionUrl"
+                :href="edu.institutionUrl"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ edu.institution }}
+              </a>
+              <span v-else>{{ edu.institution }}</span>
+            </div>
+            <span>
+              <div class="card-meta text-right col">
+                <div>{{ edu.period }}</div>
+                <div>{{ edu.location }}</div>
+              </div>
+            </span>
+          </div>
 
           <!-- Period & Location -->
-          <q-item-section side class="card-meta text-right">
-            <div>{{ edu.period }}</div>
-            <div>
-              {{ edu.location }}
-            </div>
-          </q-item-section>
-        </q-item>
+        </div>
 
+        <!-- Separator -->
+        <hr class="separator" />
+        <div class="card-title-verb">
+          {{ edu.degree }}
+        </div>
         <!-- Highlights -->
-        <q-separator />
-        <q-card-section class="card-body">
-          <ul>
+        <div>
+          <ul class="card-body">
             <li v-for="item in edu.highlights" :key="item">
               {{ item }}
             </li>
           </ul>
-        </q-card-section>
-      </q-card>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +52,4 @@ import { useResumeStore } from 'src/stores/useResumeStore';
 const store = useResumeStore();
 </script>
 
-<style scoped lang="scss">
-// No scoped styles needed; all visual design is handled globally.
-</style>
+<style scoped lang="scss"></style>

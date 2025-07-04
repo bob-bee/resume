@@ -178,11 +178,11 @@ export const useResumeStore = defineStore('resume', {
         ],
       },
       {
-        name: 'B-Web',
-        period: 'Jan 2022 – Present',
+        name: 'Build and maintain Client Websites',
         role: 'Freelance Web Developer',
-        companyUrl: '        https://www.mammamiarecco.it',
-
+        companyUrl: 'https://www.github.com/geniusfaker',
+        company: 'B-Web',
+        period: 'Jan 2022 – Present',
         items: [
           'Sole developer and maintainer for multiple client websites across hospitality, entertainment, and satire sectors.',
           'Built responsive, SEO-optimized frontends using Vue.js, HTML5, and SCSS, integrating CMS platforms and Google Analytics.',
@@ -200,6 +200,7 @@ export const useResumeStore = defineStore('resume', {
       {
         degree: 'Master of Science – Business Intelligence',
         institution: 'Università degli Studi di Genova',
+        institutionUrl: 'https://www.unige.it',
         location: 'Genova, Italy',
         period: 'Sep 2022 – Mar 2025',
         highlights: [
@@ -213,6 +214,7 @@ export const useResumeStore = defineStore('resume', {
       {
         degree: 'Bachelor of Technology – Mechanical Engineering',
         institution: 'NIT Raipur',
+        institutionUrl: 'https://www.nitrr.ac.in',
         location: 'Raipur, India',
         period: 'Jul 2010 – Jul 2014',
         highlights: [
@@ -226,6 +228,7 @@ export const useResumeStore = defineStore('resume', {
       {
         degree: 'Italian Language Certification',
         institution: 'University Degli studo di Genova',
+        institutionUrl: 'https://www.unige.it',
         location: 'Genova, Italy',
         period: '2023',
         highlights: ['Achieved B2 level proficiency in Italian language.'],
@@ -233,6 +236,7 @@ export const useResumeStore = defineStore('resume', {
       {
         degree: 'IELTS – B2',
         institution: 'British Council',
+        institutionUrl: 'https://www.britishcouncil.in',
         location: 'Vijayawada, India',
         period: '2016',
         highlights: ['Scored B2 level proficiency in English based on IELTS standards.'],
@@ -240,6 +244,7 @@ export const useResumeStore = defineStore('resume', {
       {
         degree: 'CNC Machining & AutoCAD',
         institution: 'Central Institute of Tool Design',
+        institutionUrl: 'https://www.citdindia.org',
         location: 'Hyderabad, India',
         period: '2012',
         highlights: ['Completed intensive hands-on training in CNC programming and drafting.'],
@@ -326,29 +331,6 @@ export const useResumeStore = defineStore('resume', {
       ],
       languages: ['English', 'Italian', 'Hindi', 'Telugu', 'Spanish'],
     },
-    certifications: [
-      {
-        name: 'CNC Machining & AutoCAD',
-        company: 'Central Institute of Tool Design',
-        period: '2012',
-        location: 'Hyderabad, India',
-        items: ['Completed intensive hands-on training in CNC programming and drafting.'],
-      },
-      {
-        name: 'Italian Language Certification',
-        company: 'University Degli studo di Genova',
-        period: '2023',
-        location: 'Genova, Italy',
-        items: ['Achieved B2 level proficiency in Italian language.'],
-      },
-      {
-        name: 'IELTS – B2',
-        company: 'British Council',
-        period: '2016',
-        location: 'Vijayawada, India',
-        items: ['Scored B2 level proficiency in English based on IELTS standards.'],
-      },
-    ],
 
     awards: [
       {

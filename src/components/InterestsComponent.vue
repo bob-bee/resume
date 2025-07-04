@@ -1,17 +1,19 @@
 <template>
   <div class="section">
     <h5 class="section-title">Interests</h5>
-    <div class="q-pa-md column q-gutter-md">
-      <div v-for="interest in store.interests" :key="interest.title" class="interest-card bordered">
-        <div class="card-title q-pa-sm">
-          <div>{{ interest.title }}</div>
-          <div class="card-meta caption">{{ interest.goal }}</div>
+    <div class="card">
+      ">
+
+      <div v-for="interest in store.interests" :key="interest.title">
+        <div class="card-title">
+          <div class="card-title-noun">{{ interest.title }}</div>
+          <div class="card-meta">{{ interest.goal }}</div>
         </div>
 
         <hr class="separator" />
 
-        <div v-if="interest.notes && interest.notes.length" class="card-body">
-          <ul>
+        <div v-if="interest.notes && interest.notes.length">
+          <ul class="card-body">
             <li v-for="note in interest.notes" :key="note">{{ note }}</li>
           </ul>
         </div>
