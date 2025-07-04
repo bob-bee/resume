@@ -45,19 +45,14 @@ export interface Education {
   highlights: string[];
 }
 
-export interface Skills {
-  operatingSystems: string[];
-  networking: string[];
-  devOpsTools: string[];
-  cloudPlatforms: string[];
-  databases: string[];
-  analyticsAndBI: string[];
-  webDevelopment: string[];
-  scriptingAndAutomation: string[];
-  administration: string[];
-  otherTech: string[];
-  softSkills: string[];
-  languages: string[];
+export interface SkillChild {
+  name: string;
+  value: number;
+}
+
+export interface SkillGroup {
+  name: string;
+  children: SkillChild[];
 }
 
 export interface Award {
@@ -82,7 +77,7 @@ export interface ResumeState {
   work: WorkExperience[];
   projects: Project[];
   education: Education[];
-  skills: Skills;
+  skills: SkillGroup[]; // <-- changed from Skill[] to SkillGroup[]
   awards: Award[];
   interests: Interest[];
 }
