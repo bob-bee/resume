@@ -54,6 +54,12 @@ export interface SkillGroup {
   name: string;
   children: SkillChild[];
 }
+// models.ts
+export type SkillNode = {
+  name: string;
+  value?: number;
+  children?: SkillNode[];
+};
 
 export interface Award {
   title: string;
