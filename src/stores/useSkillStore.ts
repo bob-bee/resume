@@ -216,16 +216,30 @@ const skillsNested: SkillNode = {
           name: 'BI Tools',
           children: [
             {
-              name: 'Visualization',
+              name: 'Dashboards ',
               children: [
-                { name: 'Tableau', value: 3 },
-                { name: 'Power BI', value: 4 },
-                { name: 'Google Analytics', value: 3 },
+                {
+                  name: 'Enterprise BI',
+                  children: [
+                    { name: 'Power BI', value: 4 },
+                    { name: 'Tableau', value: 3 },
+                    { name: 'grafana', value: 4 },
+                    { name: 'python', value: 4 },
+                  ],
+                },
+                {
+                  name: 'Web Analytics',
+                  children: [{ name: 'Google Analytics', value: 3 }],
+                },
               ],
             },
             {
-              name: 'Statistical',
-              children: [{ name: 'R', value: 3 }],
+              name: 'Statistical Platforms',
+
+              children: [
+                { name: 'R', value: 3 },
+                { name: 'MATLAB', value: 3 },
+              ],
             },
           ],
         },
@@ -233,11 +247,32 @@ const skillsNested: SkillNode = {
           name: 'Data Science',
           children: [
             {
-              name: 'Techniques',
+              name: 'Core',
               children: [
-                { name: 'Machine Learning', value: 3 },
-                { name: 'Data Visualization', value: 3 },
-                { name: 'Workflow Automation', value: 3 },
+                {
+                  name: 'Modeling',
+                  children: [
+                    { name: 'Data Cleansing', value: 3 },
+                    { name: 'Data Warehousing', value: 3 },
+                    { name: 'ETL', value: 3 },
+                  ],
+                },
+                {
+                  name: 'Visualization',
+                  children: [
+                    { name: 'pandas', value: 3 },
+                    { name: 'matplotlib', value: 3 },
+                    { name: 'd3.js', value: 3 },
+                  ],
+                },
+                {
+                  name: 'Automation',
+                  children: [
+                    { name: 'Airflow', value: 3 },
+                    { name: 'Data Flow', value: 3 },
+                    { name: 'Databricks', value: 3 },
+                  ],
+                },
               ],
             },
           ],
@@ -253,15 +288,39 @@ const skillsNested: SkillNode = {
             {
               name: 'Automation & Bots',
               children: [
-                { name: 'Crypto Trading Bots', value: 4 },
-                { name: 'Web Scraping', value: 5 },
+                {
+                  name: 'Trading',
+                  children: [
+                    { name: 'Crypto Bot', value: 4 },
+                    { name: 'Arbitage Bot', value: 4 },
+                  ],
+                },
+                {
+                  name: 'Data Collection',
+                  children: [
+                    { name: 'Web Scraping', value: 5 },
+                    { name: 'API', value: 5 },
+                    { name: 'Synthetic Data', value: 5 },
+                  ],
+                },
               ],
             },
             {
               name: 'Content & SEO',
               children: [
-                { name: 'SEO Optimization', value: 3 },
-                { name: 'Content Creation', value: 4 },
+                {
+                  name: 'Content Creation',
+                  children: [
+                    { name: 'Planning', value: 4 },
+                    { name: 'Shooting', value: 4 },
+                    { name: 'Editing', value: 4 },
+                    { name: 'Publishing', value: 4 },
+                  ],
+                },
+                {
+                  name: 'Optimization',
+                  children: [{ name: 'SEO Optimization', value: 3 }],
+                },
               ],
             },
           ],
@@ -272,34 +331,138 @@ const skillsNested: SkillNode = {
       name: 'Soft Skills',
       children: [
         {
-          name: 'Professional',
+          name: 'Communication',
           children: [
             {
-              name: 'Core',
+              name: 'Verbal',
               children: [
-                { name: 'Customer Service', value: 5 },
-                { name: 'Troubleshooting', value: 5 },
-                { name: 'ITIL', value: 3 },
-                { name: 'Management', value: 4 },
-                { name: 'Stakeholder Communication, value : 3' },
-                { name: 'Training', value: 3 },
-                { name: 'Documentation', value: 5 },
-                { name: 'Change Management', value: 4 },
+                { name: 'Clarity', value: 4 },
+                { name: 'Tone Control', value: 2 },
+              ],
+            },
+            {
+              name: 'Written',
+              children: [
+                { name: 'Grammar', value: 5 },
+                { name: 'Structure & Flow', value: 3 },
+              ],
+            },
+            {
+              name: 'Listening',
+              children: [
+                { name: 'Active Listening', value: 5 },
+                { name: 'Asking Questions', value: 3 },
               ],
             },
           ],
         },
-      ],
-    },
-    {
-      name: 'Languages',
-      value: 25,
-      children: [
-        { name: 'English', value: 5 },
-        { name: 'Italian', value: 3 },
-        { name: 'Hindi', value: 4 },
-        { name: 'Telugu', value: 5 },
-        { name: 'Spanish', value: 1 },
+        {
+          name: 'Interpersonal Skills',
+          children: [
+            {
+              name: 'Emotional Intelligence',
+              children: [
+                { name: 'Self-Awareness', value: 4 },
+                { name: 'Empathy', value: 2 },
+              ],
+            },
+            {
+              name: 'Social Skills',
+              children: [
+                { name: 'Conflict Resolution', value: 4 },
+                { name: 'Relationship Building', value: 5 },
+              ],
+            },
+            {
+              name: 'Team Interaction',
+              children: [
+                { name: 'Collaboration', value: 4 },
+                { name: 'Giving Feedback', value: 1 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Leadership & Management',
+          children: [
+            {
+              name: 'Strategic',
+              children: [
+                { name: 'Vision Setting', value: 2 },
+                { name: 'Decision Making', value: 4 },
+              ],
+            },
+            {
+              name: 'Operational',
+              children: [
+                { name: 'Delegation', value: 3 },
+                { name: 'Time Management', value: 3 },
+              ],
+            },
+            {
+              name: 'Motivational',
+              children: [
+                { name: 'Inspiring Others', value: 5 },
+                { name: 'Accountability', value: 4 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Problem Solving',
+          children: [
+            {
+              name: 'Thinking Skills',
+              children: [
+                { name: 'Critical Thinking', value: 4 },
+                { name: 'Analytical Thinking', value: 3 },
+              ],
+            },
+            {
+              name: 'Creativity',
+              children: [
+                { name: 'Brainstorming', value: 5 },
+                { name: 'Lateral Thinking', value: 1 },
+              ],
+            },
+            {
+              name: 'Adaptability',
+              children: [
+                { name: 'Flexibility', value: 4 },
+                { name: 'Stress Tolerance', value: 2 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Diversity & Inclusion',
+          children: [
+            {
+              name: 'Cultural Awareness',
+              children: [
+                { name: 'Sensitivity', value: 0 },
+                { name: 'Inclusive Language', value: 0 },
+              ],
+            },
+            {
+              name: 'Open-mindedness',
+              children: [
+                { name: 'Accepting Feedback', value: 5 },
+                { name: 'Challenging Biases', value: 4 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Languages',
+          children: [
+            { name: 'English', value: 5 },
+            { name: 'Italian', value: 3 },
+            { name: 'Hindi', value: 4 },
+            { name: 'Telugu', value: 5 },
+            { name: 'Spanish', value: 1 },
+          ],
+        },
       ],
     },
   ],

@@ -38,7 +38,14 @@ onMounted(() => {
 
   const root = d3
     .hierarchy<SkillNode>(data)
-    .sum((d) => d.value ?? 1)
+    .sum((d) => {
+      // Instead of using fixed numeric values,
+      // use the label length as a proxy for space needed
+      if (!d.children || d.children.length === 0) {
+        return d.name.length || 1;
+      }
+      return 0; // internal nodes get summed from children
+    })
     .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
 
   const rootWithLayout = partition(root);
@@ -61,7 +68,7 @@ onMounted(() => {
   const format = d3.format(',d');
   const nodes = rootWithLayout.descendants();
 
-  // 🆕 Create custom tooltip div
+  // Tooltip
   const tooltip = d3
     .select('body')
     .append('div')
@@ -78,6 +85,7 @@ onMounted(() => {
     .style('max-width', '200px')
     .style('display', 'none');
 
+  // Arcs
   svg
     .append('g')
     .attr('fill-opacity', 0.7)
@@ -85,30 +93,27 @@ onMounted(() => {
     .data(nodes.filter((d) => d.depth > 0))
     .join('path')
     .attr('fill', (d) => {
-      let current: typeof d = d;
+      let current = d;
       while (current.depth > 1) current = current.parent!;
       return color(current.data.name.length);
     })
     .attr('d', arc)
     .attr('stroke', '#fff')
     .attr('stroke-width', 1)
-    // 🔧 Replace <title> with custom tooltip behavior
     .on('mouseover', function (event, d) {
       d3.select(this).attr('fill-opacity', 1);
-
       const path = d
         .ancestors()
         .map((d) => d.data.name)
         .reverse()
         .join(' / ');
-
       tooltip
         .style('display', 'block')
         .html(`<strong>${path}</strong><br>${format(d.value ?? 0)}`)
         .style('left', event.pageX + 10 + 'px')
         .style('top', event.pageY + 10 + 'px');
     })
-    .on('mousemove', function (event) {
+    .on('mousemove', (event) => {
       tooltip.style('left', event.pageX + 10 + 'px').style('top', event.pageY + 10 + 'px');
     })
     .on('mouseout', function () {
@@ -116,11 +121,11 @@ onMounted(() => {
       tooltip.style('display', 'none');
     });
 
+  // Labels with rotation + word wrap
   svg
     .append('g')
-    .attr('pointer-events', 'none')
     .attr('text-anchor', 'middle')
-    .attr('font-size', 10)
+
     .attr('font-family', 'sans-serif')
     .selectAll('text')
     .data(
@@ -136,11 +141,47 @@ onMounted(() => {
       const y = (d.y0 + d.y1) / 2;
       return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
     })
+    .attr('font-size', (d) => {
+      const angle = d.x1 - d.x0; // angular width
+      const radius = (d.y0 + d.y1) / 2; // mid radius
+      const arcLength = radius * angle; // arc circumference portion
+      const arcThickness = d.y1 - d.y0;
+
+      const availableWidth = Math.min(arcLength, arcThickness * 1.5); // balance of width and thickness
+      const estimatedTextLength = d.data.name.length || 1;
+
+      // Estimate font size so text fits availableWidth
+      const size = Math.min((availableWidth / estimatedTextLength) * 1.6, arcThickness); // clamp to avoid overflow
+
+      return Math.max(size, 5); // minimum readable size
+    })
     .attr('dy', '0.35em')
-    .text((d) => d.data.name);
+    .each(function (d) {
+      const name = d.data.name;
+      const maxLen = 10;
+      const lines =
+        name.length > maxLen ? (name.match(new RegExp(`.{1,${maxLen}}`, 'g')) ?? [name]) : [name];
+
+      const el = d3.select(this);
+      lines.forEach((line, i) => {
+        el.append('tspan')
+          .attr('x', 0)
+          .attr('dy', i === 0 ? 0 : '1.1em')
+          .text(line)
+          .attr('class', 'text-label');
+      });
+    });
 });
 </script>
 
 <template>
   <div ref="chartContainer" class="skills-chart"></div>
 </template>
+<style lang="scss">
+.text-label {
+  text-align: center;
+  display: flex;
+  text-wrap: fit;
+  padding: 3px;
+}
+</style>
