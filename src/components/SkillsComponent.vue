@@ -8,10 +8,8 @@ const chartContainer = ref<HTMLDivElement | null>(null);
 const skillStore = useSkillStore();
 
 onMounted(() => {
-  // Recursive function to assign values if missing, summing children values
   function assignValues(node: SkillNode): number {
     if (!node.children || node.children.length === 0) {
-      // Leaf node: assign existing value or default to 1
       node.value = node.value ?? 1;
       return node.value;
     }
@@ -20,7 +18,6 @@ onMounted(() => {
     return total;
   }
 
-  // Clone the data to avoid mutating the store directly (optional but cleaner)
   const data: SkillNode = {
     name: 'Skills',
     children: skillStore.skills.children
@@ -28,12 +25,11 @@ onMounted(() => {
       : [],
   };
 
-  assignValues(data); // Assign values for partition sizing
+  assignValues(data);
 
   const width = 500;
   const radius = width / 2;
 
-  // Use a sequential color scale for smooth colors
   const color = d3
     .scaleSequential(d3.interpolateCool)
     .domain([0, (data.children?.length ?? 1) + 1]);
@@ -63,8 +59,24 @@ onMounted(() => {
     .style('font', '10px sans-serif');
 
   const format = d3.format(',d');
-
   const nodes = rootWithLayout.descendants();
+
+  // 🆕 Create custom tooltip div
+  const tooltip = d3
+    .select('body')
+    .append('div')
+    .attr('class', 'custom-tooltip')
+    .style('position', 'absolute')
+    .style('background', '#fff')
+    .style('padding', '6px 10px')
+    .style('border', '1px solid #ccc')
+    .style('border-radius', '4px')
+    .style('box-shadow', '0 2px 5px rgba(0,0,0,0.3)')
+    .style('font-size', '12px')
+    .style('pointer-events', 'none')
+    .style('white-space', 'normal')
+    .style('max-width', '200px')
+    .style('display', 'none');
 
   svg
     .append('g')
@@ -75,26 +87,34 @@ onMounted(() => {
     .attr('fill', (d) => {
       let current: typeof d = d;
       while (current.depth > 1) current = current.parent!;
-      return color(current.data.name.length); // Use name length for some variance
+      return color(current.data.name.length);
     })
     .attr('d', arc)
     .attr('stroke', '#fff')
     .attr('stroke-width', 1)
-    .on('mouseover', function () {
+    // 🔧 Replace <title> with custom tooltip behavior
+    .on('mouseover', function (event, d) {
       d3.select(this).attr('fill-opacity', 1);
+
+      const path = d
+        .ancestors()
+        .map((d) => d.data.name)
+        .reverse()
+        .join(' / ');
+
+      tooltip
+        .style('display', 'block')
+        .html(`<strong>${path}</strong><br>${format(d.value ?? 0)}`)
+        .style('left', event.pageX + 10 + 'px')
+        .style('top', event.pageY + 10 + 'px');
+    })
+    .on('mousemove', function (event) {
+      tooltip.style('left', event.pageX + 10 + 'px').style('top', event.pageY + 10 + 'px');
     })
     .on('mouseout', function () {
       d3.select(this).attr('fill-opacity', 0.7);
-    })
-    .append('title')
-    .text(
-      (d) =>
-        `${d
-          .ancestors()
-          .map((d) => d.data.name)
-          .reverse()
-          .join('/')}\n${format(d.value ?? 0)}`,
-    );
+      tooltip.style('display', 'none');
+    });
 
   svg
     .append('g')
@@ -120,6 +140,7 @@ onMounted(() => {
     .text((d) => d.data.name);
 });
 </script>
+
 <template>
   <div ref="chartContainer" class="skills-chart"></div>
 </template>

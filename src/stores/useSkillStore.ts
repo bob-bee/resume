@@ -99,15 +99,15 @@ const skillsNested: SkillNode = {
             {
               name: 'Vendors',
               children: [
-                { name: 'Azure' },
-                { name: 'AWS' },
-                { name: 'Heroku' },
-                { name: 'DigitalOcean' },
+                { name: 'Azure', value: 3 },
+                { name: 'AWS', value: 3 },
+                { name: 'Heroku', value: 3 },
+                { name: 'DigitalOcean', value: 3 },
               ],
             },
             {
               name: 'Device Management',
-              children: [{ name: 'InTune' }],
+              children: [{ name: 'InTune', value: 3 }],
             },
           ],
         },
@@ -116,15 +116,26 @@ const skillsNested: SkillNode = {
           children: [
             {
               name: 'Automation',
-              children: [{ name: 'SCCM' }, { name: 'Jenkins' }, { name: 'GitLab CI/CD' }],
+              children: [
+                { name: 'SCCM', value: 3 },
+                { name: 'Jenkins', value: 3 },
+                { name: 'GitLab CI/CD', value: 3 },
+              ],
             },
             {
               name: 'Remote & Collaboration',
-              children: [{ name: 'AnyDesk' }, { name: 'CRM' }],
+              children: [
+                { name: 'AnyDesk', value: 3 },
+                { name: 'CRM', value: 3 },
+              ],
             },
             {
               name: 'Containers & Streaming',
-              children: [{ name: 'Docker' }, { name: 'Kafka' }, { name: 'Spark' }],
+              children: [
+                { name: 'Docker', value: 3 },
+                { name: 'Kafka', value: 3 },
+                { name: 'Spark', value: 3 },
+              ],
             },
           ],
         },
@@ -137,31 +148,35 @@ const skillsNested: SkillNode = {
           name: 'Web Development',
           children: [
             {
-              name: 'Languages & Frameworks',
+              name: 'Languages',
               children: [
-                { name: 'Python' },
-                { name: 'JavaScript' },
-                { name: 'Vue.js' },
-                { name: 'Node.js' },
-                { name: 'Django' },
+                { name: 'JavaScript', value: 3 },
+                { name: 'HTML', value: 3 },
+                { name: 'CSS', value: 3 },
+                { name: 'Python', value: 3 },
+                { name: 'CLI', value: 3 },
               ],
             },
             {
-              name: 'Frontend',
+              name: 'Frameworks',
               children: [
-                { name: 'HTML5' },
-                { name: 'CSS3' },
-                { name: 'SCSS' },
-                { name: 'Bootstrap' },
+                { name: 'VueJS', value: 3 },
+                { name: 'Django', value: 3 },
+                { name: 'NodeJS', value: 3 },
+                { name: 'ExpressJS', value: 3 },
               ],
             },
             {
               name: 'APIs & Auth',
-              children: [{ name: 'REST APIs' }, { name: 'JWT' }, { name: 'OAuth2' }],
+              children: [
+                { name: 'REST APIs', value: 3 },
+                { name: 'JWT', value: 3 },
+                { name: 'OAuth2', value: 3 },
+              ],
             },
             {
               name: 'Testing',
-              children: [{ name: 'Unit Testing' }],
+              children: [{ name: 'Unit Testing', value: 3 }],
             },
           ],
         },
@@ -202,11 +217,15 @@ const skillsNested: SkillNode = {
           children: [
             {
               name: 'Visualization',
-              children: [{ name: 'Tableau' }, { name: 'Power BI' }, { name: 'Google Analytics' }],
+              children: [
+                { name: 'Tableau', value: 3 },
+                { name: 'Power BI', value: 4 },
+                { name: 'Google Analytics', value: 3 },
+              ],
             },
             {
               name: 'Statistical',
-              children: [{ name: 'R' }],
+              children: [{ name: 'R', value: 3 }],
             },
           ],
         },
@@ -216,9 +235,9 @@ const skillsNested: SkillNode = {
             {
               name: 'Techniques',
               children: [
-                { name: 'Machine Learning' },
-                { name: 'Data Visualization' },
-                { name: 'Workflow Automation' },
+                { name: 'Machine Learning', value: 3 },
+                { name: 'Data Visualization', value: 3 },
+                { name: 'Workflow Automation', value: 3 },
               ],
             },
           ],
@@ -233,11 +252,17 @@ const skillsNested: SkillNode = {
           children: [
             {
               name: 'Automation & Bots',
-              children: [{ name: 'Crypto Trading Bots' }, { name: 'Web Scraping' }],
+              children: [
+                { name: 'Crypto Trading Bots', value: 4 },
+                { name: 'Web Scraping', value: 5 },
+              ],
             },
             {
               name: 'Content & SEO',
-              children: [{ name: 'SEO Optimization' }, { name: 'Content Creation' }],
+              children: [
+                { name: 'SEO Optimization', value: 3 },
+                { name: 'Content Creation', value: 4 },
+              ],
             },
           ],
         },
@@ -252,14 +277,14 @@ const skillsNested: SkillNode = {
             {
               name: 'Core',
               children: [
-                { name: 'Customer Service' },
-                { name: 'Troubleshooting' },
-                { name: 'ITIL' },
-                { name: 'Management' },
-                { name: 'Stakeholder Communication' },
-                { name: 'Training' },
-                { name: 'Documentation' },
-                { name: 'Change Management' },
+                { name: 'Customer Service', value: 5 },
+                { name: 'Troubleshooting', value: 5 },
+                { name: 'ITIL', value: 3 },
+                { name: 'Management', value: 4 },
+                { name: 'Stakeholder Communication, value : 3' },
+                { name: 'Training', value: 3 },
+                { name: 'Documentation', value: 5 },
+                { name: 'Change Management', value: 4 },
               ],
             },
           ],
@@ -268,22 +293,13 @@ const skillsNested: SkillNode = {
     },
     {
       name: 'Languages',
+      value: 25,
       children: [
-        {
-          name: 'Spoken',
-          children: [
-            {
-              name: 'Fluent',
-              children: [
-                { name: 'English' },
-                { name: 'Italian' },
-                { name: 'Hindi' },
-                { name: 'Telugu' },
-                { name: 'Spanish' },
-              ],
-            },
-          ],
-        },
+        { name: 'English', value: 5 },
+        { name: 'Italian', value: 3 },
+        { name: 'Hindi', value: 4 },
+        { name: 'Telugu', value: 5 },
+        { name: 'Spanish', value: 1 },
       ],
     },
   ],
