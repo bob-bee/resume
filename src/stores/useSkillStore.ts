@@ -213,32 +213,29 @@ const skillsNested: SkillNode = {
       name: 'Analytics & BI',
       children: [
         {
-          name: 'BI Tools',
+          name: 'Business Intelligence',
           children: [
             {
-              name: 'Dashboards ',
+              name: 'Dashboarding & Reporting',
               children: [
-                {
-                  name: 'Enterprise BI',
-                  children: [
-                    { name: 'Power BI', value: 4 },
-                    { name: 'Tableau', value: 3 },
-                    { name: 'grafana', value: 4 },
-                    { name: 'python', value: 4 },
-                  ],
-                },
-                {
-                  name: 'Web Analytics',
-                  children: [{ name: 'Google Analytics', value: 3 }],
-                },
+                { name: 'Power BI', value: 4 },
+                { name: 'Tableau', value: 3 },
+                { name: 'Grafana', value: 4 },
+                { name: 'Google Analytics', value: 3 },
               ],
             },
             {
-              name: 'Statistical Platforms',
-
+              name: 'Statistical Tools',
               children: [
                 { name: 'R', value: 3 },
                 { name: 'MATLAB', value: 3 },
+              ],
+            },
+            {
+              name: 'Scripting & Integration',
+              children: [
+                { name: 'Python', value: 4 },
+                { name: 'SQL', value: 4 },
               ],
             },
           ],
@@ -247,32 +244,31 @@ const skillsNested: SkillNode = {
           name: 'Data Science',
           children: [
             {
-              name: 'Core',
+              name: 'Data Engineering',
               children: [
-                {
-                  name: 'Modeling',
-                  children: [
-                    { name: 'Data Cleansing', value: 3 },
-                    { name: 'Data Warehousing', value: 3 },
-                    { name: 'ETL', value: 3 },
-                  ],
-                },
-                {
-                  name: 'Visualization',
-                  children: [
-                    { name: 'pandas', value: 3 },
-                    { name: 'matplotlib', value: 3 },
-                    { name: 'd3.js', value: 3 },
-                  ],
-                },
-                {
-                  name: 'Automation',
-                  children: [
-                    { name: 'Airflow', value: 3 },
-                    { name: 'Data Flow', value: 3 },
-                    { name: 'Databricks', value: 3 },
-                  ],
-                },
+                { name: 'ETL', value: 3 },
+                { name: 'Data Cleansing', value: 3 },
+                { name: 'Data Warehousing', value: 3 },
+                { name: 'Airflow', value: 3 },
+                { name: 'Databricks', value: 3 },
+                { name: 'Data Flow', value: 3 },
+              ],
+            },
+            {
+              name: 'Visualization Libraries',
+              children: [
+                { name: 'pandas', value: 3 },
+                { name: 'matplotlib', value: 3 },
+                { name: 'd3.js', value: 3 },
+              ],
+            },
+            {
+              name: 'Machine Learning',
+              children: [
+                { name: 'Scikit-learn', value: 4 },
+                { name: 'XGBoost', value: 3 },
+                { name: 'TensorFlow', value: 3 },
+                { name: 'Model Deployment', value: 3 },
               ],
             },
           ],
@@ -280,47 +276,45 @@ const skillsNested: SkillNode = {
       ],
     },
     {
-      name: 'Other Tech',
+      name: 'Other ',
       children: [
         {
-          name: 'Specialized',
+          name: 'Automation & Bots',
           children: [
             {
-              name: 'Automation & Bots',
+              name: 'Trading Systems',
               children: [
-                {
-                  name: 'Trading',
-                  children: [
-                    { name: 'Crypto Bot', value: 4 },
-                    { name: 'Arbitage Bot', value: 4 },
-                  ],
-                },
-                {
-                  name: 'Data Collection',
-                  children: [
-                    { name: 'Web Scraping', value: 5 },
-                    { name: 'API', value: 5 },
-                    { name: 'Synthetic Data', value: 5 },
-                  ],
-                },
+                { name: 'Crypto Trading Bots', value: 4 },
+                { name: 'Arbitrage Bots', value: 4 },
               ],
             },
             {
-              name: 'Content & SEO',
+              name: 'Data Automation',
               children: [
-                {
-                  name: 'Content Creation',
-                  children: [
-                    { name: 'Planning', value: 4 },
-                    { name: 'Shooting', value: 4 },
-                    { name: 'Editing', value: 4 },
-                    { name: 'Publishing', value: 4 },
-                  ],
-                },
-                {
-                  name: 'Optimization',
-                  children: [{ name: 'SEO Optimization', value: 3 }],
-                },
+                { name: 'Web Scraping', value: 5 },
+                { name: 'API Integration', value: 5 },
+                { name: 'Synthetic Data Generation', value: 5 },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Content Tech',
+          children: [
+            {
+              name: 'Content Production',
+              children: [
+                { name: 'Content Planning', value: 4 },
+                { name: 'Shooting & Recording', value: 4 },
+                { name: 'Editing & Post-Production', value: 4 },
+                { name: 'Publishing Automation', value: 4 },
+              ],
+            },
+            {
+              name: 'Digital Optimization',
+              children: [
+                { name: 'SEO Strategies', value: 3 },
+                { name: 'Content Performance Tracking', value: 3 },
               ],
             },
           ],
@@ -434,25 +428,15 @@ const skillsNested: SkillNode = {
             },
           ],
         },
+
         {
-          name: 'Diversity & Inclusion',
+          name: 'Open-mindedness',
           children: [
-            {
-              name: 'Cultural Awareness',
-              children: [
-                { name: 'Sensitivity', value: 0 },
-                { name: 'Inclusive Language', value: 0 },
-              ],
-            },
-            {
-              name: 'Open-mindedness',
-              children: [
-                { name: 'Accepting Feedback', value: 5 },
-                { name: 'Challenging Biases', value: 4 },
-              ],
-            },
+            { name: 'Accepting Feedback', value: 5 },
+            { name: 'Challenging Biases', value: 4 },
           ],
         },
+
         {
           name: 'Languages',
           children: [

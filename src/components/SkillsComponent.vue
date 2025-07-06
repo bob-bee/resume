@@ -90,11 +90,12 @@ onMounted(() => {
     .append('g')
     .attr('fill-opacity', 0.7)
     .selectAll('path')
-    .data(nodes.filter((d) => d.depth > 0))
+    .data(nodes)
     .join('path')
     .attr('fill', (d) => {
       let current = d;
-      while (current.depth > 1) current = current.parent!;
+      if (current.depth === 0) return color(current.data.name.length + 100);
+      else while (current.depth > 1) current = current.parent!;
       return color(current.data.name.length);
     })
     .attr('d', arc)
@@ -108,7 +109,7 @@ onMounted(() => {
         .reverse()
         .join(' / ');
       tooltip
-        .style('display', 'block')
+        .style('display', 'flex')
         .html(`<strong>${path}</strong><br>${format(d.value ?? 0)}`)
         .style('left', event.pageX + 10 + 'px')
         .style('top', event.pageY + 10 + 'px');
@@ -125,6 +126,7 @@ onMounted(() => {
   svg
     .append('g')
     .attr('text-anchor', 'middle')
+    .attr('justify-content', 'center')
 
     .attr('font-family', 'sans-serif')
     .selectAll('text')
@@ -156,32 +158,48 @@ onMounted(() => {
       return Math.max(size, 5); // minimum readable size
     })
     .attr('dy', '0.35em')
+    .attr('class', 'text-label')
+    // ...existing code...
     .each(function (d) {
       const name = d.data.name;
       const maxLen = 10;
-      const lines =
-        name.length > maxLen ? (name.match(new RegExp(`.{1,${maxLen}}`, 'g')) ?? [name]) : [name];
+
+      // Prefer breaking at spaces, fallback to char wrap
+      let lines: string[] = [];
+      if (name.length > maxLen) {
+        const words = name.split(' ');
+        let line = '';
+        for (const word of words) {
+          if ((line + word).length > maxLen) {
+            if (line) lines.push(line.trim());
+            line = word + ' ';
+          } else {
+            line += word + ' ';
+          }
+        }
+        if (line) lines.push(line.trim());
+        // Fallback: break long lines at maxLen
+        lines = lines.flatMap((l) =>
+          l.length > maxLen ? (l.match(new RegExp(`.{1,${maxLen}}`, 'g')) ?? [l]) : [l],
+        );
+      } else {
+        lines = [name];
+      }
 
       const el = d3.select(this);
+      el.selectAll('tspan').remove();
       lines.forEach((line, i) => {
         el.append('tspan')
           .attr('x', 0)
           .attr('dy', i === 0 ? 0 : '1.1em')
-          .text(line)
-          .attr('class', 'text-label');
+          .text(line);
       });
     });
+  // ...existing code...
 });
 </script>
 
 <template>
   <div ref="chartContainer" class="skills-chart"></div>
 </template>
-<style lang="scss">
-.text-label {
-  text-align: center;
-  display: flex;
-  text-wrap: fit;
-  padding: 3px;
-}
-</style>
+<style lang="scss"></style>
