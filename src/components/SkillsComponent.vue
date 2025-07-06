@@ -138,11 +138,6 @@ onMounted(() => {
       }),
     )
     .join('text')
-    .attr('transform', (d) => {
-      const x = (((d.x0 + d.x1) / 2) * 180) / Math.PI;
-      const y = (d.y0 + d.y1) / 2;
-      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-    })
     .attr('font-size', (d) => {
       const angle = d.x1 - d.x0; // angular width
       const radius = (d.y0 + d.y1) / 2; // mid radius
@@ -159,6 +154,11 @@ onMounted(() => {
     })
     .attr('dy', '0.35em')
     .attr('class', 'text-label')
+    .attr('transform', (d) => {
+      const x = (((d.x0 + d.x1) / 2) * 180) / Math.PI;
+      const y = (d.y0 + d.y1) / 2;
+      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    })
     // ...existing code...
     .each(function (d) {
       const name = d.data.name;

@@ -354,30 +354,25 @@ const skillsNested: SkillNode = {
           name: 'Interpersonal Skills',
           children: [
             {
-              name: 'Emotional Intelligence',
+              name: 'Social',
               children: [
+                { name: 'Conflict Resolution', value: 4 },
+                { name: 'Relationship Building', value: 5 },
                 { name: 'Self-Awareness', value: 4 },
                 { name: 'Empathy', value: 2 },
               ],
             },
             {
-              name: 'Social Skills',
-              children: [
-                { name: 'Conflict Resolution', value: 4 },
-                { name: 'Relationship Building', value: 5 },
-              ],
-            },
-            {
-              name: 'Team Interaction',
+              name: 'Team',
               children: [
                 { name: 'Collaboration', value: 4 },
-                { name: 'Giving Feedback', value: 1 },
+                { name: 'Feedback', value: 1 },
               ],
             },
           ],
         },
         {
-          name: 'Leadership & Management',
+          name: 'Leadership ',
           children: [
             {
               name: 'Strategic',
@@ -391,12 +386,6 @@ const skillsNested: SkillNode = {
               children: [
                 { name: 'Delegation', value: 3 },
                 { name: 'Time Management', value: 3 },
-              ],
-            },
-            {
-              name: 'Motivational',
-              children: [
-                { name: 'Inspiring Others', value: 5 },
                 { name: 'Accountability', value: 4 },
               ],
             },
@@ -406,10 +395,10 @@ const skillsNested: SkillNode = {
           name: 'Problem Solving',
           children: [
             {
-              name: 'Thinking Skills',
+              name: 'Thinking ',
               children: [
-                { name: 'Critical Thinking', value: 4 },
-                { name: 'Analytical Thinking', value: 3 },
+                { name: 'Critical ', value: 4 },
+                { name: 'Analytical ', value: 3 },
               ],
             },
             {

@@ -2,7 +2,7 @@
   <div class="section">
     <h5 class="section-title">Work Experience</h5>
     <div class="card">
-      <div v-for="job in store.work" :key="job.company">
+      <div v-for="job in store.work" :key="job.company" class="card-section">
         <!-- Company Header -->
 
         <div class="card-title row">

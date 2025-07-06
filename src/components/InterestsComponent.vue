@@ -4,7 +4,7 @@
     <div class="card">
       ">
 
-      <div v-for="interest in store.interests" :key="interest.title">
+      <div v-for="interest in store.interests" :key="interest.title" class="card-section">
         <div class="card-title">
           <div class="card-title-noun">{{ interest.title }}</div>
           <div class="card-meta">{{ interest.goal }}</div>
