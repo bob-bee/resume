@@ -2,11 +2,11 @@
   <div class="section">
     <h5 class="section-title">Academia</h5>
     <div>
-      <div v-for="edu in store.education" :key="edu.degree" bordered>
+      <div v-for="edu in store.education" :key="edu.degree" class="card-section">
         <!-- Degree & Institution -->
         <div>
           <div class="card-title row">
-            <div class="card-title-verb col">
+            <div class="card-title-noun col">
               <a
                 v-if="edu.institutionUrl"
                 :href="edu.institutionUrl"
@@ -17,15 +17,13 @@
               </a>
               <span v-else>{{ edu.institution }}</span>
             </div>
-            <span>
-              <div class="card-meta text-right col">
-                <div>{{ edu.period }}</div>
-                <div>{{ edu.location }}</div>
-              </div>
-            </span>
-          </div>
+            <!-- Period & Location -->
 
-          <!-- Period & Location -->
+            <div class="card-meta text-right col">
+              <div>{{ edu.period }}</div>
+              <div>{{ edu.location }}</div>
+            </div>
+          </div>
         </div>
 
         <!-- Separator -->

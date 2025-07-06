@@ -75,8 +75,8 @@ img {
 
 .section-title {
   font-size: $font-size-xl;
-  font-weight: 800;
-  margin-block-end: $gap-small;
+  font-weight: 600;
+  margin-block: $gap-small;
   padding: $gap-tiny $gap-small;
   text-align: center;
 }
@@ -134,7 +134,7 @@ img {
 }
 .card-title-noun {
   font-size: $font-size-lg;
-  font-weight: 600;
+  font-weight: 400;
   color: $secondary;
   display: flex;
   align-items: start;
@@ -153,7 +153,7 @@ img {
 }
 
 .card-description {
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
   color: #555;
   margin-block-end: $gap-tiny;
   display: flex;
@@ -162,7 +162,7 @@ img {
 }
 
 .card-meta {
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   color: #777;
   font-weight: 500;
   vertical-align: middle;
@@ -208,27 +208,13 @@ img {
   color: #666;
 }
 
-// Chips (assumed)
-.chip {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  font-size: $font-size-sm;
-  background-color: var(--q-accent);
-  border-radius: 16px;
-  color: white;
-}
-.chip {
-  display: inline-block;
-  background-color: var(--q-color-accent, #e0e0e0);
-  color: #333;
-  padding: 4px 10px;
-  line-height: 1;
-}
 // Contact Section
 .contact-info {
   display: flex;
   flex-direction: column;
   font-size: $font-size-sm;
+  margin: $gap-base;
+
   color: #374151;
 }
 
@@ -333,23 +319,31 @@ img {
 .q-row-gutter-sm {
   row-gap: $gap-small;
 }
-
-// Print Styles
 @media print {
-  html,
   body {
-    font-size: $print-font-base !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: white !important;
+    -webkit-print-color-adjust: exact; /* Chrome, Safari */
+    print-color-adjust: exact; /* Firefox */
+    background: white;
+    color: black;
   }
 
-  .no-print {
-    display: none !important;
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
-
-  @page {
-    size: A4;
-    margin: 0.25in;
+  .card-section,
+  .card-body {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .page-break {
+    break-before: page; /* Modern spec */
+  }
+  /* Force layout elements to stay visible */
+  header,
+  footer,
+  nav,
+  aside {
+    display: block !important;
   }
 }

@@ -2,12 +2,12 @@
   <div class="section">
     <h5 class="section-title">Work Experience</h5>
     <div class="card">
-      <div v-for="job in store.work" :key="job.company">
+      <div v-for="job in store.work" :key="job.company" class="card-section">
         <!-- Company Header -->
 
         <div class="card-title row">
           <div class="card-title-noun col">
-            <a v-if="job.url" :href="job.url" target="_blank" rel="noopener">
+            <a v-if="job.url" :href="job.url" target="_blank" rel="noopener" class="card-section">
               {{ job.company }}
             </a>
             <span v-else>{{ job.company }}</span>

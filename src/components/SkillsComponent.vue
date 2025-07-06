@@ -2,7 +2,7 @@
   <div class="section">
     <h5 class="section-title">Skills</h5>
     <div class="card">
-      <div v-for="(skillList, category) in store.skills" :key="category">
+      <div v-for="(skillList, category) in store.skills" :key="category" class="card-section">
         <div class="q-pa-sm row wrap">
           <!-- Category Label (2 cols) -->
           <div class="col-2 skill-category q-pa-sm">

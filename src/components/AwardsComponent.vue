@@ -1,18 +1,12 @@
 <template>
   <div class="section">
     <h5 class="section-title">Awards</h5>
-    <ul class="section-item">
-      <li v-for="award in store.awards" :key="award.title">
-        <div v-for="item in award.items || [null]" :key="item || 'no-item'" class="award-item">
-          <div class="award-main">
+    <div class="card">
+      <li v-for="award in store.awards" :key="award.title" class="card-section row">
+        <div v-for="item in award.items || [null]" :key="item || 'no-item'" class="card=section">
+          <div class="card-title row">
             <span class="card-title">{{ award.title }}</span> —
-            <a
-              v-if="award.issuerUrl"
-              :href="award.issuerUrl"
-              target="_blank"
-              rel="noopener"
-              class="award-issuer text-primary"
-            >
+            <a v-if="award.issuerUrl" :href="award.issuerUrl" target="_blank" rel="noopener">
               {{ award.issuer }}
             </a>
             <span v-else class="card-title-verb">{{ award.issuer }}</span>
@@ -29,7 +23,7 @@
           <hr class="separator" />
         </div>
       </li>
-    </ul>
+    </div>
   </div>
 </template>
 
