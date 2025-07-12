@@ -74,6 +74,21 @@ export interface Interest {
   goal: string;
   notes?: string[];
 }
+export interface SkillChild {
+  name: string;
+  value: number;
+}
+
+export interface SkillGroup {
+  name: string;
+  children: SkillChild[];
+}
+// models.ts
+export type SkillNode = {
+  name: string;
+  value?: number;
+  children?: SkillNode[];
+};
 
 export interface ResumeState {
   name: string;
