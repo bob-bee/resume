@@ -375,16 +375,53 @@ export const useResumeStore = defineStore('resume', {
   }),
 
   actions: {
-    /* existing actions */,
-    addWorkExperience(exp)      { this.work.push(exp); },
-    removeWorkExperience(idx)   { this.work.splice(idx,1); },
-    addEducation(edu)           { this.education.push(edu); },
-    removeEducation(idx)        { this.education.splice(idx,1); },
-    updateSkills(skills)        { this.skills = { ...this.skills, ...skills }; },
-    saveToLocalStorage()        { localStorage.setItem('resume-data', JSON.stringify(this.$state)); },
+    addWorkExperience(exp: {
+      company: string;
+      url: string;
+      location: string;
+      period: string;
+      roles: { title: string; duration: string; items: string[] }[];
+    }) {
+      this.work.push(exp);
+    },
+    removeWorkExperience(idx: number): void {
+      this.work.splice(idx, 1);
+    },
+    addEducation(edu: {
+      degree: string;
+      institution: string;
+      institutionUrl?: string;
+      location: string;
+      period: string;
+      highlights: string[];
+    }): void {
+      this.education.push(edu);
+    },
+    removeEducation(idx: number) {
+      this.education.splice(idx, 1);
+    },
+    updateSkills(skills: {
+      operatingSystems: string[];
+      networking: string[];
+      devOpsTools: string[];
+      cloudPlatforms: string[];
+      databases: string[];
+      analyticsAndBI: string[];
+      webDevelopment: string[];
+      scriptingAndAutomation: string[];
+      administration: string[];
+      otherTech: string[];
+      softSkills: string[];
+      languages: string[];
+    }) {
+      this.skills = { ...this.skills, ...skills };
+    },
+    saveToLocalStorage() {
+      localStorage.setItem('resume-data', JSON.stringify(this.$state));
+    },
     loadFromLocalStorage() {
       const data = localStorage.getItem('resume-data');
       if (data) this.$patch(JSON.parse(data));
-    }
-  }
+    },
+  },
 });

@@ -101,3 +101,5 @@ export interface ResumeState {
   awards: Award[];
   interests: Interest[];
 }
+// Utility for generic objects
+export type Recordable = Record<string, unknown>;

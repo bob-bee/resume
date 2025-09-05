@@ -1,7 +1,7 @@
-import { boot } from '#app';
+import { boot } from 'quasar/wrappers';
 import { useResumeStore } from 'src/stores/useResumeStore';
 
-export default boot(({ app }) => {
+export default boot(() => {
   const resumeStore = useResumeStore();
   resumeStore.loadFromLocalStorage();
 });
