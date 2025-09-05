@@ -1,0 +1,2643 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+src/
+  assets/
+    quasar-logo-vertical.svg
+  components/
+    input/
+      ContactComponent.vue
+    resume/
+      AwardsComponent.vue
+      EducationComponent.vue
+      FreelanceComponent.vue
+      HeaderComponent.vue
+      InterestsComponent.vue
+      SkillsComponent.vue
+      WorkComponent.vue
+  css/
+    app.scss
+    quasar.variables.scss
+  layouts/
+    MainLayout.vue
+  models/
+    models.ts
+  pages/
+    ErrorNotFound.vue
+    InputPage.vue
+    ResumePage.vue
+  router/
+    index.ts
+    routes.ts
+  stores/
+    example-store.ts
+    index.ts
+    useResumeStore.ts
+    useSkillStore.ts
+  App.vue
+  env.d.ts
+.editorconfig
+.gitignore
+.npmrc
+.prettierrc.json
+eslint.config.js
+index.html
+package.json
+postcss.config.js
+quasar.config.ts
+README.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/assets/quasar-logo-vertical.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 360">
+	<path
+		d="M43.4 303.4c0 3.8-2.3 6.3-7.1 6.3h-15v-22h14.4c4.3 0 6.2 2.2 6.2 5.2 0 2.6-1.5 4.4-3.4 5 2.8.4 4.9 2.5 4.9 5.5zm-8-13H24.1v6.9H35c2.1 0 4-1.3 4-3.8 0-2.2-1.3-3.1-3.7-3.1zm5.1 12.6c0-2.3-1.8-3.7-4-3.7H24.2v7.7h11.7c3.4 0 4.6-1.8 4.6-4zm36.3 4v2.7H56v-22h20.6v2.7H58.9v6.8h14.6v2.3H58.9v7.5h17.9zm23-5.8v8.5H97v-8.5l-11-13.4h3.4l8.9 11 8.8-11h3.4l-10.8 13.4zm19.1-1.8V298c0-7.9 5.2-10.7 12.7-10.7 7.5 0 13 2.8 13 10.7v1.4c0 7.9-5.5 10.8-13 10.8s-12.7-3-12.7-10.8zm22.7 0V298c0-5.7-3.9-8-10-8-6 0-9.8 2.3-9.8 8v1.4c0 5.8 3.8 8.1 9.8 8.1 6 0 10-2.3 10-8.1zm37.2-11.6v21.9h-2.9l-15.8-17.9v17.9h-2.8v-22h3l15.6 18v-18h2.9zm37.9 10.2v1.3c0 7.8-5.2 10.4-12.4 10.4H193v-22h11.2c7.2 0 12.4 2.8 12.4 10.3zm-3 0c0-5.3-3.3-7.6-9.4-7.6h-8.4V307h8.4c6 0 9.5-2 9.5-7.7V298zm50.8-7.6h-9.7v19.3h-3v-19.3h-9.7v-2.6h22.4v2.6zm34.4-2.6v21.9h-3v-10.1h-16.8v10h-2.8v-21.8h2.8v9.2H296v-9.2h2.9zm34.9 19.2v2.7h-20.7v-22h20.6v2.7H316v6.8h14.5v2.3H316v7.5h17.8zM24 340.2v7.3h13.9v2.4h-14v9.6H21v-22h20v2.7H24zm41.5 11.4h-9.8v7.9H53v-22h13.3c5.1 0 8 1.9 8 6.8 0 3.7-2 6.3-5.6 7l6 8.2h-3.3l-5.8-8zm-9.8-2.6H66c3.1 0 5.3-1.5 5.3-4.7 0-3.3-2.2-4.1-5.3-4.1H55.7v8.8zm47.9 6.2H89l-2 4.3h-3.2l10.7-22.2H98l10.7 22.2h-3.2l-2-4.3zm-1-2.3l-6.3-13-6 13h12.2zm46.3-15.3v21.9H146v-17.2L135.7 358h-2.1l-10.2-15.6v17h-2.8v-21.8h3l11 16.9 11.3-17h3zm35 19.3v2.6h-20.7v-22h20.6v2.7H166v6.8h14.5v2.3H166v7.6h17.8zm47-19.3l-8.3 22h-3l-7.1-18.6-7 18.6h-3l-8.2-22h3.3L204 356l6.8-18.5h3.4L221 356l6.6-18.5h3.3zm10 11.6v-1.4c0-7.8 5.2-10.7 12.7-10.7 7.6 0 13 2.9 13 10.7v1.4c0 7.9-5.4 10.8-13 10.8-7.5 0-12.7-3-12.7-10.8zm22.8 0v-1.4c0-5.7-4-8-10-8s-9.9 2.3-9.9 8v1.4c0 5.8 3.8 8.2 9.8 8.2 6.1 0 10-2.4 10-8.2zm28.3 2.4h-9.8v7.9h-2.8v-22h13.2c5.2 0 8 1.9 8 6.8 0 3.7-2 6.3-5.6 7l6 8.2h-3.3l-5.8-8zm-9.8-2.6h10.2c3 0 5.2-1.5 5.2-4.7 0-3.3-2.1-4.1-5.2-4.1h-10.2v8.8zm40.3-1.5l-6.8 5.6v6.4h-2.9v-22h2.9v12.3l15.2-12.2h3.7l-9.9 8.1 10.3 13.8h-3.6l-8.9-12z" />
+	<path fill="#050A14"
+		d="M188.4 71.7a10.4 10.4 0 01-20.8 0 10.4 10.4 0 1120.8 0zM224.2 45c-2.2-3.9-5-7.5-8.2-10.7l-12 7c-3.7-3.2-8-5.7-12.6-7.3a49.4 49.4 0 00-9.7 13.9 59 59 0 0140.1 14l7.6-4.4a57 57 0 00-5.2-12.5zM178 125.1c4.5 0 9-.6 13.4-1.7v-14a40 40 0 0012.5-7.2 47.7 47.7 0 00-7.1-15.3 59 59 0 01-32.2 27.7v8.7c4.4 1.2 8.9 1.8 13.4 1.8zM131.8 45c-2.3 4-4 8.1-5.2 12.5l12 7a40 40 0 000 14.4c5.7 1.5 11.3 2 16.9 1.5a59 59 0 01-8-41.7l-7.5-4.3c-3.2 3.2-6 6.7-8.2 10.6z" />
+	<path fill="#00B4FF"
+		d="M224.2 98.4c2.3-3.9 4-8 5.2-12.4l-12-7a40 40 0 000-14.5c-5.7-1.5-11.3-2-16.9-1.5a59 59 0 018 41.7l7.5 4.4c3.2-3.2 6-6.8 8.2-10.7zm-92.4 0c2.2 4 5 7.5 8.2 10.7l12-7a40 40 0 0012.6 7.3c4-4.1 7.3-8.8 9.7-13.8a59 59 0 01-40-14l-7.7 4.4c1.2 4.3 3 8.5 5.2 12.4zm46.2-80c-4.5 0-9 .5-13.4 1.7V34a40 40 0 00-12.5 7.2c1.5 5.7 4 10.8 7.1 15.4a59 59 0 0132.2-27.7V20a53.3 53.3 0 00-13.4-1.8z" />
+	<path fill="#00B4FF"
+		d="M178 9.2a62.6 62.6 0 11-.1 125.2A62.6 62.6 0 01178 9.2m0-9.2a71.7 71.7 0 100 143.5A71.7 71.7 0 00178 0z" />
+	<path fill="#050A14"
+		d="M96.6 212v4.3c-9.2-.8-15.4-5.8-15.4-17.8V180h4.6v18.4c0 8.6 4 12.6 10.8 13.5zm16-31.9v18.4c0 8.9-4.3 12.8-10.9 13.5v4.4c9.2-.7 15.5-5.6 15.5-18v-18.3h-4.7zM62.2 199v-2.2c0-12.7-8.8-17.4-21-17.4-12.1 0-20.7 4.7-20.7 17.4v2.2c0 12.8 8.6 17.6 20.7 17.6 1.5 0 3-.1 4.4-.3l11.8 6.2 2-3.3-8.2-4-6.4-3.1a32 32 0 01-3.6.2c-9.8 0-16-3.9-16-13.3v-2.2c0-9.3 6.2-13.1 16-13.1 9.9 0 16.3 3.8 16.3 13.1v2.2c0 5.3-2.1 8.7-5.6 10.8l4.8 2.4c3.4-2.8 5.5-7 5.5-13.2zM168 215.6h5.1L156 179.7h-4.8l17 36zM143 205l7.4-15.7-2.4-5-15.1 31.4h5.1l3.3-7h18.3l-1.8-3.7H143zm133.7 10.7h5.2l-17.3-35.9h-4.8l17 36zm-25-10.7l7.4-15.7-2.4-5-15.1 31.4h5.1l3.3-7h18.3l-1.7-3.7h-14.8zm73.8-2.5c6-1.2 9-5.4 9-11.4 0-8-4.5-10.9-12.9-10.9h-21.4v35.5h4.6v-31.3h16.5c5 0 8.5 1.4 8.5 6.7 0 5.2-3.5 7.7-8.5 7.7h-11.4v4.1h10.7l9.3 12.8h5.5l-9.9-13.2zm-117.4 9.9c-9.7 0-14.7-2.5-18.6-6.3l-2.2 3.8c5.1 5 11 6.7 21 6.7 1.6 0 3.1-.1 4.6-.3l-1.9-4h-3zm18.4-7c0-6.4-4.7-8.6-13.8-9.4l-10.1-1c-6.7-.7-9.3-2.2-9.3-5.6 0-2.5 1.4-4 4.6-5l-1.8-3.8c-4.7 1.4-7.5 4.2-7.5 8.9 0 5.2 3.4 8.7 13 9.6l11.3 1.2c6.4.6 8.9 2 8.9 5.4 0 2.7-2.1 4.7-6 5.8l1.8 3.9c5.3-1.6 8.9-4.7 8.9-10zm-20.3-21.9c7.9 0 13.3 1.8 18.1 5.7l1.8-3.9a30 30 0 00-19.6-5.9c-2 0-4 .1-5.7.3l1.9 4 3.5-.2z" />
+	<path fill="#00B4FF"
+		d="M.5 251.9c29.6-.5 59.2-.8 88.8-1l88.7-.3 88.7.3 44.4.4 44.4.6-44.4.6-44.4.4-88.7.3-88.7-.3a7981 7981 0 01-88.8-1z" />
+	<path fill="none" d="M-565.2 324H-252v15.8h-313.2z" />
+</svg>
+</file>
+
+<file path="src/components/input/ContactComponent.vue">
+<template>
+  <div class="resume-header">
+    <!-- Left Section -->
+    <div class="left-section">
+      <div>
+        <label>Name:</label>
+        <input type="text" v-model="resume.name" />
+      </div>
+
+      <div>
+        <label>Title:</label>
+        <input type="text" v-model="currentBucket.title" />
+      </div>
+
+      <div>
+        <label>Summary:</label>
+        <textarea v-model="currentBucket.summary"></textarea>
+      </div>
+    </div>
+
+    <!-- Center Section -->
+    <div class="center-section">
+      <div class="profile-photo">
+        <img src="/src/assets/picture.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div v-for="(contact, index) in resume.contacts" :key="index" class="contact-block">
+        <div>
+          <label>Text:</label>
+          <input type="text" v-model="contact.text" />
+        </div>
+        <div>
+          <label>URL:</label>
+          <input type="text" v-model="contact.url" />
+        </div>
+        <div>
+          <label>Icon:</label>
+          <input type="text" v-model="contact.icon" />
+        </div>
+      </div>
+
+      <button @click="addContact">Add Contact</button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed, ref } from 'vue';
+import { useResumeStore } from 'src/stores/useResumeStore';
+import type { RoleBucket, Contact } from 'src/models/models';
+
+const resume = useResumeStore();
+const selectedKey = ref<string>('itSupport');
+
+const currentBucket = computed<RoleBucket>(() => {
+  const bucket = resume.roleBuckets.find((b: RoleBucket) => b.key === selectedKey.value);
+  if (!bucket) {
+    throw new Error(`Role bucket with key "${selectedKey.value}" not found.`);
+  }
+  return bucket;
+});
+
+function addContact() {
+  resume.contacts.push({
+    text: '',
+    url: '',
+    icon: '',
+  } as Contact);
+}
+</script>
+
+<style scoped>
+.resume-header {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.left-section,
+.center-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-photo {
+  inline-size: 120px;
+  block-size: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-photo img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.contact-block {
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+</style>
+</file>
+
+<file path="src/components/resume/AwardsComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Awards</h5>
+    <div class="card">
+      <li v-for="award in store.awards" :key="award.title" class="card-section row">
+        <div v-for="item in award.items || [null]" :key="item || 'no-item'" class="card=section">
+          <div class="card-title row">
+            <span class="card-title">{{ award.title }}</span> —
+            <a v-if="award.issuerUrl" :href="award.issuerUrl" target="_blank" rel="noopener">
+              {{ award.issuer }}
+            </a>
+            <span v-else class="card-title-verb">{{ award.issuer }}</span>
+          </div>
+
+          <div v-if="item" class="card-caption">{{ item }}</div>
+
+          <div class="card-meta text-right">
+            <span v-if="award.period">{{ award.period }}</span>
+            <span v-if="award.period && award.location"> | </span>
+            <span v-if="award.location">{{ award.location }}</span>
+          </div>
+
+          <hr class="separator" />
+        </div>
+      </li>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+</script>
+</file>
+
+<file path="src/components/resume/EducationComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Academia</h5>
+    <div>
+      <div v-for="edu in store.education" :key="edu.degree" class="card-section">
+        <!-- Degree & Institution -->
+        <div>
+          <div class="card-title row">
+            <div class="card-title-noun col">
+              <a
+                v-if="edu.institutionUrl"
+                :href="edu.institutionUrl"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ edu.institution }}
+              </a>
+              <span v-else>{{ edu.institution }}</span>
+            </div>
+            <!-- Period & Location -->
+
+            <div class="card-meta text-right col">
+              <div>{{ edu.period }}</div>
+              <div>{{ edu.location }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Separator -->
+        <hr class="separator" />
+        <div class="card-title-verb">
+          {{ edu.degree }}
+        </div>
+        <!-- Highlights -->
+        <div>
+          <ul class="card-body">
+            <li v-for="item in edu.highlights" :key="item">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+</script>
+
+<style scoped lang="scss"></style>
+</file>
+
+<file path="src/components/resume/FreelanceComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Projects</h5>
+    <div class="card">
+      <div v-for="project in store.projects" :key="project.name" class="card-section">
+        <!-- Title and Company -->
+        <div class="card-title row">
+          <div>
+            <div class="card-title-noun col">
+              <a
+                v-if="project.companyUrl"
+                :href="project.companyUrl"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ project.company }}
+              </a>
+              <span v-else>{{ project.company }}</span>
+            </div>
+            <div class="card-description row">
+              {{ project.name }}
+            </div>
+          </div>
+
+          <!-- Period & Location -->
+          <div class="card-meta text-right col">
+            <div v-if="project.period">{{ project.period }}</div>
+            <div v-if="project.location">
+              {{ project.location }}
+            </div>
+          </div>
+        </div>
+
+        <hr class="separator" />
+
+        <div class="card-title-verb">
+          {{ project.role }}
+        </div>
+        <ul class="card-body">
+          <li v-for="item in project.items" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script lang="ts" setup>
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+</script>
+<style lang="scss" scoped></style>
+</file>
+
+<file path="src/components/resume/HeaderComponent.vue">
+<template>
+  <div class="resume-header">
+    <div class="left-section">
+      <div class="resume-title">{{ resume.name }}</div>
+      <div class="card-title-verb">{{ currentBucket.title }}</div>
+      <div class="card-body">{{ currentBucket.summary }}</div>
+    </div>
+
+    <div class="center-section">
+      <div class="profile-photo">
+        <img src="/src/assets/picture.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <div class="right-section">
+      <ul class="contact-list">
+        <li v-for="contact in resume.contacts" :key="contact.text" class="contact-item">
+          <div class="contact-info">
+            <template v-if="contact.url">
+              <a :href="contact.url" class="resume-link">{{ contact.text }}</a>
+            </template>
+            <template v-else>
+              <span class="resume-text-muted">{{ contact.text }}</span>
+            </template>
+          </div>
+          <div class="contact-icon">
+            <q-icon :name="contact.icon" />
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { computed, ref } from 'vue';
+import { useResumeStore } from 'src/stores/useResumeStore';
+import type { RoleBucket } from 'src/models/models';
+
+const resume = useResumeStore();
+
+const selectedKey = ref<string>('itSupport');
+
+const currentBucket = computed<RoleBucket>(() => {
+  const bucket = resume.roleBuckets.find((b: RoleBucket) => b.key === selectedKey.value);
+  if (!bucket) {
+    throw new Error(`Role bucket with key "${selectedKey.value}" not found.`);
+  }
+  return bucket;
+});
+</script>
+
+<style scoped lang="scss">
+.resume-header {
+  display: flex;
+  flex-direction: row;
+  inline-size: 100%;
+  block-size: auto;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  gap: 1rem;
+  border: 0.1rem solid rgb(12, 12, 10);
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+.left-section,
+.center-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.left-section {
+  flex: 1 1 55%;
+  max-inline-size: 60%;
+}
+
+.center-section {
+  flex: 0 0 20%;
+  align-items: center;
+
+  .profile-photo {
+    inline-size: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}
+
+.right-section {
+  flex: 1 1 25%;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 0.5rem;
+
+    .contact-info {
+      inline-size: 75%;
+      text-align: end;
+    }
+
+    .contact-icon {
+      inline-size: 2rem;
+      display: flex;
+      align-items: start;
+    }
+
+    .resume-link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.resume-title {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  margin-block-end: 0.5rem;
+}
+
+.card-title-verb {
+  font-size: $font-size-md;
+  font-weight: 600;
+  margin-block-end: 0.25rem;
+}
+
+.card-body {
+  font-size: $font-size-base;
+}
+</style>
+</file>
+
+<file path="src/components/resume/InterestsComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Interests</h5>
+    <div class="card">
+      ">
+
+      <div v-for="interest in store.interests" :key="interest.title" class="card-section">
+        <div class="card-title">
+          <div class="card-title-noun">{{ interest.title }}</div>
+          <div class="card-meta">{{ interest.goal }}</div>
+        </div>
+
+        <hr class="separator" />
+
+        <div v-if="interest.notes && interest.notes.length">
+          <ul class="card-body">
+            <li v-for="note in interest.notes" :key="note">{{ note }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+</script>
+
+<style scoped lang="scss">
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card-left {
+  display: flex;
+  flex-direction: column;
+}
+.caption {
+  font-size: 0.875rem;
+  color: #666;
+}
+</style>
+</file>
+
+<file path="src/components/resume/SkillsComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Skills</h5>
+    <div class="card">
+      <div v-for="(skillList, category) in store.skills" :key="category" class="card-section">
+        <div class="q-pa-sm row wrap">
+          <!-- Category Label (2 cols) -->
+          <div class="col-2 skill-category q-pa-sm">
+            {{ categoryLabels[category] || category }}
+          </div>
+
+          <!-- Skills List (10 cols) -->
+          <div class="col-10 q-pa-sm skill-list bordered rounded">
+            <div class="row q-col-gutter-sm q-row-gutter-sm">
+              <span v-for="(skill, index) in skillList" :key="`${category}-${index}`" class="">
+                <q-chip class="chip col-auto q-pa-xs q-mb-xs q-mr-xs">{{ skill }}</q-chip>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+
+const categoryLabels: Record<string, string> = {
+  operatingSystems: 'Operating Systems',
+  networking: 'Networking',
+  cloudPlatforms: 'Cloud Platforms',
+  devOpsTools: 'DevOps & Tools',
+  databases: 'Databases',
+  analyticsAndBI: 'Analytics & BI',
+  webDevelopment: 'Web Development',
+  scriptingAndAutomation: 'Scripting & Automation',
+  administration: 'Administration',
+  softSkills: 'Soft Skills',
+  languages: 'Languages',
+  otherTech: 'Other Technologies',
+};
+</script>
+
+<style scoped lang="scss"></style>
+</file>
+
+<file path="src/components/resume/WorkComponent.vue">
+<template>
+  <div class="section">
+    <h5 class="section-title">Work Experience</h5>
+    <div class="card">
+      <div v-for="job in store.work" :key="job.company" class="card-section">
+        <!-- Company Header -->
+
+        <div class="card-title row">
+          <div class="card-title-noun col">
+            <a v-if="job.url" :href="job.url" target="_blank" rel="noopener" class="card-section">
+              {{ job.company }}
+            </a>
+            <span v-else>{{ job.company }}</span>
+          </div>
+
+          <div class="card-meta text-right col">
+            <div>
+              {{ job.location }}
+            </div>
+            <div>{{ job.period }}</div>
+          </div>
+        </div>
+
+        <!-- Separator -->
+        <hr class="separator" />
+
+        <!-- Roles -->
+        <div v-for="role in job.roles" :key="role.title">
+          <div class="card-title-verb">
+            {{ role.title }}
+            <span class="card-meta">
+              {{ role.duration }}
+            </span>
+          </div>
+          <!-- Items -->
+
+          <div>
+            <ul class="card-body">
+              <li v-for="item in role.items" :key="item">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { useResumeStore } from 'src/stores/useResumeStore';
+
+const store = useResumeStore();
+</script>
+
+<style scoped lang="scss">
+// Styling assumed to be global or handled by card-style-default
+</style>
+</file>
+
+<file path="src/pages/ErrorNotFound.vue">
+<template>
+  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+    <div>
+      <div style="font-size: 30vh">
+        404
+      </div>
+
+      <div class="text-h2" style="opacity:.4">
+        Oops. Nothing here...
+      </div>
+
+      <q-btn
+        class="q-mt-xl"
+        color="white"
+        text-color="blue"
+        unelevated
+        to="/"
+        label="Go Home"
+        no-caps
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+//
+</script>
+</file>
+
+<file path="src/pages/ResumePage.vue">
+<template>
+  <q-page padding>
+    <!-- You can optionally use <q-header> inside here -->
+    <HeaderComponent />
+
+    <section class="resume-section" id="work-experience">
+      <WorkComponent />
+    </section>
+    <div class="page-break"></div>
+
+    <section class="resume-section" id="projects">
+      <FreelanceComponent />
+    </section>
+    <div class="page-break"></div>
+
+    <section class="resume-section" id="education">
+      <EducationComponent />
+    </section>
+    <div class="page-break"></div>
+
+    <section class="resume-section" id="skills">
+      <SkillsComponent />
+    </section>
+  </q-page>
+</template>
+
+<script setup lang="ts">
+// No need to import store or call fetch here anymore
+import WorkComponent from 'src/components/resume/WorkComponent.vue';
+import FreelanceComponent from 'src/components/resume/FreelanceComponent.vue';
+import EducationComponent from 'src/components/resume/EducationComponent.vue';
+import HeaderComponent from 'src/components/resume/HeaderComponent.vue';
+import SkillsComponent from 'src/components/resume/SkillsComponent.vue';
+</script>
+</file>
+
+<file path="src/router/index.ts">
+import { defineRouter } from '#q-app/wrappers';
+import {
+  createMemoryHistory,
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from 'vue-router';
+import routes from './routes';
+
+/*
+ * If not building with SSR mode, you can
+ * directly export the Router instantiation;
+ *
+ * The function below can be async too; either use
+ * async/await or return a Promise which resolves
+ * with the Router instance.
+ */
+
+export default defineRouter(function (/* { store, ssrContext } */) {
+  const createHistory = process.env.SERVER
+    ? createMemoryHistory
+    : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory);
+
+  const Router = createRouter({
+    scrollBehavior: () => ({ left: 0, top: 0 }),
+    routes,
+
+    // Leave this as is and make changes in quasar.conf.js instead!
+    // quasar.conf.js -> build -> vueRouterMode
+    // quasar.conf.js -> build -> publicPath
+    history: createHistory(process.env.VUE_ROUTER_BASE),
+  });
+
+  return Router;
+});
+</file>
+
+<file path="src/stores/example-store.ts">
+import { defineStore, acceptHMRUpdate } from 'pinia';
+
+export const useCounterStore = defineStore('counter', {
+  state: () => ({
+    counter: 0,
+  }),
+
+  getters: {
+    doubleCount: (state) => state.counter * 2,
+  },
+
+  actions: {
+    increment() {
+      this.counter++;
+    },
+  },
+});
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useCounterStore, import.meta.hot));
+}
+</file>
+
+<file path="src/stores/index.ts">
+import { defineStore } from '#q-app/wrappers'
+import { createPinia } from 'pinia'
+
+/*
+ * When adding new properties to stores, you should also
+ * extend the `PiniaCustomProperties` interface.
+ * @see https://pinia.vuejs.org/core-concepts/plugins.html#typing-new-store-properties
+ */
+declare module 'pinia' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface PiniaCustomProperties {
+    // add your custom properties here, if any
+  }
+}
+
+/*
+ * If not building with SSR mode, you can
+ * directly export the Store instantiation;
+ *
+ * The function below can be async too; either use
+ * async/await or return a Promise which resolves
+ * with the Store instance.
+ */
+
+export default defineStore((/* { ssrContext } */) => {
+  const pinia = createPinia()
+
+  // You can add Pinia plugins here
+  // pinia.use(SomePiniaPlugin)
+
+  return pinia
+})
+</file>
+
+<file path="src/stores/useSkillStore.ts">
+// stores/useSkillStore.ts
+import { defineStore } from 'pinia';
+import type { SkillNode } from 'src/models/models';
+
+export const useSkillStore = defineStore('skillStore', {
+  state: () => ({
+    skills: skillsNested,
+  }),
+  getters: {
+    flatSkills: (state): string[] => {
+      const names: string[] = [];
+
+      const traverse = (node: SkillNode) => {
+        names.push(node.name);
+        node.children?.forEach(traverse);
+      };
+
+      traverse(state.skills);
+      return names;
+    },
+  },
+});
+
+// Raw nested structure — place it here or in a separate file and import
+const skillsNested: SkillNode = {
+  name: 'Skills',
+  children: [
+    {
+      name: 'IT & Infrastructure',
+      children: [
+        {
+          name: 'Operating Systems',
+          children: [
+            {
+              name: 'Desktop',
+              children: [{ name: 'Windows' }, { name: 'Linux' }, { name: 'MacOS' }],
+            },
+            {
+              name: 'Mobile',
+              children: [{ name: 'Android' }, { name: 'iOS' }],
+            },
+          ],
+        },
+        {
+          name: 'Networking',
+          children: [
+            {
+              name: 'Protocols',
+              children: [
+                { name: 'TCP/IP' },
+                { name: 'HTTP/HTTPS' },
+                { name: 'SMTP' },
+                { name: 'SSL/TLS' },
+              ],
+            },
+            {
+              name: 'Services',
+              children: [
+                { name: 'VPN' },
+                { name: 'DHCP' },
+                { name: 'DNS' },
+                { name: 'LAN/WAN' },
+                { name: 'Firewall' },
+                { name: 'Port Forwarding' },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Administration',
+          children: [
+            {
+              name: 'Systems',
+              children: [
+                { name: 'MS Exchange' },
+                { name: 'Active Directory' },
+                { name: 'Office Suite' },
+                { name: 'IIS' },
+              ],
+            },
+            {
+              name: 'Service Management',
+              children: [
+                { name: 'Service Desk Tools' },
+                { name: 'SLA Management' },
+                { name: 'Workforce Planning' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Cloud & DevOps',
+      children: [
+        {
+          name: 'Cloud Platforms',
+          children: [
+            {
+              name: 'Vendors',
+              children: [
+                { name: 'Azure' },
+                { name: 'AWS' },
+                { name: 'Heroku' },
+                { name: 'DigitalOcean' },
+              ],
+            },
+            {
+              name: 'Device Management',
+              children: [{ name: 'InTune' }],
+            },
+          ],
+        },
+        {
+          name: 'DevOps Tools',
+          children: [
+            {
+              name: 'Automation',
+              children: [{ name: 'SCCM' }, { name: 'Jenkins' }, { name: 'GitLab CI/CD' }],
+            },
+            {
+              name: 'Remote & Collaboration',
+              children: [{ name: 'AnyDesk' }, { name: 'CRM' }],
+            },
+            {
+              name: 'Containers & Streaming',
+              children: [{ name: 'Docker' }, { name: 'Kafka' }, { name: 'Spark' }],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Development',
+      children: [
+        {
+          name: 'Web Development',
+          children: [
+            {
+              name: 'Languages & Frameworks',
+              children: [
+                { name: 'Python' },
+                { name: 'JavaScript' },
+                { name: 'Vue.js' },
+                { name: 'Node.js' },
+                { name: 'Django' },
+              ],
+            },
+            {
+              name: 'Frontend',
+              children: [
+                { name: 'HTML5' },
+                { name: 'CSS3' },
+                { name: 'SCSS' },
+                { name: 'Bootstrap' },
+              ],
+            },
+            {
+              name: 'APIs & Auth',
+              children: [{ name: 'REST APIs' }, { name: 'JWT' }, { name: 'OAuth2' }],
+            },
+            {
+              name: 'Testing',
+              children: [{ name: 'Unit Testing' }],
+            },
+          ],
+        },
+        {
+          name: 'Scripting & Automation',
+          children: [
+            {
+              name: 'Python Ecosystem',
+              children: [
+                { name: 'Python' },
+                { name: 'BeautifulSoup' },
+                { name: 'Playwright' },
+                { name: 'Requests' },
+              ],
+            },
+            {
+              name: 'Productivity',
+              children: [{ name: 'Excel Macros' }, { name: 'Regex' }],
+            },
+          ],
+        },
+        {
+          name: 'Databases',
+          children: [
+            {
+              name: 'DBMS',
+              children: [{ name: 'MongoDB' }, { name: 'SQL' }],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Analytics & BI',
+      children: [
+        {
+          name: 'BI Tools',
+          children: [
+            {
+              name: 'Visualization',
+              children: [{ name: 'Tableau' }, { name: 'Power BI' }, { name: 'Google Analytics' }],
+            },
+            {
+              name: 'Statistical',
+              children: [{ name: 'R' }],
+            },
+          ],
+        },
+        {
+          name: 'Data Science',
+          children: [
+            {
+              name: 'Techniques',
+              children: [
+                { name: 'Machine Learning' },
+                { name: 'Data Visualization' },
+                { name: 'Workflow Automation' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Other Tech',
+      children: [
+        {
+          name: 'Specialized',
+          children: [
+            {
+              name: 'Automation & Bots',
+              children: [{ name: 'Crypto Trading Bots' }, { name: 'Web Scraping' }],
+            },
+            {
+              name: 'Content & SEO',
+              children: [{ name: 'SEO Optimization' }, { name: 'Content Creation' }],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Soft Skills',
+      children: [
+        {
+          name: 'Professional',
+          children: [
+            {
+              name: 'Core',
+              children: [
+                { name: 'Customer Service' },
+                { name: 'Troubleshooting' },
+                { name: 'ITIL' },
+                { name: 'Management' },
+                { name: 'Stakeholder Communication' },
+                { name: 'Training' },
+                { name: 'Documentation' },
+                { name: 'Change Management' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Languages',
+      children: [
+        {
+          name: 'Spoken',
+          children: [
+            {
+              name: 'Fluent',
+              children: [
+                { name: 'English' },
+                { name: 'Italian' },
+                { name: 'Hindi' },
+                { name: 'Telugu' },
+                { name: 'Spanish' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+</file>
+
+<file path="src/env.d.ts">
+declare namespace NodeJS {
+  interface ProcessEnv {
+    NODE_ENV: string;
+    VUE_ROUTER_MODE: 'hash' | 'history' | 'abstract' | undefined;
+    VUE_ROUTER_BASE: string | undefined;
+  }
+}
+</file>
+
+<file path=".editorconfig">
+[*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}]
+charset = utf-8
+indent_size = 2
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+</file>
+
+<file path=".gitignore">
+.DS_Store
+.thumbs.db
+node_modules
+
+# Quasar core related directories
+.quasar
+/dist
+/quasar.config.*.temporary.compiled*
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/node_modules
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# local .env files
+.env.local*
+</file>
+
+<file path=".npmrc">
+# pnpm-related options
+shamefully-hoist=true
+strict-peer-dependencies=false
+# to get the latest compatible packages when creating the project https://github.com/pnpm/pnpm/issues/6463
+resolution-mode=highest
+</file>
+
+<file path=".prettierrc.json">
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "singleQuote": true,
+  "printWidth": 100
+}
+</file>
+
+<file path="index.html">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= productName %></title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="<%= productDescription %>">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>">
+
+    <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+  </head>
+  <body>
+    <!-- quasar:entry-point -->
+  </body>
+</html>
+</file>
+
+<file path="postcss.config.js">
+// https://github.com/michael-ciniawsky/postcss-load-config
+
+import autoprefixer from 'autoprefixer'
+// import rtlcss from 'postcss-rtlcss'
+
+export default {
+  plugins: [
+    // https://github.com/postcss/autoprefixer
+    autoprefixer({
+      overrideBrowserslist: [
+        'last 4 Chrome versions',
+        'last 4 Firefox versions',
+        'last 4 Edge versions',
+        'last 4 Safari versions',
+        'last 4 Android versions',
+        'last 4 ChromeAndroid versions',
+        'last 4 FirefoxAndroid versions',
+        'last 4 iOS versions'
+      ]
+    }),
+
+    // https://github.com/elchininet/postcss-rtlcss
+    // If you want to support RTL css, then
+    // 1. yarn/pnpm/bun/npm install postcss-rtlcss
+    // 2. optionally set quasar.config.js > framework > lang to an RTL language
+    // 3. uncomment the following line (and its import statement above):
+    // rtlcss()
+  ]
+}
+</file>
+
+<file path="quasar.config.ts">
+// Configuration for your app
+// https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
+
+import { defineConfig } from '#q-app/wrappers';
+
+export default defineConfig((/* ctx */) => {
+  return {
+    // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
+    // preFetch: true,
+
+    // app boot file (/src/boot)
+    // --> boot files are part of "main.js"
+    // https://v2.quasar.dev/quasar-cli-vite/boot-files
+    boot: [],
+
+    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
+    css: ['app.scss'],
+
+    // https://github.com/quasarframework/quasar/tree/dev/extras
+    extras: [
+      // 'ionicons-v4',
+      'mdi-v7',
+      'fontawesome-v6',
+      // 'eva-icons',
+      // 'themify',
+      // 'line-awesome',
+      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
+
+      'roboto-font', // optional, you are not bound to it
+      'material-icons', // optional, you are not bound to it
+    ],
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
+    build: {
+      target: {
+        browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
+        node: 'node20',
+      },
+
+      typescript: {
+        strict: true,
+        vueShim: true,
+        // extendTsConfig (tsConfig) {}
+      },
+
+      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      // vueRouterBase,
+      // vueDevtools,
+      // vueOptionsAPI: false,
+
+      // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
+
+      // publicPath: '/',
+      // analyze: true,
+      // env: {},
+      // rawDefine: {}
+      // ignorePublicFolder: true,
+      // minify: false,
+      // polyfillModulePreload: true,
+      // distDir
+
+      // extendViteConf (viteConf) {},
+      // viteVuePluginOptions: {},
+
+      vitePlugins: [
+        [
+          'vite-plugin-checker',
+          {
+            vueTsc: true,
+            eslint: {
+              lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{ts,js,mjs,cjs,vue}"',
+              useFlatConfig: true,
+            },
+          },
+          { server: false },
+        ],
+      ],
+    },
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
+    devServer: {
+      // https: true,
+      open: true, // opens browser window automatically
+    },
+
+    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
+    framework: {
+      config: {},
+
+      // iconSet: 'material-icons', // Quasar icon set
+      // lang: 'en-US', // Quasar language pack
+
+      // For special cases outside of where the auto-import strategy can have an impact
+      // (like functional components as one of the examples),
+      // you can manually specify Quasar components/directives to be available everywhere:
+      //
+      // components: [],
+      // directives: [],
+
+      // Quasar plugins
+      plugins: [],
+    },
+
+    // animations: 'all', // --- includes all animations
+    // https://v2.quasar.dev/options/animations
+    animations: [],
+
+    // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#sourcefiles
+    // sourceFiles: {
+    //   rootComponent: 'src/App.vue',
+    //   router: 'src/router/index',
+    //   store: 'src/store/index',
+    //   pwaRegisterServiceWorker: 'src-pwa/register-service-worker',
+    //   pwaServiceWorker: 'src-pwa/custom-service-worker',
+    //   pwaManifestFile: 'src-pwa/manifest.json',
+    //   electronMain: 'src-electron/electron-main',
+    //   electronPreload: 'src-electron/electron-preload'
+    //   bexManifestFile: 'src-bex/manifest.json
+    // },
+
+    // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
+    ssr: {
+      prodPort: 3000, // The default port that the production server should use
+      // (gets superseded if process.env.PORT is specified at runtime)
+
+      middlewares: [
+        'render', // keep this as last one
+      ],
+
+      // extendPackageJson (json) {},
+      // extendSSRWebserverConf (esbuildConf) {},
+
+      // manualStoreSerialization: true,
+      // manualStoreSsrContextInjection: true,
+      // manualStoreHydration: true,
+      // manualPostHydrationTrigger: true,
+
+      pwa: false,
+      // pwaOfflineHtmlFilename: 'offline.html', // do NOT use index.html as name!
+
+      // pwaExtendGenerateSWOptions (cfg) {},
+      // pwaExtendInjectManifestOptions (cfg) {}
+    },
+
+    // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
+    pwa: {
+      workboxMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
+      // swFilename: 'sw.js',
+      // manifestFilename: 'manifest.json',
+      // extendManifestJson (json) {},
+      // useCredentialsForManifestTag: true,
+      // injectPwaMetaTags: false,
+      // extendPWACustomSWConf (esbuildConf) {},
+      // extendGenerateSWOptions (cfg) {},
+      // extendInjectManifestOptions (cfg) {}
+    },
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-cordova-apps/configuring-cordova
+    cordova: {
+      // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
+    },
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-capacitor-apps/configuring-capacitor
+    capacitor: {
+      hideSplashscreen: true,
+    },
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-electron-apps/configuring-electron
+    electron: {
+      // extendElectronMainConf (esbuildConf) {},
+      // extendElectronPreloadConf (esbuildConf) {},
+
+      // extendPackageJson (json) {},
+
+      // Electron preload scripts (if any) from /src-electron, WITHOUT file extension
+      preloadScripts: ['electron-preload'],
+
+      // specify the debugging port to use for the Electron app when running in development mode
+      inspectPort: 5858,
+
+      bundler: 'packager', // 'packager' or 'builder'
+
+      packager: {
+        // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+        // OS X / Mac App Store
+        // appBundleId: '',
+        // appCategoryType: '',
+        // osxSign: '',
+        // protocol: 'myapp://path',
+        // Windows only
+        // win32metadata: { ... }
+      },
+
+      builder: {
+        // https://www.electron.build/configuration/configuration
+
+        appId: 'quasar-project',
+      },
+    },
+
+    // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex
+    bex: {
+      // extendBexScriptsConf (esbuildConf) {},
+      // extendBexManifestJson (json) {},
+
+      /**
+       * The list of extra scripts (js/ts) not in your bex manifest that you want to
+       * compile and use in your browser extension. Maybe dynamic use them?
+       *
+       * Each entry in the list should be a relative filename to /src-bex/
+       *
+       * @example [ 'my-script.ts', 'sub-folder/my-other-script.js' ]
+       */
+      extraScripts: [],
+    },
+  };
+});
+</file>
+
+<file path="README.md">
+# Quasar App (quasar-project)
+
+A Quasar Project
+
+## Install the dependencies
+```bash
+yarn
+# or
+npm install
+```
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
+
+
+### Lint the files
+```bash
+yarn lint
+# or
+npm run lint
+```
+
+
+### Format the files
+```bash
+yarn format
+# or
+npm run format
+```
+
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+</file>
+
+<file path="src/layouts/MainLayout.vue">
+<script setup lang="ts"></script>
+
+<template>
+  <q-layout view="lHh Lpr lFf" class="main-layout">
+
+    <q-page-container class="page-content">
+      <router-view />
+    </q-page-container>
+  </q-layout>
+</template>
+</file>
+
+<file path="src/pages/InputPage.vue">
+<template>
+  <q-page padding>
+    <!-- You can optionally use <q-header> inside here -->
+    <ContactComponent />
+  </q-page>
+</template>
+
+<script setup lang="ts">
+// No need to import store or call fetch here anymore
+import ContactComponent from 'src/components/input/ContactComponent.vue';
+</script>
+</file>
+
+<file path="src/App.vue">
+<template>
+  <router-view />
+</template>
+
+<script setup lang="ts">
+//
+</script>
+
+<style lang="scss"></style>
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js';
+import globals from 'globals';
+import pluginVue from 'eslint-plugin-vue';
+import pluginQuasar from '@quasar/app-vite/eslint';
+import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
+import prettierSkipFormatting from '@vue/eslint-config-prettier/skip-formatting';
+
+export default defineConfigWithVueTs(
+  {
+    /**
+     * Ignore the following files.
+     * Please note that pluginQuasar.configs.recommended() already ignores
+     * the "node_modules" folder for you (and all other Quasar project
+     * relevant folders and files).
+     *
+     * ESLint requires "ignores" key to be the only one in this object
+     */
+    // ignores: []
+  },
+
+  pluginQuasar.configs.recommended(),
+  js.configs.recommended,
+
+  /**
+   * https://eslint.vuejs.org
+   *
+   * pluginVue.configs.base
+   *   -> Settings and rules to enable correct ESLint parsing.
+   * pluginVue.configs[ 'flat/essential']
+   *   -> base, plus rules to prevent errors or unintended behavior.
+   * pluginVue.configs["flat/strongly-recommended"]
+   *   -> Above, plus rules to considerably improve code readability and/or dev experience.
+   * pluginVue.configs["flat/recommended"]
+   *   -> Above, plus rules to enforce subjective community defaults to ensure consistency.
+   */
+  pluginVue.configs['flat/essential'],
+
+  {
+    files: ['**/*.ts', '**/*.vue'],
+    rules: {
+      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+    },
+  },
+  // https://github.com/vuejs/eslint-config-typescript
+  vueTsConfigs.recommendedTypeChecked,
+
+  {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+
+      globals: {
+        ...globals.browser,
+        ...globals.node, // SSR, Electron, config files
+        process: 'readonly', // process.env.*
+        ga: 'readonly', // Google Analytics
+        cordova: 'readonly',
+        Capacitor: 'readonly',
+        chrome: 'readonly', // BEX related
+        browser: 'readonly', // BEX related
+      },
+    },
+
+    // add your custom rules here
+    rules: {
+      'prefer-promise-reject-errors': 'off',
+
+      // allow debugger during development only
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    },
+  },
+
+  {
+    files: ['src-pwa/custom-service-worker.ts'],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+      },
+    },
+  },
+
+  prettierSkipFormatting,
+);
+</file>
+
+<file path="package.json">
+{
+  "name": "quasar-project",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "Bobby Seelam <geniusfaker@gmail.com>",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "postinstall": "quasar prepare"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.4",
+    "pinia": "^3.0.1",
+    "quasar": "^2.16.0",
+    "vue": "^3.4.18",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@quasar/app-vite": "^2.1.0",
+    "@types/node": "^20.5.9",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "@vue/eslint-config-typescript": "^14.4.0",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "~5.5.3",
+    "vite-plugin-checker": "^0.9.0",
+    "vite-plugin-vue-devtools": "^7.7.6",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^2.0.29"
+  },
+  "engines": {
+    "node": "^28 || ^26 || ^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "extends": "./.quasar/tsconfig.json"
+}
+</file>
+
+<file path="src/router/routes.ts">
+import type { RouteRecordRaw } from 'vue-router';
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    component: () => import('src/layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('src/pages/ResumePage.vue') },
+      { path: '/resume', component: () => import('src/pages/InputPage.vue') },
+    ],
+  },
+  // Always leave this as last one,
+  // but you can also remove it
+  {
+    path: '/:catchAll(.*)*',
+    component: () => import('pages/ErrorNotFound.vue'),
+  },
+];
+
+export default routes;
+</file>
+
+<file path="src/css/quasar.variables.scss">
+// quasar.variables.scss
+
+// THEME COLORS
+$primary: #3f51b5;
+$secondary: #ff9800;
+$accent: #e4dddd;
+$dark: #1d1d1d;
+$positive: #21ba45;
+$negative: #c10015;
+$info: #31ccec;
+$warning: #f2c037;
+
+$background-color-base: #fff;
+$background-color-light: #fafafa;
+$background-color-dark: #121212;
+$background-color-shadow: rgba(245, 238, 238, 0.986);
+$text-color-base: #000;
+
+// BORDER RADIUS
+$border-radius-base: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 0.75rem;
+
+// TYPOGRAPHY
+$body-font-family: 'Inter', sans-serif;
+$font-family-base: 'Inter', sans-serif;
+$font-size-xs: clamp(0.7rem, 0.75vw, 0.9rem);
+$font-size-sm: clamp(0.8rem, 0.9vw, 1rem);
+$font-size-base: clamp(0.9rem, 1vw + 0.1rem, 1.15rem); // between sm and md
+$font-size-md: clamp(1rem, 1.5vw + 0.3rem, 1.4rem);
+$font-size-lg: clamp(1.2rem, 2vw + 0.5rem, 2rem);
+$font-size-xl: clamp(1.5rem, 2.5vw + 0.7rem, 2.5rem);
+// Fixed Sizes for Print
+$print-font-sm: 10pt;
+$print-font-base: 11pt;
+$print-font-md: 13pt;
+$print-font-lg: 16pt;
+
+// SPACING TOKENS
+$space: (
+  'xxs': 0.125rem,
+  'xs': 0.25rem,
+  'sm': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'xl': 1.5rem,
+);
+
+$gap-tiny: map-get($space, 'xxs');
+$gap-small: map-get($space, 'xs');
+$gap-base: map-get($space, 'sm');
+$gap-loose: map-get($space, 'md');
+
+$page-max-width: 1200px;
+$page-padding: 1rem;
+
+// Print
+$print-padding: 0.25in;
+</file>
+
+<file path="src/models/models.ts">
+// src/models/models.ts
+
+export interface RoleBucket {
+  key: string;
+  title: string;
+  summary: string;
+}
+
+export interface Contact {
+  icon: string;
+  text: string;
+  url: string | null;
+}
+
+export interface WorkRole {
+  title: string;
+  duration: string;
+  items: string[];
+}
+
+export interface WorkExperience {
+  company: string;
+  url: string;
+  location: string;
+  period: string;
+  roles: WorkRole[];
+}
+
+export interface Project {
+  name: string;
+  role?: string;
+  company?: string;
+  companyUrl?: string;
+  period: string;
+  location?: string;
+  items: string[];
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  institutionUrl?: string;
+  location: string;
+  period: string;
+  highlights: string[];
+}
+
+export interface Skills {
+  operatingSystems: string[];
+  networking: string[];
+  devOpsTools: string[];
+  cloudPlatforms: string[];
+  databases: string[];
+  analyticsAndBI: string[];
+  webDevelopment: string[];
+  scriptingAndAutomation: string[];
+  administration: string[];
+  otherTech: string[];
+  softSkills: string[];
+  languages: string[];
+}
+
+export interface Award {
+  title: string;
+  issuer?: string;
+  issuerUrl?: string;
+  period?: string;
+  location?: string;
+  items?: string[];
+}
+
+export interface Interest {
+  title: string;
+  goal: string;
+  notes?: string[];
+}
+export interface SkillChild {
+  name: string;
+  value: number;
+}
+
+export interface SkillGroup {
+  name: string;
+  children: SkillChild[];
+}
+// models.ts
+export type SkillNode = {
+  name: string;
+  value?: number;
+  children?: SkillNode[];
+};
+
+export interface ResumeState {
+  name: string;
+  roleBuckets: RoleBucket[];
+  contacts: Contact[];
+  work: WorkExperience[];
+  projects: Project[];
+  education: Education[];
+  skills: Skills;
+  awards: Award[];
+  interests: Interest[];
+}
+</file>
+
+<file path="src/stores/useResumeStore.ts">
+import { defineStore } from 'pinia';
+import type { ResumeState } from 'src/models/models';
+
+export const useResumeStore = defineStore('resume', {
+  state: (): ResumeState => ({
+    name: 'Bobby Seelam',
+    roleBuckets: [
+      {
+        key: 'itSupport',
+        title: 'IT Support Engineer | Desktop Support | Field Services',
+        summary:
+          'IT support professional with Tier 1–3 experience in troubleshooting hardware, software, and network issues. Skilled in Windows, Linux, SCCM, Active Directory, MDM, and service‑desk ticketing tools. Proven record of reducing AHT, boosting CSAT, and automating repetitive tasks to streamline support operations. Adept at delivering on‑site and remote assistance, conducting system upgrades, and developing user training materials to enhance team productivity and minimize repeat incidents over time.',
+      },
+      {
+        key: 'dataBI',
+        title: 'Data Engineer | BI Developer | Analytics Specialist',
+        summary:
+          'Data and BI professional with experience designing ETL pipelines, real‑time dashboards, and predictive models. Skilled in transforming raw data into actionable insights using tools like SQL, Spark, Kafka, Power BI, and Tableau. Proven success in optimizing performance through anomaly detection, sales forecasting, and supply chain analytics. Experienced in collaborating with cross‑functional teams to integrate data solutions, document data schemas, and maintain data governance standards for secure, compliant reporting environments.',
+      },
+      {
+        key: 'webDev',
+        title: 'Full‑Stack Developer | Front‑End Developer | Web Developer',
+        summary:
+          'Web developer versed in Vue.js, Django, Node.js, and RESTful API design. Experienced building responsive, performant UIs and robust back‑ends, with CI/CD pipelines on AWS, Heroku, and DigitalOcean. Passionate about UX optimization, code‑splitting, lazy loading, and SEO best practices. Proficient at writing unit and integration tests, optimizing database queries, and implementing secure authentication workflows to deliver scalable and maintainable web applications.',
+      },
+      {
+        key: 'techLead',
+        title: 'Technical Support Manager | IT Project Coordinator | Solutions Engineer',
+        summary:
+          'Technical leader with experience managing 100+ support engineers, real‑time workforce planning, and cross‑functional escalation workflows. Skilled in stakeholder communication, training program development, and aligning IT operations with business goals for maximum efficiency. Successfully led change management initiatives, implemented performance dashboards, and negotiated SLAs with vendors to ensure continuous service improvement.',
+      },
+      {
+        key: 'hybrid',
+        title: 'Technical Consultant | IT Business Analyst | Product Support Specialist',
+        summary:
+          'Versatile technical consultant bridging IT and business. Expertise in requirements gathering, documentation, and translating user needs into technical solutions. Strong background in BI tools, service‑desk operations, and end‑user training. Experienced in facilitating stakeholder workshops, creating process flow diagrams, and delivering end‑to‑end project support for software implementations and system migrations.',
+      },
+      {
+        key: 'freelance',
+        title: 'Freelance Web Developer | Digital Media Manager | Automation Specialist',
+        summary:
+          'Entrepreneurial freelancer with a track record of building client websites, automating workflows with Python, and managing digital content. Adept at full‑lifecycle project delivery, from wireframing to deployment and maintenance. Skilled in SEO optimization, social media strategy, and implementing analytics tracking to measure engagement and ROI for diverse clientele.',
+      },
+    ],
+    contacts: [
+      { icon: 'email', text: 'bobby.seelam93@gmail.com', url: 'mailto:bobby.seelam93@gmail.com' },
+      { icon: 'phone', text: '(+39) 3758327534', url: null },
+      { icon: 'place', text: 'Milano, Italy', url: null },
+      {
+        icon: 'fab fa-linkedin',
+        text: 'linkedin.com/in/geniusfaker',
+        url: 'https://linkedin.com/in/geniusfaker',
+      },
+      {
+        icon: 'fab fa-github',
+        text: 'github.com/geniusfaker',
+        url: 'https://github.com/geniusfaker',
+      },
+      { icon: 'fab fa-github', text: 'github.com/bob-bee', url: 'https://github.com/bob-bee' },
+    ],
+    work: [
+      {
+        company: 'Symantec Corporation',
+        url: 'https://us.norton.com/',
+        location: 'Chennai, India',
+        period: 'Jul 2014 – Aug 2019',
+        roles: [
+          {
+            title: 'Technical Support Manager',
+            duration: 'Aug 2018 – Aug 2019',
+            items: [
+              'Directed a cross-shift support organization of 134 agents, overseeing workforce planning, escalation management, and SLA delivery. Streamlined reporting through dashboards and analytics tools, enabling real-time decision-making and improving average resolution times by 18%.',
+              'Revamped onboarding by implementing a tiered training structure, accelerating time-to-proficiency and raising first-call resolution (FCR) by 21%. Partnered with QA to ensure knowledge retention through audits and periodic refreshers.',
+              'Spearheaded upsell integration into support flows, equipping agents with scripts and decision trees to recommend Norton VPN, password managers, and parental controls. Drove a 14% increase in qualified leads from Tier 1 support.',
+              'Chaired Voice of Customer (VoC) sessions, distilling feedback from live calls, NPS surveys, and chat transcripts into actionable insights for product teams. Influenced three product updates by identifying top usability pain points.',
+              'Managed incident response for critical service outages, coordinating with L3 engineers and comms teams to triage issues and update customers proactively. Maintained SLA compliance during high-impact periods.',
+            ],
+          },
+          {
+            title: 'Subject Matter Expert (SME)',
+            duration: 'Aug 2016 – Jul 2018',
+            items: [
+              'Led the SME desk for complex escalations, resolving enterprise-grade incidents involving zero-day malware, rootkit infections, and advanced system corruption. Reduced engineering escalations by 27% via hands-on issue triage.',
+              'Mentored a cohort of 25+ support engineers, delivering training on proprietary diagnostic tools, malware removal workflows, and secure remote access protocols. Developed SOPs and certification paths to boost agent confidence and consistency.',
+              'Standardized diagnostic workflows across shifts, replacing fragmented approaches with structured playbooks. Achieved a 22% improvement in average resolution speed and minimized rework by enforcing guided troubleshooting.',
+              'Automated frontline scripting using Excel macros and call control templates, shortening average handle time (AHT) by 7 seconds per call and increasing process adherence.',
+              'Created and published over 30 internal KB articles addressing niche issues and edge cases. Recognized with the “Best SME” award in 2017 for technical depth and team enablement.',
+            ],
+          },
+          {
+            title: 'Technical Support Engineer',
+            duration: 'Jul 2014 – Jul 2016',
+            items: [
+              'Delivered Tier 1 and Tier 2 support for antivirus, performance, and network issues across desktops, tablets, and mobile platforms. Assisted customers globally via phone, email, and remote sessions, often handling high-stress escalations.',
+              'Diagnosed and resolved malware infections using tools like SymDiag, Norton Power Eraser, and LiveUpdate. Educated customers on safe browsing practices and configuration hardening for long-term protection.',
+              'Logged and managed support cases through Salesforce CRM 5.0, ensuring accurate documentation and lifecycle tracking. Maintained an average of 94% CSAT while balancing AHT and first-contact resolution (FCR) metrics.',
+              'Worked closely with L2 and engineering teams to replicate bugs, isolate system crashes, and document root causes for recurring technical faults. Contributed findings to product QA loops and KB updates.',
+              'Participated in queue monitoring and shift transitions, collaborating with peers to reduce ticket backlog during peak periods. Volunteered for weekend rotations to maintain 24x7 SLA compliance.',
+            ],
+          },
+        ],
+      },
+    ],
+
+    projects: [
+      {
+        name: 'IT Asset Refresh Project',
+        role: 'Field Services Engineer',
+        company: 'Vorwerk Group',
+        companyUrl: 'https://corporate.vorwerk.com/en/home/',
+        period: 'Apr 2025 – Jun 2025',
+        location: 'Milan, Italy',
+        items: [
+          'Led multinational IT asset refresh by replacing laptops, desktops, routers, monitors, and peripherals for onsite and remote teams, ensuring minimal disruption and timely deployment.',
+          'Autonomously coordinated logistics and troubleshooting with cross-country teams in Italy and India, managing 90% of decisions independently to streamline processes.',
+          'Utilized SCCM and MDM platforms to provision, monitor, and track device compliance across departments, enhancing visibility into rollout progress and security posture.',
+          'Resolved network port configurations and hardware compatibility issues on routers and servers, executing critical device replacements to maintain system stability.',
+          'Authored multilingual self-help documentation (English, Italian, Hindi, Telugu) with detailed visuals, empowering users to resolve common issues and reducing technician workload.',
+        ],
+      },
+
+      {
+        name: 'Custom Web Crawling Automation Suite',
+        role: 'Freelance Developer',
+        companyUrl: 'https://github.com/B-Spidey',
+        company: 'B-Spidey',
+        period: 'Jan 2024 – Present',
+        items: [
+          'Built modular web crawlers in Python using libraries like BeautifulSoup, Requests, and Playwright to extract data from dynamic and static web sources.',
+          'Developed job scraping tools targeting platforms like LinkedIn, filtering out sponsored content to curate clean, ad-free job listings for analysis.',
+          'Crawled manga aggregation sites to extract chapters and metadata; converted outputs to structured formats (JSON, PDF, EPUB) for archival and offline use.',
+          'Designed scraping workflows to handle login, infinite scroll, rate limits, and CAPTCHA challenges using headless browsers and session management.',
+          'Stored and indexed crawled data into MongoDB for fast querying, later used in visual dashboards and notification triggers.',
+        ],
+      },
+      {
+        name: 'B-Coin – Automated Crypto Trading Bot',
+        role: 'Freelance Developer',
+        companyUrl: 'https://github.com/B-Coin',
+        company: 'B-Coin',
+        period: 'Aug 2024 – Present',
+        items: [
+          'Built a Python-based crypto trading bot to automate buying/selling logic using technical indicators like RSI, EMA, and MACD.',
+          'Integrated with Binance API for real-time market data, order placement, and account balance management with secure key handling.',
+          'Implemented strategy logic for breakout detection, volatility filtering, and stop-loss triggers to limit downside risks.',
+          'Logged trades with timestamps, position sizes, and performance metrics for post-trade analysis and ongoing strategy refinement.',
+          'Tested bot logic using historical price data and dry-run environments before executing with live funds on a rolling schedule.',
+        ],
+      },
+      {
+        name: 'Build and maintain Client Websites',
+        role: 'Freelance Web Developer',
+        companyUrl: 'https://www.github.com/geniusfaker',
+        company: 'B-Web',
+        period: 'Jan 2022 – Present',
+        items: [
+          'Sole developer and maintainer for multiple client websites across hospitality, entertainment, and satire sectors.',
+          'Built responsive, SEO-optimized frontends using Vue.js, HTML5, and SCSS, integrating CMS platforms and Google Analytics.',
+          'Handled hosting, SSL setup, and domain config across environments to ensure uptime and performance.',
+          'Created and deployed custom features like booking widgets, dynamic menus, and structured data for rich snippets.',
+          'Websites built and maintained:',
+          'www.officinadelriso.com',
+          'www.waldenmilano.it',
+          'www.geniusfaker.com',
+        ],
+      },
+    ],
+
+    education: [
+      {
+        degree: 'Master of Science – Business Intelligence',
+        institution: 'Università degli Studi di Genova',
+        institutionUrl: 'https://www.unige.it',
+        location: 'Genova, Italy',
+        period: 'Sep 2022 – Mar 2025',
+        highlights: [
+          'Completed a rigorous curriculum covering ETL processes, OLAP systems, SQL, Spark, R, Python, MongoDB, GDPR compliance, and advanced data visualization to support data-driven decision-making in enterprise environments.',
+          'Executed capstone project on predictive sales forecasting using ARIMA and Random Forest models, achieving X% accuracy improvement over baseline and demonstrating advanced time-series analysis skills.',
+          'Developed supply chain analytics dashboards during internship, which identified and reduced latency bottlenecks by approximately 30%, improving on-time delivery metrics and stakeholder satisfaction.',
+          'Designed a real-time anomaly detection pipeline using Kafka and Spark ML—implemented a streaming-based alerts system that flagged data inconsistencies within seconds, enhancing operational responsiveness.',
+          'Delivered a technical talk titled "Ethical AI" at the 2024 International Symposium and co-led a “Python for BI” workshop at UniGe, illustrating strong communication and thought leadership in data ethics and education.',
+        ],
+      },
+      {
+        degree: 'Bachelor of Technology – Mechanical Engineering',
+        institution: 'NIT Raipur',
+        institutionUrl: 'https://www.nitrr.ac.in',
+        location: 'Raipur, India',
+        period: 'Jul 2010 – Jul 2014',
+        highlights: [
+          'Studied Solid Mechanics, Thermodynamics, CFD, CAD/CAM, CNC machining, MATLAB, and DFM across core and elective modules.',
+          'Graduated in the top 20% of the class; received Merit Scholarship for academic performance throughout all four years.',
+          'Led a team project to build a spring-powered boat, achieving a 3× performance increase over baseline in the college design challenge.',
+          'Conducted peer training sessions on CNC safety and G-code programming during departmental workshops.',
+          'Headed sustainability efforts as Go-Green Club lead, including design and campus-wide rollout of an eco-bin initiative for waste segregation.',
+        ],
+      },
+      {
+        degree: 'Italian Language Certification',
+        institution: 'University Degli studo di Genova',
+        institutionUrl: 'https://www.unige.it',
+        location: 'Genova, Italy',
+        period: '2023',
+        highlights: ['Achieved B2 level proficiency in Italian language.'],
+      },
+      {
+        degree: 'IELTS – B2',
+        institution: 'British Council',
+        institutionUrl: 'https://www.britishcouncil.in',
+        location: 'Vijayawada, India',
+        period: '2016',
+        highlights: ['Scored B2 level proficiency in English based on IELTS standards.'],
+      },
+      {
+        degree: 'CNC Machining & AutoCAD',
+        institution: 'Central Institute of Tool Design',
+        institutionUrl: 'https://www.citdindia.org',
+        location: 'Hyderabad, India',
+        period: '2012',
+        highlights: ['Completed intensive hands-on training in CNC programming and drafting.'],
+      },
+    ],
+
+    skills: {
+      operatingSystems: ['Windows', 'Linux', 'MacOS', 'Android', 'iOS'],
+      networking: [
+        'VPN',
+        'DHCP',
+        'DNS',
+        'LAN/WAN',
+        'TCP/IP',
+        'HTTP/HTTPS',
+        'SMTP',
+        'SSL/TLS',
+        'Firewall',
+        'Port Forwarding',
+      ],
+      cloudPlatforms: ['Azure', 'AWS', 'Heroku', 'DigitalOcean', 'InTune'],
+      devOpsTools: [
+        'SCCM',
+        'AnyDesk',
+        'CRM',
+        'Jenkins',
+        'GitLab CI/CD',
+        'Docker',
+        'Kafka',
+        'Spark',
+      ],
+      databases: ['MongoDB', 'SQL'],
+      analyticsAndBI: ['Tableau', 'Power BI', 'R', 'Google Analytics'],
+      webDevelopment: [
+        'Python',
+        'JavaScript',
+        'Vue.js',
+        'Node.js',
+        'Django',
+        'HTML5',
+        'CSS3',
+        'SCSS',
+        'Bootstrap',
+        'REST APIs',
+        'JWT',
+        'OAuth2',
+        'Unit Testing',
+      ],
+      scriptingAndAutomation: [
+        'Python',
+        'Excel Macros',
+        'BeautifulSoup',
+        'Playwright',
+        'Requests',
+        'Regex',
+      ],
+      administration: [
+        'MS Exchange',
+        'Active Directory',
+        'Office Suite',
+        'IIS',
+        'Service Desk Tools',
+        'SLA Management',
+        'Workforce Planning',
+      ],
+      softSkills: [
+        'Customer Service',
+        'Troubleshooting',
+        'ITIL',
+        'Management',
+        'Stakeholder Communication',
+        'Training',
+        'Documentation',
+        'Change Management',
+      ],
+      otherTech: [
+        'SEO Optimization',
+        'Web Scraping',
+        'Crypto Trading Bots',
+        'Machine Learning',
+        'Data Visualization',
+        'Workflow Automation',
+        'Content Creation',
+      ],
+      languages: ['English', 'Italian', 'Hindi', 'Telugu', 'Spanish'],
+    },
+
+    awards: [
+      {
+        title: 'Gold Medal – Inter NIT Boxing',
+        issuer: 'National Institute of Technology',
+        issuerUrl: 'https://www.nitrr.ac.in',
+        period: '2012',
+        location: 'India',
+        items: ['Won gold in the national inter-NIT boxing tournament (lightweight division).'],
+      },
+      {
+        title: 'Bronze Medal – Inter NIT Boxing',
+        issuer: 'National Institute of Technology',
+        issuerUrl: 'https://www.nitrr.ac.in',
+
+        period: '2013',
+        location: 'India',
+        items: ['Secured bronze the following year in the same national tournament.'],
+      },
+      {
+        title: 'Symantec Employee of the Year',
+        issuer: 'Symantec Corporation',
+        issuerUrl: 'https://www.us.norton.com',
+        period: '2014–2015',
+        location: 'Chennai, India',
+        items: ['Recognized for outstanding team leadership and technical innovation.'],
+      },
+    ],
+
+    interests: [
+      {
+        title: 'AI',
+        goal: 'Build an AI comedy-writing assistant to co-write stand-up material.',
+        notes: ['Experiment with GPT agents', 'Deploy as mobile app'],
+      },
+      {
+        title: 'Quantum Physics',
+        goal: 'Write a layman-accessible explainer series on quantum computing.',
+        notes: ['Collaborate with researchers', 'Publish on Medium/Substack'],
+      },
+      {
+        title: 'Calisthenics',
+        goal: 'Hold a full human flag for 30 seconds.',
+        notes: ['Train planche and front lever', 'Document progress on IG'],
+      },
+      {
+        title: 'MMA',
+        goal: 'Compete in an amateur MMA bout.',
+        notes: ['Focus: Muay Thai + BJJ', 'Track training and sparring stats'],
+      },
+      {
+        title: 'Traveling',
+        goal: 'Bike across at least 10 European countries and vlog the journey.',
+        notes: ['Create a documentary', 'Secure gear sponsor'],
+      },
+      {
+        title: 'Music',
+        goal: 'Produce and release a full rap EP with Dr. Dre (or die trying).',
+        notes: ['Learn mixing/mastering', 'Perform at a local club or fest'],
+      },
+      {
+        title: 'Vlog',
+        goal: 'Hit 100K YouTube subs documenting tech+travel lifestyle.',
+        notes: ['Blend tutorials + storytelling', 'Weekly uploads'],
+      },
+      {
+        title: 'Content Creation',
+        goal: 'Launch a podcast blending comedy, AI, and weird science.',
+        notes: ['Interview niche experts', 'Distribute across platforms'],
+      },
+    ],
+  }),
+
+  actions: {
+    fetchprojects() {
+      // If this later becomes async, we can return a promise.
+      console.log('Fetching projects...');
+      // For now, it's static — you could expand this later to fetch from API
+    },
+  },
+});
+</file>
+
+<file path="src/css/app.scss">
+@use './quasar.variables' as *;
+
+// Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 10px;
+  overflow-x: hidden;
+  font-family: $font-family-base;
+  background-color: $background-color-base;
+  color: $text-color-base;
+  line-height: 1.3;
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+// Layout & Utility
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-2 {
+  inline-size: 16.6667%;
+}
+
+.col-10 {
+  inline-size: 83.3333%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.bordered {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.separator {
+  border: none;
+  border-block-start: 1px solid #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+// Section Styles
+.section {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color-base;
+  border-radius: $border-radius-base;
+  box-shadow: 0 1px 3px rgba(248, 248, 248, 0.1);
+}
+
+.section-title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  margin-block: $gap-small;
+  padding: $gap-tiny $gap-small;
+  text-align: center;
+}
+
+// Skill Section
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-weight: 600;
+  vertical-align: center;
+  color: $primary;
+  text-transform: capitalize;
+  padding: auto;
+  margin: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  background-color: $background-color-base;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: $gap-small;
+  padding: $gap-small;
+  border-radius: 0.25rem;
+  vertical-align: middle;
+}
+
+// Card Styles
+.card-style {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  color: $text-color-base;
+  transition: none;
+}
+
+.card-title {
+  vertical-align: middle;
+  align-items: center;
+  display: flex-grid;
+  flex-direction: row;
+  margin-block-end: $gap-small;
+  padding-block-end: $gap-tiny;
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+.card-title-noun {
+  font-size: $font-size-lg;
+  font-weight: 400;
+  color: $secondary;
+  display: flex;
+  align-items: start;
+  vertical-align: middle;
+}
+
+.card-title-verb {
+  font-size: $font-size-md;
+  font-weight: 500;
+  margin-block-end: 0.25rem;
+  color: $primary;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: start;
+}
+
+.card-description {
+  font-size: $font-size-base;
+  color: #555;
+  margin-block-end: $gap-tiny;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.card-meta {
+  font-size: $font-size-sm;
+  color: #777;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.card-body {
+  display: flex;
+  font-size: $font-size-sm;
+  flex-direction: column;
+  gap: $gap-small;
+  padding: $gap-small;
+  padding-inline-start: 20px;
+  background-color: $background-color-light;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+}
+
+// Text
+.text-primary {
+  color: var(--q-primary);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.text-right {
+  margin-inline-start: auto;
+  text-align: end;
+  display: grid;
+  align-items: end;
+  vertical-align: middle;
+  justify-content: end;
+  justify-items: middle;
+  align-content: center;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.caption {
+  font-size: $font-size-xs;
+  color: #666;
+}
+
+// Contact Section
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-sm;
+  margin: $gap-base;
+
+  color: #374151;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: $gap-small;
+  padding: $gap-tiny;
+  border-radius: 0.25rem;
+}
+
+.contact-icon {
+  color: $primary;
+  font-size: $font-size-md;
+  flex-shrink: 0;
+}
+
+// Resume Header
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume-title {
+  font-size: $font-size-xl;
+  font-weight: bold;
+}
+
+.resume-link {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.resume-text-muted {
+  color: #888;
+}
+
+// Profile
+.profile-photo {
+  inline-size: 100px;
+  block-size: 100px;
+  border-radius: 70%;
+  object-fit: cover;
+}
+
+// Interest Cards
+.interest-card {
+  border: 1px solid #ccc;
+  border-radius: $border-radius-base;
+  background-color: $background-color-base;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+// Award section (assuming these are custom cards)
+.award-main,
+.award-item,
+.award-issuer {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-small;
+}
+
+// Layout
+.left-section {
+  flex: 1;
+}
+
+.right-section {
+  flex: 1;
+}
+
+// Quasar Gaps (these may be utilities or overridden)
+.q-pa-md {
+  padding: $gap-base;
+}
+
+.q-pa-sm {
+  padding: $gap-small;
+}
+
+.q-mb-md {
+  margin-block-end: $gap-base;
+}
+
+.q-mb-xs {
+  margin-block-end: 0.25rem;
+}
+
+.q-mr-xs {
+  margin-inline-end: 0.25rem;
+}
+
+.q-col-gutter-sm {
+  column-gap: $gap-small;
+}
+
+.q-row-gutter-sm {
+  row-gap: $gap-small;
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* Chrome, Safari */
+    print-color-adjust: exact; /* Firefox */
+    background: white;
+    color: black;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .card-section,
+  .card-body {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .page-break {
+    break-before: page; /* Modern spec */
+  }
+  /* Force layout elements to stay visible */
+  header,
+  footer,
+  nav,
+  aside {
+    display: block !important;
+  }
+}
+</file>
+
+</files>

@@ -60,36 +60,6 @@ export const useResumeStore = defineStore('resume', {
     ],
     work: [
       {
-        company: 'Colourmoon Technologies',
-        url: 'https://thecolourmoon.com/',
-        location: 'Vijayawada, India',
-        period: 'Oct 2019 – Jul 2022',
-        roles: [
-          {
-            title: 'Full Stack Developer',
-            duration: 'Jan 2022 – Jul 2022',
-            items: [
-              'Led end-to-end development of scalable web apps using Vue.js (frontend), Django (backend), and Node.js (server-side logic), translating complex business requirements into secure, production-grade applications that supported real-time user interactions and administrative control panels.',
-              'Architected and integrated RESTful APIs with third-party services including payment gateways (e.g., Razorpay, Stripe) and SMTP email systems. Enabled seamless transactions and automated email workflows, significantly improving user onboarding and operational throughput.',
-              'Implemented authentication using JWT and OAuth2, enforced HTTPS, and managed role-based access controls (RBAC). These security layers safeguarded user data and access hierarchies, meeting compliance standards and reducing unauthorized access incidents.',
-              'Built CI/CD pipelines using GitLab CI/CD and Jenkins, automating deployment, testing, and rollback procedures. Reduced manual intervention by 80%, shortened release cycles, and ensured higher build stability across staging and production environments.',
-              'Deployed applications across AWS EC2, Heroku, and DigitalOcean, managing environment-specific configurations and backups. Leveraged cloud-native tools for scaling, resulting in resilient infrastructure with minimal downtime and simplified maintenance.',
-            ],
-          },
-          {
-            title: 'Front-End Developer',
-            duration: 'Oct 2019 – Dec 2021',
-            items: [
-              'Engineered responsive, cross-device UIs using Vue.js, HTML5, CSS3, and Bootstrap, addressing client demands for seamless mobile-first designs. Ensured consistent UX across platforms through component-driven development and adaptive layouts, leading to increased session durations and lower bounce rates across varied industry projects.',
-              'Developed custom websites and landing pages for a multi-sector client base by translating requirements into engaging UI/UX using wireframes and reusable components. Collaborated with stakeholders during iterative design cycles, significantly improving time-to-launch and client satisfaction metrics.',
-              'Optimized frontend performance via lazy loading, image compression, and CSS/JS minification. Reduced page load times by over 40% on average, directly improving SEO scores and elevating Core Web Vitals, contributing to higher organic traffic and better user retention.',
-              'Embedded technical SEO enhancements including meta tags, structured data (JSON-LD), and semantic markup, enabling better indexing and rich results on search engines. Collaborated with digital marketing teams to ensure alignment with campaign goals and boost discoverability.',
-              'Conducted rigorous cross-browser testing and visual regression audits across Chrome, Firefox, Safari, and Edge. Identified and resolved rendering inconsistencies using debugging tools, delivering pixel-perfect, consistent UIs and reducing browser-related support tickets.',
-            ],
-          },
-        ],
-      },
-      {
         company: 'Symantec Corporation',
         url: 'https://us.norton.com/',
         location: 'Chennai, India',
@@ -405,10 +375,16 @@ export const useResumeStore = defineStore('resume', {
   }),
 
   actions: {
-    fetchprojects() {
-      // If this later becomes async, we can return a promise.
-      console.log('Fetching projects...');
-      // For now, it's static — you could expand this later to fetch from API
-    },
-  },
+    /* existing actions */,
+    addWorkExperience(exp)      { this.work.push(exp); },
+    removeWorkExperience(idx)   { this.work.splice(idx,1); },
+    addEducation(edu)           { this.education.push(edu); },
+    removeEducation(idx)        { this.education.splice(idx,1); },
+    updateSkills(skills)        { this.skills = { ...this.skills, ...skills }; },
+    saveToLocalStorage()        { localStorage.setItem('resume-data', JSON.stringify(this.$state)); },
+    loadFromLocalStorage() {
+      const data = localStorage.getItem('resume-data');
+      if (data) this.$patch(JSON.parse(data));
+    }
+  }
 });
