@@ -1,4 +1,3 @@
-```vue
 <template>
   <q-page class="q-pa-md">
     <!-- Personal Information -->
@@ -60,123 +59,139 @@
       />
     </div>
 
-    <q-btn color="primary" label="Save All" class="full-width" @click="saveAll" />
+    <!-- Notification Banner -->
+    <q-banner v-if="message" class="q-mt-md" dense>{{ message }}</q-banner>
+
+    <!-- Clear Data Button -->
+    <div class="q-mt-lg">
+      <q-btn color="negative" label="Clear All Data" @click="confirmClear" />
+    </div>
+
+    <!-- Save All Button -->
+    <q-btn color="primary" label="Save All" class="full-width q-mt-md" @click="saveAll" />
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, onMounted, computed } from 'vue';
+<script lang="ts" setup>
+import { ref, onMounted, computed } from 'vue';
+import { useQuasar } from 'quasar';
 import { useResumeStore } from 'src/stores/useResumeStore';
 import SectionEditor from 'src/components/input/SectionEditor.vue';
 import ContactComponent from 'src/components/input/ContactComponent.vue';
 
-export default defineComponent({
-  components: { SectionEditor, ContactComponent },
-  setup() {
-    const store = useResumeStore();
-    const skillsInput = ref('');
+const $q = useQuasar();
+const store = useResumeStore();
+const skillsInput = ref('');
+const message = ref('');
 
-    // Computed with getter/setter for first role bucket
-    const primaryTitle = computed({
-      get: () => store.roleBuckets[0]?.title ?? '',
-      set: (val: string) => {
-        if (store.roleBuckets.length === 0) {
-          store.roleBuckets.push({ key: '', title: val, summary: '' });
-        } else {
-          if (store.roleBuckets[0]) {
-            store.roleBuckets[0].title = val;
-          }
-        }
-      },
-    });
-    const primarySummary = computed({
-      get: () => store.roleBuckets[0]?.summary ?? '',
-      set: (val: string) => {
-        if (store.roleBuckets.length === 0) {
-          store.roleBuckets.push({ key: '', title: '', summary: val });
-        } else {
-          if (store.roleBuckets[0]) {
-            store.roleBuckets[0].summary = val;
-          }
-        }
-      },
-    });
-
-    onMounted(() => {
-      store.loadFromLocalStorage();
-      skillsInput.value = store.skills.webDevelopment.join(', ');
-    });
-
-    function addWork(): void {
-      store.addWorkExperience({ company: '', url: '', location: '', period: '', roles: [] });
+// Computed with getter/setter for first role bucket
+const primaryTitle = computed({
+  get: () => store.roleBuckets[0]?.title ?? '',
+  set: (val: string) => {
+    if (store.roleBuckets.length === 0) {
+      store.roleBuckets.push({ key: '', title: val, summary: '' });
+    } else {
+      if (store.roleBuckets[0]) {
+        store.roleBuckets[0].title = val;
+      }
     }
-    function removeWork(idx: number): void {
-      store.removeWorkExperience(idx);
-    }
-
-    function addEducation(): void {
-      store.addEducation({
-        degree: '',
-        institution: '',
-        institutionUrl: '',
-        location: '',
-        period: '',
-        highlights: [],
-      });
-    }
-    function removeEducation(idx: number): void {
-      store.removeEducation(idx);
-    }
-
-    function saveSkills(): void {
-      const arr = skillsInput.value
-        .split(',')
-        .map((s) => s.trim())
-        .filter(Boolean);
-      store.updateSkills({
-        webDevelopment: arr,
-        operatingSystems: [],
-        networking: [],
-        devOpsTools: [],
-        cloudPlatforms: [],
-        databases: [],
-        analyticsAndBI: [],
-        scriptingAndAutomation: [],
-        administration: [],
-        otherTech: [],
-        softSkills: [],
-        languages: [],
-      });
-    }
-
-    function updateContacts(newContacts: typeof store.contacts): void {
-      store.contacts = newContacts;
-    }
-
-    function saveAll(): void {
-      store.saveToLocalStorage();
-    }
-
-    return {
-      store,
-      skillsInput,
-      primaryTitle,
-      primarySummary,
-      addWork,
-      removeWork,
-      addEducation,
-      removeEducation,
-      saveSkills,
-      updateContacts,
-      saveAll,
-    };
   },
 });
+
+const primarySummary = computed({
+  get: () => store.roleBuckets[0]?.summary ?? '',
+  set: (val: string) => {
+    if (store.roleBuckets.length === 0) {
+      store.roleBuckets.push({ key: '', title: '', summary: val });
+    } else {
+      if (store.roleBuckets[0]) {
+        store.roleBuckets[0].summary = val;
+      }
+    }
+  },
+});
+
+onMounted(() => {
+  store.loadFromLocalStorage();
+  skillsInput.value = store.skills.webDevelopment.join(', ');
+});
+
+function addWork(): void {
+  store.addWorkExperience({ company: '', url: '', location: '', period: '', roles: [] });
+}
+
+function removeWork(idx: number): void {
+  store.removeWorkExperience(idx);
+}
+
+function addEducation(): void {
+  store.addEducation({
+    degree: '',
+    institution: '',
+    institutionUrl: '',
+    location: '',
+    period: '',
+    highlights: [],
+  });
+}
+
+function removeEducation(idx: number): void {
+  store.removeEducation(idx);
+}
+
+function saveSkills(): void {
+  const arr = skillsInput.value
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  store.updateSkills({
+    webDevelopment: arr,
+    operatingSystems: [],
+    networking: [],
+    devOpsTools: [],
+    cloudPlatforms: [],
+    databases: [],
+    analyticsAndBI: [],
+    scriptingAndAutomation: [],
+    administration: [],
+    otherTech: [],
+    softSkills: [],
+    languages: [],
+  });
+}
+
+function updateContacts(newContacts: typeof store.contacts): void {
+  store.contacts = newContacts;
+}
+
+function saveAll(): void {
+  store.saveToLocalStorage();
+  message.value = 'All data saved successfully.';
+}
+
+// Confirm clearing user data
+function confirmClear() {
+  $q.dialog({
+    title: 'Confirm Clear',
+    message: 'Are you sure you want to clear all your resume data? This action cannot be undone.',
+    cancel: true,
+    persistent: true,
+  }).onOk(() => {
+    clearAllData();
+  });
+}
+
+// Clear all data locally
+function clearAllData() {
+  localStorage.removeItem('resume-data');
+  store.$reset();
+  skillsInput.value = '';
+  message.value = 'All data cleared. You can start fresh now.';
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .section-editor {
   border: 1px solid #ccc;
 }
 </style>
-```

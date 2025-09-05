@@ -1,4 +1,7 @@
 import { defineStore } from 'pinia';
+import { debounce } from 'quasar';
+import { db } from 'src/db/index';
+
 import type { ResumeState } from 'src/models/models';
 
 export const useResumeStore = defineStore('resume', {
@@ -375,6 +378,15 @@ export const useResumeStore = defineStore('resume', {
   }),
 
   actions: {
+    // Load resume from IndexedDB by key
+    async loadFromDB(key: string) {
+      const data = await db.getResume(key);
+      if (data) this.$patch(data);
+    },
+    // Save resume to IndexedDB by key
+    async saveToDB(key: string) {
+      await db.saveResume(key, this.$state);
+    },
     addWorkExperience(exp: {
       company: string;
       url: string;
@@ -425,3 +437,15 @@ export const useResumeStore = defineStore('resume', {
     },
   },
 });
+// Debounced wrapper outside store
+const saveDebounced = debounce(() => {
+  const store = useResumeStore();
+  store.saveToLocalStorage();
+}, 500);
+
+// Subscribe to store changes and trigger debounced save
+export function setupAutoSave(store: ReturnType<typeof useResumeStore>) {
+  store.$subscribe(() => {
+    saveDebounced();
+  });
+}
